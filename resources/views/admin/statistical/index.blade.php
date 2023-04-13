@@ -4,7 +4,7 @@
     <section class="content-header">
         <h1>Trang quản trị hệ thống website xây dựng website bán hàng</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
         </ol>
     </section>
     <section class="content">
@@ -15,7 +15,7 @@
                     <span class="info-box-icon bg-aqua"><i class="ion ion-ios-cart-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Tổng số đơn hàng</span>
-                        <span class="info-box-number">{{  $totalTransactions }}<small><a href="{{  route('admin.transaction.index') }}">(Chi tiết)</a></small></span>
+                        <span class="info-box-number">{{  $totalTransactions }}<small><a href="{{  route('admin.transaction.index') }}">(Chi tiết đơn hàng)</a></small></span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -27,7 +27,7 @@
                     <span class="info-box-icon bg-red"><i class="ion ion-ios-people-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Thành viên</span>
-                        <span class="info-box-number">{{ $totalUsers }} <small><a href="{{ route('admin.user.index') }}">(Chi tiết)</a></small></span>
+                        <span class="info-box-number">{{ $totalUsers }} <small><a href="{{ route('admin.user.index') }}">(Chi tiết thành viên)</a></small></span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -41,7 +41,7 @@
                     <span class="info-box-icon bg-green"><i class="ion ion-ios-gear-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Sản phẩm</span>
-                        <span class="info-box-number">{{  $totalProducts }} <small><a href="{{ route('admin.product.index') }}">(Chi tiết)</a></small></span>
+                        <span class="info-box-number">{{  $totalProducts }} <small><a href="{{ route('admin.product.index') }}">(Chi tiết sản phẩm)</a></small></span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -53,7 +53,7 @@
                     <span class="info-box-icon bg-yellow"><i class="fa fa-google-plus"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Đánh giá</span>
-                        <span class="info-box-number">{{ $totalRatings }} <small><a href="{{ route('admin.rating.index') }}">(Chi tiết)</a></small></span>
+                        <span class="info-box-number">{{ $totalRatings }} <small><a href="{{ route('admin.rating.index') }}">(Chi tiết đánh giá)</a></small></span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>

@@ -3,7 +3,7 @@
     <section class="content-header">
         <h1> TRANG ADMIN THE CIINDYS</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
         </ol>
     </section>
     <section class="content">
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-cart-outline"></i></span>
+                    <span class="info-box-icon bg-aqua"><i class="ion ion-cart-heart"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Tổng số đơn hàng</span>
                         <span class="info-box-number"><?php echo e($totalTransactions); ?><small><a href="<?php echo e(route('admin.transaction.index')); ?>">(Chi tiết đơn hàng)</a></small></span>
@@ -325,4 +325,4 @@
     </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app_master_admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/admin/statistical/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app_master_admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\THE CIINDYS\resources\views/admin/statistical/index.blade.php ENDPATH**/ ?>

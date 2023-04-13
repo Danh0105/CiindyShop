@@ -1,9 +1,9 @@
 <?php $__env->startSection('content'); ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Trang quản trị hệ thống website xây dựng website bán hàng</h1>
+        <h1> TRANG ADMIN THE CIINDYS</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
         </ol>
     </section>
     <section class="content">
@@ -14,7 +14,7 @@
                     <span class="info-box-icon bg-aqua"><i class="ion ion-ios-cart-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Tổng số đơn hàng</span>
-                        <span class="info-box-number"><?php echo e($totalTransactions); ?><small><a href="<?php echo e(route('admin.transaction.index')); ?>">(Chi tiết)</a></small></span>
+                        <span class="info-box-number"><?php echo e($totalTransactions); ?><small><a href="<?php echo e(route('admin.transaction.index')); ?>">(Chi tiết đơn hàng)</a></small></span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -26,7 +26,7 @@
                     <span class="info-box-icon bg-red"><i class="ion ion-ios-people-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Thành viên</span>
-                        <span class="info-box-number"><?php echo e($totalUsers); ?> <small><a href="<?php echo e(route('admin.user.index')); ?>">(Chi tiết)</a></small></span>
+                        <span class="info-box-number"><?php echo e($totalUsers); ?> <small><a href="<?php echo e(route('admin.user.index')); ?>">(Chi tiết thành viên)</a></small></span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -40,7 +40,7 @@
                     <span class="info-box-icon bg-green"><i class="ion ion-ios-gear-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Sản phẩm</span>
-                        <span class="info-box-number"><?php echo e($totalProducts); ?> <small><a href="<?php echo e(route('admin.product.index')); ?>">(Chi tiết)</a></small></span>
+                        <span class="info-box-number"><?php echo e($totalProducts); ?> <small><a href="<?php echo e(route('admin.product.index')); ?>">(Chi tiết sản phẩm)</a></small></span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -52,7 +52,7 @@
                     <span class="info-box-icon bg-yellow"><i class="fa fa-google-plus"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Đánh giá</span>
-                        <span class="info-box-number"><?php echo e($totalRatings); ?> <small><a href="<?php echo e(route('admin.rating.index')); ?>">(Chi tiết)</a></small></span>
+                        <span class="info-box-number"><?php echo e($totalRatings); ?> <small><a href="<?php echo e(route('admin.rating.index')); ?>">(Chi tiết đánh giá)</a></small></span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
