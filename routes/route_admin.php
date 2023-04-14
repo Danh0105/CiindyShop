@@ -74,6 +74,7 @@
             Route::get('order-delete/{id}','AdminTransactionController@deleteOrderItem')->name('ajax_admin.transaction.order_item');
             Route::get('view-transaction/{id}','AdminTransactionController@getTransactionDetail')->name('ajax.admin.transaction.detail');
             Route::get('action/{action}/{id}','AdminTransactionController@getAction')->name('admin.action.transaction');
+            Route::get('get-bill/{id}','AdminTransactionController@getBill')->name('admin.getbill');
         });
 
 

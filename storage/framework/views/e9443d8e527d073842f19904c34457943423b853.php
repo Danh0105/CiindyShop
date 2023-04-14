@@ -3,9 +3,9 @@
     <section class="content-header">
         <h1>Quản lý đơn hàng</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
             <li><a href="<?php echo e(route('admin.transaction.index')); ?>"> Transaction</a></li>
-            <li class="active"> List</a></li>
+            <li class="active"> Danh sách</a></li>
         </ol>
     </section>
     <!-- Main content -->
@@ -30,9 +30,9 @@
                             <option value="3" <?php echo e(Request::get('status') == 3 ? "selected='selected'" : ""); ?>>Đã bàn giao</option>
                             <option value="-1" <?php echo e(Request::get('status') == -1 ? "selected='selected'" : ""); ?>>Huỷ bỏ</option>
                         </select>
-                        <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Search</button>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Tìm kiếm</button>
                         <button type="submit" name="export" value="true" class="btn btn-info">
-                            <i class="fa fa-save"></i> Export
+                            <i class="fa fa-save"></i> Xuất
                         </button>
                     </form>
                 </div>
@@ -92,17 +92,17 @@
                                             </td>
                                             <td><?php echo e($transaction->created_at); ?></td>
                                             <td>
-                                                <a data-id="<?php echo e($transaction->id); ?>" href="<?php echo e(route('ajax.admin.transaction.detail', $transaction->id)); ?>" class="btn btn-xs btn-info js-preview-transaction"><i class="fa fa-eye"></i> View</a>
+                                                <a data-id="<?php echo e($transaction->id); ?>" href="<?php echo e(route('ajax.admin.transaction.detail', $transaction->id)); ?>" class="btn btn-xs btn-info js-preview-transaction"><i class="fa fa-eye"></i> Hiển thị</a>
 
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-success btn-xs">Action</button>
+                                                    <button type="button" class="btn btn-success btn-xs">Tình trạng</button>
                                                     <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                         <span class="caret"></span>
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li>
-                                                            <a href="<?php echo e(route('admin.transaction.delete', $transaction->id)); ?>" class="js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                                            <a href="<?php echo e(route('admin.transaction.delete', $transaction->id)); ?>" class="js-delete-confirm"><i class="fa fa-trash"></i> Xóa</a>
                                                         </li>
                                                         <li class="divider"></li>
                                                         <li>
@@ -150,7 +150,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Lưu dữ liệu</button>
+                    <form class="form-inline print" method="GET" action="http://127.0.0.1:8000/api-admin/transaction/get-bill/7"> 
+                        <button href="{{route('admin.getbill')}}" type="submit" class="print btn btn-primary">In đơn hàng</button>
+                    </form>
                 </div>
             </div>
         <!-- /.modal-content -->

@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1> TRANG ADMIN THE CIINDYS</h1>
+        <h1>Trang quản trị hệ thống website xây dựng website bán hàng</h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
         </ol>
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="ion ion-cart-heart"></i></span>
+                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-cart-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Tổng số đơn hàng</span>
                         <span class="info-box-number"><?php echo e($totalTransactions); ?><small><a href="<?php echo e(route('admin.transaction.index')); ?>">(Chi tiết đơn hàng)</a></small></span>

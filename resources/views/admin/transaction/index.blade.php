@@ -31,9 +31,9 @@
                             <option value="3" {{ Request::get('status') == 3 ? "selected='selected'" : "" }}>Đã bàn giao</option>
                             <option value="-1" {{ Request::get('status') == -1 ? "selected='selected'" : "" }}>Huỷ bỏ</option>
                         </select>
-                        <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Search</button>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Tìm kiếm</button>
                         <button type="submit" name="export" value="true" class="btn btn-info">
-                            <i class="fa fa-save"></i> Export
+                            <i class="fa fa-save"></i> Xuất
                         </button>
                     </form>
                 </div>
@@ -92,17 +92,17 @@
                                             </td>
                                             <td>{{  $transaction->created_at }}</td>
                                             <td>
-                                                <a data-id="{{  $transaction->id }}" href="{{ route('ajax.admin.transaction.detail', $transaction->id) }}" class="btn btn-xs btn-info js-preview-transaction"><i class="fa fa-eye"></i> View</a>
+                                                <a data-id="{{  $transaction->id }}" href="{{ route('ajax.admin.transaction.detail', $transaction->id) }}" class="btn btn-xs btn-info js-preview-transaction"><i class="fa fa-eye"></i> Hiển thị</a>
 
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-success btn-xs">Action</button>
+                                                    <button type="button" class="btn btn-success btn-xs">Tình trạng</button>
                                                     <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                         <span class="caret"></span>
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li>
-                                                            <a href="{{  route('admin.transaction.delete', $transaction->id) }}" class="js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                                            <a href="{{  route('admin.transaction.delete', $transaction->id) }}" class="js-delete-confirm"><i class="fa fa-trash"></i> Xóa</a>
                                                         </li>
                                                         <li class="divider"></li>
                                                         <li>

@@ -26,9 +26,9 @@
                             <img alt="Image" src="assets/img/avatar-male-4.jpg" class="avatar" />
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a href="nav-side-user.html" class="dropdown-item">Profile</a>
+                                <a href="nav-side-user.html" class="dropdown-item">Thông tin</a>
                                 <a href="utility-account-settings.html" class="dropdown-item">Account Settings</a>
-                                <a href="#" class="dropdown-item">Log Out</a>
+                                <a href="#" class="dropdown-item">Đăng xuất</a>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse flex-column" id="navbar-collapse">
                     <ul class="navbar-nav d-lg-block">
                         <li class="nav-item">
-                            <a class="nav-link" href="/account">Home</a>
+                            <a class="nav-link" href="/account">Trang chủ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{  route('get.user.update_info') }}">Cập nhật thông tin</a>

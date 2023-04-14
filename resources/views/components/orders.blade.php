@@ -11,7 +11,7 @@
         </tr>
         @foreach($orders as $item)
             <tr>
-                <td>#{{ $item->id }}.</td>
+                <td id="id">#{{ $item->id }}.</td>
                 <td>
                     <a href="">{{ $item->product->pro_name ?? "[N\A]" }}</a>
                     <br>

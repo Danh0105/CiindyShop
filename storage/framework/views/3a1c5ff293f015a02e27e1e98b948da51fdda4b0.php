@@ -393,12 +393,13 @@
                         reader.readAsDataURL(this.files[0]);
                     }
                 });
-
+                var temp = "ădwa"
                 $(".js-preview-transaction").click(function(event) {
                     event.preventDefault();
                     let $this = $(this);
                     let URL   = $this.attr('href');
                     let ID    = $this.attr('data-id');
+                    temp = ID
                     $("#idTransaction").html("#" + ID);
                     $.ajax({
                         url: URL
@@ -409,7 +410,20 @@
                         })
                     });
                 });
+                /* $(".print").click(function(event) {
+                    
 
+                    event.preventDefault();
+                    let URL   = `http://127.0.0.1:8000/api-admin/transaction/get-bill/${temp}`;
+                    $.ajax({
+                    type:"GET",
+                    cache:false,
+                    url: URL,   
+                    success: function (html) {
+                        console.log(html)
+                    }
+                });
+                }); */
                 $('body').on("click",'.js-delete-order-item', function(event) {
                     event.preventDefault();
                     let URL = $(this).attr('href');

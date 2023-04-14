@@ -8,15 +8,13 @@ use App\Models\Transaction;
 use App\Models\Order;
 use App\Models\Product;
 use App\Exports\TransactionExport;
-
 class AdminTransactionController extends Controller
 {
     // get list transaction 
     public function index(Request $request)
     {
         $transactions = Transaction::with('payment')->whereRaw(1);
-
-        if ($request->id) $transactions->where('id',$request->id);
+   /*      if ($request->id) $transactions->where('id',$request->id);
         if ($email = $request->email) {
             $transactions->where('tst_email','like','%'.$email.'%');
         }
@@ -32,12 +30,14 @@ class AdminTransactionController extends Controller
 
         if ($status = $request->status) {
             $transactions->where('tst_status',$status);
-        }
+        } */
 
         $transactions = $transactions->orderByDesc('id')
                             ->paginate(10);
+                            
         if ($request->export) {
             // Gọi tới export excel 
+           /*  dd(new TransactionExport($transactions)); */
             return \Excel::download(new TransactionExport($transactions), 'don-hang.xlsx');
         }
 
@@ -117,5 +117,13 @@ class AdminTransactionController extends Controller
         }
 
         return redirect()->back();
+    }
+    public function getBill($id){
+     $transactions = Transaction::with('payment')->whereRaw(1);
+     if ($id) $transactions->where('id',$id);
+     $transactions = $transactions->orderByDesc('id')
+     ->paginate(10);
+    return \Excel::download(new TransactionExport($transactions), 'don-hang.xlsx');
+        
     }
 }
