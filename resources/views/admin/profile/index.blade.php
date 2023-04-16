@@ -41,7 +41,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputName" class="col-sm-2 control-label">Phone</label>
+                                    <label for="inputName" class="col-sm-2 control-label">Số điện thoại</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="phone" placeholder="Name" value="{{ $admin->phone }}">
                                     </div>

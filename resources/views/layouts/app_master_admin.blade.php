@@ -41,7 +41,7 @@
                 <!-- Logo -->
                 <a href="/" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><b>N</b>.Ân</span>
+                    <span class="logo-mini"><b>THE</b>CIINDYS</span>
                     <!-- logo for regular state and mobile devices -->
                     <span class="logo-lg"><b>{{ get_data_user('admins','name') }}</b></span>
                 </a>
@@ -49,7 +49,7 @@
                 <nav class="navbar navbar-static-top">
                     <!-- Sidebar toggle button-->
                     <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">Điều hướng chuyển đổi</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -73,7 +73,7 @@
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="{{ route('admin.profile.index') }}" class="btn btn-default btn-flat">Profile</a>
+                                            <a href="{{ route('admin.profile.index') }}" class="btn btn-default btn-flat">Thông tin</a>
                                         </div>
 
                                         <div class="pull-right">
@@ -160,10 +160,9 @@
             <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <div class="pull-right hidden-xs">
-                    <b>Version</b> 2.4.0
+                    <b>THE</b>CIINDYS
                 </div>
-                <strong>Copyright &copy; 2023 <a href="https://adminlte.io">Nguyễn Thành Trung</a>.</strong> All rights
-                reserved.
+                <strong>Copyright &copy; 2023 <a href="https://adminlte.io">Pham Công Vinh</a>.</strong>Đã đăng ký Bản quyền.
             </footer>
             <!-- Control Sidebar -->
             <aside class="control-sidebar control-sidebar-dark">
@@ -176,14 +175,14 @@
                 <div class="tab-content">
                     <!-- Home tab content -->
                     <div class="tab-pane" id="control-sidebar-home-tab">
-                        <h3 class="control-sidebar-heading">Recent Activity</h3>
+                        <h3 class="control-sidebar-heading"> Hoạt động gần đây</h3>
                         <ul class="control-sidebar-menu">
                             <li>
                                 <a href="javascript:void(0)">
                                     <i class="menu-icon fa fa-birthday-cake bg-red"></i>
                                     <div class="menu-info">
-                                        <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-                                        <p>Will be 23 on April 24th</p>
+                                        <h4 class="control-sidebar-subheading">Sinh nhật của Langdon</h4>
+                                        <p>Sẽ là 23 vào ngày 24 tháng 4</p>
                                     </div>
                                 </a>
                             </li>
@@ -191,8 +190,8 @@
                                 <a href="javascript:void(0)">
                                     <i class="menu-icon fa fa-user bg-yellow"></i>
                                     <div class="menu-info">
-                                        <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-                                        <p>New phone +1(800)555-1234</p>
+                                        <h4 class="control-sidebar-subheading">đã cập nhật hồ sơ của anh ấy</h4>
+                                        <p>Số điện thoại </p>
                                     </div>
                                 </a>
                             </li>
@@ -200,8 +199,8 @@
                                 <a href="javascript:void(0)">
                                     <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
                                     <div class="menu-info">
-                                        <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-                                        <p>nora@example.com</p>
+                                        <h4 class="control-sidebar-subheading">Danh sách gửi thư đã tham gia</h4>
+                                        <p>THECIINDYS@gmail.com</p>
                                     </div>
                                 </a>
                             </li>
@@ -209,19 +208,19 @@
                                 <a href="javascript:void(0)">
                                     <i class="menu-icon fa fa-file-code-o bg-green"></i>
                                     <div class="menu-info">
-                                        <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-                                        <p>Execution time 5 seconds</p>
+                                        <h4 class="control-sidebar-subheading">Công việc định kỳ 254 đã được thực hiện</h4>
+                                        <p>Thời gian thực hiện 5 giây</p>
                                     </div>
                                 </a>
                             </li>
                         </ul>
                         <!-- /.control-sidebar-menu -->
-                        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                        <h3 class="control-sidebar-heading">tiến độ nhiệm vụ</h3>
                         <ul class="control-sidebar-menu">
                             <li>
                                 <a href="javascript:void(0)">
                                     <h4 class="control-sidebar-subheading">
-                                        Custom Template Design
+                                        Thiết kế mẫu tùy chỉnh
                                         <span class="label label-danger pull-right">70%</span>
                                     </h4>
                                     <div class="progress progress-xxs">
@@ -232,7 +231,7 @@
                             <li>
                                 <a href="javascript:void(0)">
                                     <h4 class="control-sidebar-subheading">
-                                        Update Resume
+                                        Cập nhật sơ yếu lý lịch
                                         <span class="label label-success pull-right">95%</span>
                                     </h4>
                                     <div class="progress progress-xxs">
@@ -243,7 +242,7 @@
                             <li>
                                 <a href="javascript:void(0)">
                                     <h4 class="control-sidebar-subheading">
-                                        Laravel Integration
+                                        Tích hợp Laravel  
                                         <span class="label label-warning pull-right">50%</span>
                                     </h4>
                                     <div class="progress progress-xxs">
@@ -254,7 +253,7 @@
                             <li>
                                 <a href="javascript:void(0)">
                                     <h4 class="control-sidebar-subheading">
-                                        Back End Framework
+                                        Kết thúc Framework
                                         <span class="label label-primary pull-right">68%</span>
                                     </h4>
                                     <div class="progress progress-xxs">
