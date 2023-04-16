@@ -17,13 +17,13 @@
                    <div class="col-md-12">
                         <table class="table">
                             <tbody>
-                                <tr>
+                            <tr>
                                     <th style="width: 10px">#</th>
-                                    <th>Name</th>
+                                    <th>Tên</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Time</th>
-                                    <th>Action</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Thời gian</th>
+                                    <th>Hành động</th>
                                 </tr>
                                 <?php if(isset($users)): ?>
                                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -35,7 +35,7 @@
                                             <td><?php echo e($user->created_at); ?></td>
                                             <td>
                                                 
-                                                <a href="<?php echo e(route('admin.user.delete', $user->id)); ?>" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                                <a href="<?php echo e(route('admin.user.delete', $user->id)); ?>" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Xóa</a>
                                             </td>
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

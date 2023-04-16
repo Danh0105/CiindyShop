@@ -9,4 +9,4 @@
             ><?php echo e($article->a_name); ?></a>
         <p><?php echo e($article->a_description); ?></p>
     </div>
-</div><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/frontend/pages/article/include/_inc_blog_item.blade.php ENDPATH**/ ?>
+</div><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/frontend/pages/article/include/_inc_blog_item.blade.php ENDPATH**/ ?>

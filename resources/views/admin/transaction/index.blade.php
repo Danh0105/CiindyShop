@@ -4,9 +4,9 @@
     <section class="content-header">
         <h1>Quản lý đơn hàng</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{  route('admin.transaction.index') }}"> Transaction</a></li>
-            <li class="active"> List</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="{{  route('admin.transaction.index') }}"> Đơn hàng</a></li>
+            <li class="active">Danh sách</a></li>
         </ol>
     </section>
     <!-- Main content -->
@@ -33,7 +33,7 @@
                         </select>
                         <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Tìm kiếm</button>
                         <button type="submit" name="export" value="true" class="btn btn-info">
-                            <i class="fa fa-save"></i> Xuất
+                            <i class="fa fa-save"></i> Xuất file
                         </button>
                     </form>
                 </div>
@@ -42,14 +42,14 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <th style="width: 10px">#</th>
+                                    <th style="width: 5.9%">Thứ tự</th>
                                     <th style="width: 30%">Thông tin</th>
                                     <th>Tổng tiền</th>
                                     <th>Vai trò</th>
                                     <th>Phương thức thanh toán</th>
                                     <th>Trạng thái</th>
                                     <th>Ngày tạo</th>
-                                    <th>Hành động</th>
+                                    <th style="width: 18%">Hành động</th>
                                 </tr>
                                 @if (isset($transactions))
                                     @foreach($transactions as $transaction)
@@ -57,10 +57,10 @@
                                             <td>{{ $transaction->id }}</td>
                                             <td>
                                                 <ul>
-                                                    <li>Name: {{ $transaction->tst_name }}</li>
+                                                    <li>Tên: {{ $transaction->tst_name }}</li>
                                                     <li>Email: {{ $transaction->tst_email }}</li>
-                                                    <li>Phone: {{ $transaction->tst_phone }}</li>
-                                                    <li>Addres: {{ $transaction->tst_address }}</li>
+                                                    <li>Số điện thoại: {{ $transaction->tst_phone }}</li>
+                                                    <li>Địa chỉ: {{ $transaction->tst_address }}</li>
                                                 </ul>
                                             </td>
                                             <td>{{ number_format($transaction->tst_total_money,0,',','.') }} đ</td>
@@ -149,7 +149,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Lưu dữ liệu</button>
+                    <button type="button" class="btn btn-primary">Lưu xxdữ liệu</button>
                 </div>
             </div>
         <!-- /.modal-content -->

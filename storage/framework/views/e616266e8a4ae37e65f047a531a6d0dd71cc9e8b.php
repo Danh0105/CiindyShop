@@ -25,4 +25,4 @@
     </div>
 <?php else: ?> 
     <a href="<?php echo e(route('get.product.rating_list',$product->pro_slug . '-'.$product->id )); ?>" class="btn-load-rating">Xem tất cả đánh giá <i class="la la-angle-right"></i></a>
-<?php endif; ?><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/frontend/pages/product_detail/include/_inc_list_reviews.blade.php ENDPATH**/ ?>
+<?php endif; ?><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/frontend/pages/product_detail/include/_inc_list_reviews.blade.php ENDPATH**/ ?>

@@ -2,11 +2,11 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Thêm mới menu</h1>
+        <h1>Thêm mới bài viết</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
             <li><a href="{{  route('admin.menu.index') }}"> Menu</a></li>
-            <li class="active"> Create</a></li>
+            <li class="active"> Tạo</a></li>
         </ol>
     </section>
     <!-- Main content -->
@@ -20,7 +20,7 @@
                         <div class="col-sm-8">
                             <div class="form-group {{ $errors->first('mn_name') ? 'has-error' : '' }}">
                                 <label for="name">Tên <span class="text-danger">(*)</span></label>
-                                <input type="text" class="form-control" name="mn_name"  placeholder="Name ...">
+                                <input type="text" class="form-control" name="mn_name"  placeholder="Tên sự kiện ...">
                                 @if ($errors->first('mn_name'))
                                     <span class="text-danger">{{ $errors->first('mn_name') }}</span>
                                 @endif
@@ -32,8 +32,8 @@
                         <div class="col-sm-12">
                             <div class="box-footer text-center">
                                 <a href="{{ route('admin.menu.index') }}" class="btn btn-danger">
-                                Quay lại <i class="fa fa-undo"></i></a>
-                                <button type="submit" class="btn btn-success">Lưu dữ liệu <i class="fa fa-save"></i></button>
+                                 Đóng <i class="fa fa-close"></i></a>
+                                <button type="submit" class="btn btn-success">Lưu <i class="fa fa-save"></i></button>
                             </div>
                         </div>
                     </form>  

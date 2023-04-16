@@ -29,7 +29,7 @@
                         <div class="col-sm-12">
                             <div class="box-footer text-center "  style="margin-top: 20px;">
                                 <a href="{{ route('admin.type.index') }}" class="btn btn-danger">
-                                Quay lại <i class="fa fa-undo"></i></a>
+                                 Đóng <i class="fa fa-close"></i></a>
                                 <button type="submit" class="btn btn-success">Cập nhật dữ liệu <i class="fa fa-save"></i></button>
                             </div>
                         </div>

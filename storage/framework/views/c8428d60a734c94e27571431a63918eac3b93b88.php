@@ -63,4 +63,4 @@
         <?php echo $__env->make('frontend.pages.product_detail.include._inc_list_reviews', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         
     </div>
-</div><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/frontend/pages/product_detail/include/_inc_ratings.blade.php ENDPATH**/ ?>
+</div><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/frontend/pages/product_detail/include/_inc_ratings.blade.php ENDPATH**/ ?>

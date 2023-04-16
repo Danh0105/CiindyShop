@@ -15,4 +15,4 @@
     <div class="item_footer">
         <span class="item_time"><i class="la la-clock-o"></i> đánh giá <?php echo e($rating->created_at); ?></span>
     </div>
-</div><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/frontend/pages/product_detail/include/_inc_rating_item.blade.php ENDPATH**/ ?>
+</div><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/frontend/pages/product_detail/include/_inc_rating_item.blade.php ENDPATH**/ ?>

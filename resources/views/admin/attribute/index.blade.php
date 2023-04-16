@@ -2,11 +2,11 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Quản lý dữ liệu sản phẩm</h1>
+        <h1>Quản lý kích thước màu sắc sản phẩm</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{  route('admin.attribute.index') }}"> Dữ liệu sản phẩm</a></li>
-            <li class="active">List</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i>Trang chủ</a></li>
+            <li><a href="{{  route('admin.attribute.index') }}"> Dữ liệu kích thước màu sắc sản phẩm</a></li>
+            <li class="active">Danh sách</li>
         </ol>
     </section>
     <!-- Main content -->
@@ -22,7 +22,7 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <th style="width: 10px">#</th>
+                                   <th style="width: 70px; text-align:center;">Thứ tự</th>
                                     <th>Tên</th>
                                     <th>Kiểu</th>
                                     <th>Ngày tạo</th>
@@ -38,8 +38,8 @@
                                             </td>
                                             <td>{{  $attribute->created_at }}</td>
                                             <td>
-                                                <a href="{{ route('admin.attribute.update', $attribute->id) }}" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a>
-                                                <a href="{{  route('admin.attribute.delete', $attribute->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                                <a href="{{ route('admin.attribute.update', $attribute->id) }}" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i>Chỉnh sửa</a>
+                                                <a href="{{  route('admin.attribute.delete', $attribute->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i>Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -41,7 +41,7 @@
                 <!-- Logo -->
                 <a href="/" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><b>N</b>.Ân</span>
+                    <span class="logo-mini"><b></b> </span>
                     <!-- logo for regular state and mobile devices -->
                     <span class="logo-lg"><b><?php echo e(get_data_user('admins','name')); ?></b></span>
                 </a>
@@ -74,7 +74,7 @@
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="<?php echo e(route('admin.profile.index')); ?>" class="btn btn-default btn-flat">Profile</a>
+                                            <a href="<?php echo e(route('admin.profile.index')); ?>" class="btn btn-default btn-flat">Thông tin</a>
                                         </div>
 
                                         <div class="pull-right">
@@ -103,15 +103,15 @@
                         </div>
                         <div class="pull-left info">
                             <p><?php echo e(get_data_user('admins','name')); ?></p>
-                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                            <a href="#"><i class="fa fa-circle text-success"></i></a>
                         </div>
                     </div>
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu" data-widget="tree">
-                        <li class="header">MAIN NAVIGATION</li>
+                        <li class="header"></li>
                         <li class="">
                             <a href="/api-admin">
-                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            <i class="fa fa-dashboard"></i> <!-- MAIN NAVIGATION--> <span></span>
                             </a>
                         </li>
 
@@ -148,10 +148,9 @@
                                 <?php endif; ?>
                             </li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        <li><a href="<?php echo e(route('admin.slide.index')); ?>"><i class="fa fa-circle-o text-red"></i> <span>Slide</span></a></li>
+                        <li><a href="<?php echo e(route('admin.slide.index')); ?>"><i class="fa fa-circle-o text-red"></i> <span>Banner</span></a></li>
                         <li><a href="<?php echo e(route('admin.event.index')); ?>"><i class="fa fa-circle-o text-red"></i> <span>Sự kiện</span></a></li>
                         <li><a href="<?php echo e(route('admin.static.index')); ?>"><i class="fa fa-circle-o text-red"></i> <span>Trang tĩnh</span></a></li>
-                        <li><a href="<?php echo e(route('admin.statistical')); ?>"><i class="fa fa-circle-o text-red"></i> <span>Thống kê</span></a></li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -164,10 +163,9 @@
             <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <div class="pull-right hidden-xs">
-                    <b>Version</b> 2.4.0
+    
                 </div>
-                <strong>Copyright &copy; 2023 <a href="https://adminlte.io">Nguyễn Thành Trung</a>.</strong> All rights
-                reserved.
+                <strong>Copyright &copy; 2023 <a href="https://adminlte.io">Phan Công Vinh</a>.</strong>Đã đăng ký Bản quyền.
             </footer>
             <!-- Control Sidebar -->
             <aside class="control-sidebar control-sidebar-dark">
@@ -180,14 +178,14 @@
                 <div class="tab-content">
                     <!-- Home tab content -->
                     <div class="tab-pane" id="control-sidebar-home-tab">
-                        <h3 class="control-sidebar-heading">Recent Activity</h3>
+                        <h3 class="control-sidebar-heading">Hoạt động gần đây</h3>
                         <ul class="control-sidebar-menu">
                             <li>
                                 <a href="javascript:void(0)">
                                     <i class="menu-icon fa fa-birthday-cake bg-red"></i>
                                     <div class="menu-info">
-                                        <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-                                        <p>Will be 23 on April 24th</p>
+                                        <h4 class="control-sidebar-subheading">Sinh nhật của Langdon</h4>
+                                        <p>Sẽ là 23 vào ngày 24 tháng 4</p>
                                     </div>
                                 </a>
                             </li>
@@ -195,8 +193,8 @@
                                 <a href="javascript:void(0)">
                                     <i class="menu-icon fa fa-user bg-yellow"></i>
                                     <div class="menu-info">
-                                        <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-                                        <p>New phone +1(800)555-1234</p>
+                                        <h4 class="control-sidebar-subheading"> Cập nhật hồ sơ của anh ấy</h4>
+                                        <p> </p>
                                     </div>
                                 </a>
                             </li>
@@ -204,8 +202,8 @@
                                 <a href="javascript:void(0)">
                                     <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
                                     <div class="menu-info">
-                                        <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-                                        <p>nora@example.com</p>
+                                        <h4 class="control-sidebar-subheading">Danh sách gửi thư đã tham gia</h4>
+                                        <p>THE CIINDYS@gmail.com</p>
                                     </div>
                                 </a>
                             </li>
@@ -213,19 +211,19 @@
                                 <a href="javascript:void(0)">
                                     <i class="menu-icon fa fa-file-code-o bg-green"></i>
                                     <div class="menu-info">
-                                        <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-                                        <p>Execution time 5 seconds</p>
+                                        <h4 class="control-sidebar-subheading">Công việc định kỳ 254 đã được thực hiện</h4>
+                                        <p>Thời gian thực hiện 5 giây</p>
                                     </div>
                                 </a>
                             </li>
                         </ul>
                         <!-- /.control-sidebar-menu -->
-                        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                        <h3 class="control-sidebar-heading">tiến độ nhiệm vụ</h3>
                         <ul class="control-sidebar-menu">
                             <li>
                                 <a href="javascript:void(0)">
                                     <h4 class="control-sidebar-subheading">
-                                        Custom Template Design
+                                    Thiết kế mẫu tùy chỉnh
                                         <span class="label label-danger pull-right">70%</span>
                                     </h4>
                                     <div class="progress progress-xxs">
@@ -236,7 +234,7 @@
                             <li>
                                 <a href="javascript:void(0)">
                                     <h4 class="control-sidebar-subheading">
-                                        Update Resume
+                                    Cập nhật sơ yếu lý lịch
                                         <span class="label label-success pull-right">95%</span>
                                     </h4>
                                     <div class="progress progress-xxs">
@@ -247,7 +245,7 @@
                             <li>
                                 <a href="javascript:void(0)">
                                     <h4 class="control-sidebar-subheading">
-                                        Laravel Integration
+                                    Tích hợp Laravel
                                         <span class="label label-warning pull-right">50%</span>
                                     </h4>
                                     <div class="progress progress-xxs">
@@ -258,7 +256,7 @@
                             <li>
                                 <a href="javascript:void(0)">
                                     <h4 class="control-sidebar-subheading">
-                                        Back End Framework
+                                       Kết thúc Framework
                                         <span class="label label-primary pull-right">68%</span>
                                     </h4>
                                     <div class="progress progress-xxs">
@@ -271,60 +269,60 @@
                     </div>
                     <!-- /.tab-pane -->
                     <!-- Stats tab content -->
-                    <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                    <div class="tab-pane" id="control-sidebar-stats-tab">Nội dung tab thống kê</div>
                     <!-- /.tab-pane -->
                     <!-- Settings tab content -->
                     <div class="tab-pane" id="control-sidebar-settings-tab">
                         <form method="post">
-                            <h3 class="control-sidebar-heading">General Settings</h3>
+                            <h3 class="control-sidebar-heading">Cài đặt chung</h3>
                             <div class="form-group">
                                 <label class="control-sidebar-subheading">
-                                Report panel usage
+                                Báo cáo việc sử dụng bảng điều khiển
                                 <input type="checkbox" class="pull-right" checked>
                                 </label>
                                 <p>
-                                    Some information about this general settings option
+                                Một số thông tin về tùy chọn cài đặt chung này
                                 </p>
                             </div>
                             <!-- /.form-group -->
                             <div class="form-group">
                                 <label class="control-sidebar-subheading">
-                                Allow mail redirect
+                                Cho phép chuyển hướng thư
                                 <input type="checkbox" class="pull-right" checked>
                                 </label>
                                 <p>
-                                    Other sets of options are available
+                                Các bộ tùy chọn khác có sẵn
                                 </p>
                             </div>
                             <!-- /.form-group -->
                             <div class="form-group">
                                 <label class="control-sidebar-subheading">
-                                Expose author name in posts
+                                Hiển thị tên tác giả trong bài viết
                                 <input type="checkbox" class="pull-right" checked>
                                 </label>
                                 <p>
-                                    Allow the user to show his name in blog posts
+                                Cho phép người dùng hiển thị tên của mình trong các bài đăng trên blog
                                 </p>
                             </div>
                             <!-- /.form-group -->
-                            <h3 class="control-sidebar-heading">Chat Settings</h3>
+                            <h3 class="control-sidebar-heading">cài đặt trò chuyện</h3>
                             <div class="form-group">
                                 <label class="control-sidebar-subheading">
-                                Show me as online
+                                Cho tôi xem trực tuyến
                                 <input type="checkbox" class="pull-right" checked>
                                 </label>
                             </div>
                             <!-- /.form-group -->
                             <div class="form-group">
                                 <label class="control-sidebar-subheading">
-                                Turn off notifications
+                                Tắt thông báo
                                 <input type="checkbox" class="pull-right">
                                 </label>
                             </div>
                             <!-- /.form-group -->
                             <div class="form-group">
                                 <label class="control-sidebar-subheading">
-                                Delete chat history
+                                Xóa lịch sử trò chuyện
                                 <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
                                 </label>
                             </div>
@@ -449,4 +447,4 @@
         </script>
     </body>
 </html>
-<?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/layouts/app_master_admin.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/layouts/app_master_admin.blade.php ENDPATH**/ ?>

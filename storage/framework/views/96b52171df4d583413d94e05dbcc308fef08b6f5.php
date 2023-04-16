@@ -36,4 +36,4 @@
         <?php endif; ?>
         
     </div>
-<?php endif; ?><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/frontend/components/product_item.blade.php ENDPATH**/ ?>
+<?php endif; ?><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/frontend/components/product_item.blade.php ENDPATH**/ ?>

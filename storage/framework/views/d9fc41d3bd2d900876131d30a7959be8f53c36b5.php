@@ -18,12 +18,12 @@
     <div class="col-sm-8">
         <div class="box box-warning">
             <div class="box-header with-border">
-                <h3 class="box-title">Thông tin cơ bản</h3>
+                <h3 class="box-title">Thông tin Sản Phẩm</h3>
             </div>
             <div class="box-body">
                 <div class="form-group ">
                     <label for="exampleInputEmail1">Tên <b class="col-red">(*)</b></label>
-                    <input type="text" class="form-control" name="pro_name" placeholder="Name ...." autocomplete="off" value="<?php echo e($product->pro_name ?? old('pro_name')); ?>">
+                    <input type="text" class="form-control" name="pro_name" placeholder="Tên sản phẩm...." autocomplete="off" value="<?php echo e($product->pro_name ?? old('pro_name')); ?>">
                     <?php if($errors->first('pro_name')): ?>
                         <span class="text-danger"><?php echo e($errors->first('pro_name')); ?></span>
                     <?php endif; ?>
@@ -32,7 +32,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Giá sản phẩm</label>
-                             <input type="text" name="pro_price" value="<?php echo e(old('pro_price', isset($product->pro_price) ? $product->pro_price : 0)); ?>" class="form-control" data-type="currency" placeholder="15.000.000">
+                             <input type="text" name="pro_price" value="<?php echo e(old('pro_price', isset($product->pro_price) ? $product->pro_price : 0)); ?>" class="form-control" data-type="currency" placeholder="Giá...">
                              <?php if($errors->first('pro_price')): ?>
                                 <span class="text-danger"><?php echo e($errors->first('pro_price')); ?></span>
                             <?php endif; ?>
@@ -41,14 +41,14 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Giảm giá</label>
-                             <input type="number" name="pro_sale" value="<?php echo e(old('pro_sale', isset($product->pro_sale) ? $product->pro_sale : 0)); ?>" class="form-control" data-type="currency" placeholder="5">
+                             <input type="number" name="pro_sale" value="<?php echo e(old('pro_sale', isset($product->pro_sale) ? $product->pro_sale : 0)); ?>" class="form-control" data-type="currency" placeholder="Giá giảm...">
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label for="tag">Keyword</label>
+                            <label for="tag">Từ khóa</label>
                             <select name="keywords[]" class="form-control js-select2-keyword" multiple="">
-                                <option value="">__Click__</option>
+                                <option value="">__Chọn_</option>
                                 <?php $__currentLoopData = $keywords; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $keyword): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option value="<?php echo e($keyword->id); ?>" <?php echo e(in_array($keyword->id, $keywordOld ) ? "selected='selected'"  : ''); ?>>
                                         <?php echo e($keyword->k_name); ?></option>
@@ -68,7 +68,7 @@
                 <div class="form-group ">
                     <label class="control-label">Danh mục <b class="col-red">(*)</b></label>
                     <select name="pro_category_id" class="form-control ">
-                        <option value="">__Click__</option>
+                        <option value="">__Chọn__</option>
                         <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <option value="<?php echo e($category->id); ?>" <?php echo e(($product->pro_category_id ?? 0) == $category->id ? "selected='selected'" : ""); ?>>
                                 <?php echo e($category->c_name); ?>
@@ -155,9 +155,9 @@
             
             <div class="box-body" style="padding: 0px;">
                 <div class="form-group col-sm-6">
-                    <label for="exampleInputEmail1">Xuất sứ</label>
+                    <label for="exampleInputEmail1">Thương hiệu</label>
                     <select name="pro_country" class="form-control ">
-                        <option value="0">__Click__</option>
+                        <option value="0">__Chọn__</option>
                         <?php $__currentLoopData = $producer; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <option value="<?php echo e($item->id); ?>" <?php echo e(($product->pro_country ?? '' ) == $item->id ? "selected='selected'" : ""); ?>><?php echo e($item->pdr_name); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -194,13 +194,13 @@
                 <div style="margin-bottom: 10px">
                     <img src="<?php echo e(pare_url_file($product->pro_avatar ?? '') ?? '/images/no-image.jpg'); ?>" onerror="this.onerror=null;this.src='/images/no-image.jpg';" alt="" class="img-thumbnail" style="width: 200px;height: 200px;">
                 </div>
-                <div style="position:relative;"> <a class="btn btn-primary" href="javascript:;"> Choose File... <input type="file" style="position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=0)&quot;;opacity:0;background-color:transparent;color:transparent;" name="pro_avatar" size="40" class="js-upload"> </a> &nbsp; <span class="label label-info" id="upload-file-info"></span> </div>
+                <div style="position:relative;"> <a class="btn btn-primary" href="javascript:;"> Chọn tập tin... <input type="file" style="position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=0)&quot;;opacity:0;background-color:transparent;color:transparent;" name="pro_avatar" size="40" class="js-upload"> </a> &nbsp; <span class="label label-info" id="upload-file-info"></span> </div>
             </div>
         </div>
     </div>
     <div class="col-sm-12 clearfix">
         <div class="box-footer text-center">
-            <a href="<?php echo e(route('admin.product.index')); ?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> Cancel</a>
+            <a href="<?php echo e(route('admin.product.index')); ?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> Đóng</a>
             <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> <?php echo e(isset($product) ? "Cập nhật" : "Thêm mới"); ?> </button> </div>
     </div>
 </form>

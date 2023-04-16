@@ -2,11 +2,11 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Quản lý Event</h1>
+        <h1>Quản lý sự kiện</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{  route('admin.event.index') }}"> Event</a></li>
-            <li class="active"> List</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="{{  route('admin.event.index') }}"> Sự kiện</a></li>
+            <li class="active"> Danh sách</li>
         </ol>
     </section>
     <!-- Main content -->
@@ -22,7 +22,7 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <th style="width: 10px">#</th>
+                                    <th style="width: 70px">Thứ tự</th>
                                     <th>Tiêu đề</th>
                                     <th>Link</th>
                                     <th>Banner</th>
@@ -41,18 +41,18 @@
                                             </td>
                                             <td>
                                                 @if($event->e_position_1 !== 0)
-                                                    <p>Home 1</p>
+                                                    <p>Trang chủ 1</p>
                                                 @elseif($event->e_position_2 !== 0)
-                                                    <p>Home 2</p>
+                                                    <p>Trang chủ 2</p>
                                                 @elseif($event->e_position_3 !== 0)
-                                                    <p>Home 3</p>
+                                                    <p>Trang chủ 3</p>
                                                 @elseif($event->e_position_4 !== 0)
                                                 @endif
                                             </td>
                                             <td>{{  $event->created_at }}</td>
                                             <td>
-                                                <a href="{{ route('admin.event.update', $event->id) }}" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a>
-                                                <a href="{{  route('admin.event.delete', $event->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                                <a href="{{ route('admin.event.update', $event->id) }}" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Chỉnh sửa</a>
+                                                <a href="{{  route('admin.event.delete', $event->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

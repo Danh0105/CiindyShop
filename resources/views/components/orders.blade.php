@@ -1,13 +1,13 @@
 <table class="table table-condensed">
     <tbody>
         <tr>
-            <th style="width: 10px">#</th>
+            <th style="width: 10px">ggg#</th>
             <th style="width: 250px">Tên sản phẩm</th>
             <th>Ảnh</th>
             <th>Giá</th>
             <th>Số lượng</th>
             <th>Tổng tiền</th>
-            <th>Hành động</th>
+            <th>Hành độnxxxg</th>
         </tr>
         @foreach($orders as $item)
             <tr>
@@ -40,7 +40,7 @@
                 <td>{{ $item->od_qty }}</td>
                 <td>{{ number_format($item->od_price * $item->od_qty,0,',','.') }} đ</td>
                 <td>
-                    <a href="{{ route('ajax_admin.transaction.order_item', $item->id) }}" class="btn btn-xs btn-danger js-delete-order-item">Delete</a>
+                    <a href="{{ route('ajax_admin.transaction.order_item', $item->id) }}" class="btn btn-xs btn-danger js-delete-order-item">Xóa</a>
                 </td>
             </tr>
         @endforeach

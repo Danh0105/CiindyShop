@@ -1,5 +1,5 @@
 <div class="best-sell">
-    <div class="title">Top bán chạy nhất</div>
+    <div class="title">Sản phẩm bán chạy nhất</div>
     <div class="content">
         <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="item">
@@ -34,4 +34,4 @@
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
-</div><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/frontend/components/top_product.blade.php ENDPATH**/ ?>
+</div><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/frontend/components/top_product.blade.php ENDPATH**/ ?>

@@ -4,8 +4,8 @@
     <section class="content-header">
         <h1>Quản lý Liên hệ</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active"><a href="">Contact</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li class="active"><a href="">Liên hệ</a></li>
         </ol>
     </section>
     <!-- Main content -->
@@ -18,10 +18,10 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <th style="width: 10px">#</th>
+                                    <th style="width: 70px">Thứ tự</th>
                                     <th>Tên</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
+                                    <th>Số điện thoại</th>
                                     <th>Nội dung</th>
                                     <th>Ngày tạo</th>
                                     <th>Hành động</th>
@@ -36,7 +36,7 @@
                                             <td>{{ $item->c_content }}</td>
                                             <td>{{ $item->created_at }}</td>
                                             <td>
-                                                <a href="{{  route('admin.contact.delete', $item->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                                <a href="{{  route('admin.contact.delete', $item->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

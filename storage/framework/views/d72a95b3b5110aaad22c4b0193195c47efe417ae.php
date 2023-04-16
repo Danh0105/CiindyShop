@@ -32,4 +32,4 @@
         </div>
     </body>
 </html>
-<?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions/views/minimal.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions/views/minimal.blade.php ENDPATH**/ ?>

@@ -11,4 +11,4 @@
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
-</div><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/frontend/components/hot_article.blade.php ENDPATH**/ ?>
+</div><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/frontend/components/hot_article.blade.php ENDPATH**/ ?>

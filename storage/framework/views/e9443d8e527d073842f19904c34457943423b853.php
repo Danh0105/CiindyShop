@@ -4,8 +4,8 @@
         <h1>Quản lý đơn hàng</h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
-            <li><a href="<?php echo e(route('admin.transaction.index')); ?>"> Transaction</a></li>
-            <li class="active"> Danh sách</a></li>
+            <li><a href="<?php echo e(route('admin.transaction.index')); ?>"> Đơn hàng</a></li>
+            <li class="active">Danh sách</a></li>
         </ol>
     </section>
     <!-- Main content -->
@@ -32,7 +32,7 @@
                         </select>
                         <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Tìm kiếm</button>
                         <button type="submit" name="export" value="true" class="btn btn-info">
-                            <i class="fa fa-save"></i> Xuất
+                            <i class="fa fa-save"></i> Xuất file
                         </button>
                     </form>
                 </div>
@@ -41,14 +41,14 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <th style="width: 10px">#</th>
+                                    <th style="width: 5.9%">Thứ tự</th>
                                     <th style="width: 30%">Thông tin</th>
                                     <th>Tổng tiền</th>
                                     <th>Vai trò</th>
                                     <th>Phương thức thanh toán</th>
                                     <th>Trạng thái</th>
                                     <th>Ngày tạo</th>
-                                    <th>Hành động</th>
+                                    <th style="width: 18%">Hành động</th>
                                 </tr>
                                 <?php if(isset($transactions)): ?>
                                     <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -56,10 +56,10 @@
                                             <td><?php echo e($transaction->id); ?></td>
                                             <td>
                                                 <ul>
-                                                    <li>Name: <?php echo e($transaction->tst_name); ?></li>
+                                                    <li>Tên: <?php echo e($transaction->tst_name); ?></li>
                                                     <li>Email: <?php echo e($transaction->tst_email); ?></li>
-                                                    <li>Phone: <?php echo e($transaction->tst_phone); ?></li>
-                                                    <li>Addres: <?php echo e($transaction->tst_address); ?></li>
+                                                    <li>Số điện thoại: <?php echo e($transaction->tst_phone); ?></li>
+                                                    <li>Địa chỉ: <?php echo e($transaction->tst_address); ?></li>
                                                 </ul>
                                             </td>
                                             <td><?php echo e(number_format($transaction->tst_total_money,0,',','.')); ?> đ</td>
@@ -150,9 +150,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <form class="form-inline print" method="GET" action="http://127.0.0.1:8000/api-admin/transaction/get-bill/7"> 
-                        <button href="{{route('admin.getbill')}}" type="submit" class="print btn btn-primary">In đơn hàng</button>
-                    </form>
+                    <button type="button" class="btn btn-primary">Lưu xxdữ liệu</button>
                 </div>
             </div>
         <!-- /.modal-content -->

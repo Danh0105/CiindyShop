@@ -82,7 +82,7 @@
 
       <nav aria-label="breadcrumb" class="d-none d-lg-block" id="breadcrumbs">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item invisible">Home</li>
+          <li class="breadcrumb-item invisible">Trang chủ</li>
         </ol>
       </nav>
 
@@ -178,13 +178,13 @@
       <div class="carousel-control-background" aria-hidden="true">
         <i class="fas fa-chevron-left"></i>
       </div>
-      <span class="sr-only">Previous</span>
+      <span class="sr-only">Trước</span>
     </a>
     <a class="carousel-control-next" href="#previewCarousel" role="button" data-slide="next">
       <div class="carousel-control-background" aria-hidden="true">
         <i class="fas fa-chevron-right"></i>
       </div>
-      <span class="sr-only">Next</span>
+      <span class="sr-only">Tiếp tục</span>
     </a>
   </div>
 

@@ -56,4 +56,4 @@
 <?php echo $__env->yieldContent('script'); ?>
 </body>
 </html>
-<?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/layouts/app_master_user.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/layouts/app_master_user.blade.php ENDPATH**/ ?>

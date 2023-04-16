@@ -10,4 +10,4 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </ul>
     </div>
-<?php endif; ?><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/frontend/components/articles_hot_sidebar_top.blade.php ENDPATH**/ ?>
+<?php endif; ?><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/frontend/components/articles_hot_sidebar_top.blade.php ENDPATH**/ ?>

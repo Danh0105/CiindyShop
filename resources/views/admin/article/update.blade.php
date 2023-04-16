@@ -2,11 +2,11 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Update bài viết</h1>
+        <h1>Cập nhật bài viết</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{  route('admin.article.index') }}"> Article</a></li>
-            <li class="active"> Update</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="{{  route('admin.article.index') }}"> Bài viết</a></li>
+            <li class="active">Cập nhật</li>
         </ol>
     </section>
     <!-- Main content -->

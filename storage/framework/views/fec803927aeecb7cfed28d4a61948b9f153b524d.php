@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-group">
                     <button class="btn btn-purple btn-xs">Đăng ký</button>
-                    <a href="<?php echo e(route('get.email_reset_password')); ?>">Quên mật khẩu</a>
+                    <a href="<?php echo e(route('get.email_reset_password')); ?>">Quên mật khẩu?</a>
                 </div>
             </form>
         </div>
@@ -64,4 +64,4 @@
         <?php $js = file_get_contents('js/home.js');echo $js;?>
     </script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.app_master_frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/auth/register.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app_master_frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/auth/register.blade.php ENDPATH**/ ?>

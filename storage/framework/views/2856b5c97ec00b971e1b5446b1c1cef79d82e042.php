@@ -4,7 +4,7 @@
     <div class="col-sm-8">
         <div class="box box-warning">
             <div class="box-header with-border">
-                <h3 class="box-title">Thông tin cơ bản</h3>
+                <h3 class="box-title">Thông tin Sản Phẩm</h3>
             </div>
             <div class="box-body">
                 <div class="form-group "> 

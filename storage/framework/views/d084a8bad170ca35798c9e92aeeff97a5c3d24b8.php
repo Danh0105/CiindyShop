@@ -18,12 +18,12 @@
     <div class="col-sm-8">
         <div class="box box-warning">
             <div class="box-header with-border">
-                <h3 class="box-title">Thông tin cơ bản</h3>
+                <h3 class="box-title">Thông tin Sản Phẩm</h3>
             </div>
             <div class="box-body">
                 <div class="form-group ">
                     <label for="exampleInputEmail1">Tên <b class="col-red">(*)</b></label>
-                    <input type="text" class="form-control" name="pro_name" placeholder="Name ...." autocomplete="off" value="<?php echo e($product->pro_name ?? old('pro_name')); ?>">
+                    <input type="text" class="form-control" name="pro_name" placeholder="Tên sản phẩm ...." autocomplete="off" value="<?php echo e($product->pro_name ?? old('pro_name')); ?>">
                     <?php if($errors->first('pro_name')): ?>
                         <span class="text-danger"><?php echo e($errors->first('pro_name')); ?></span>
                     <?php endif; ?>

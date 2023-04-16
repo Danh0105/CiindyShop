@@ -12,9 +12,9 @@
     <section class="content-header">
         <h1>Danh sách đánh giá, review sản phẩm</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{  route('admin.rating.index') }}"> Rating</a></li>
-            <li class="active"> List </li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="{{  route('admin.rating.index') }}"> Đánh giá</a></li>
+            <li class="active">Danh sách </li>
         </ol>
     </section>
     <!-- Main content -->
@@ -27,10 +27,10 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <th style="width: 10px">#</th>
+                                    <th style="width: 70px">Thứ tự</th>
                                     <th>Tên</th>
                                     <th>Người dùng </th>
-                                    <th>Rating</th>
+                                    <th>Sao</th>
                                     <th>Ngày tạo</th>
                                     <th>Hành động</th>
                                 </tr>
@@ -49,7 +49,7 @@
                                             </td>
                                             <td>{{ $rating->created_at }}</td>
                                             <td>
-                                                <a href="{{  route('admin.rating.delete', $rating->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                                <a href="{{  route('admin.rating.delete', $rating->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i>Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

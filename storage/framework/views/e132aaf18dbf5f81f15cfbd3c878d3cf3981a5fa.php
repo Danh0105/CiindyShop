@@ -3,9 +3,9 @@
     <section class="content-header">
         <h1>Thêm mới bài viết</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo e(route('admin.article.index')); ?>"> Article</a></li>
-            <li class="active"> Create</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="<?php echo e(route('admin.article.index')); ?>">Bài viết</a></li>
+            <li class="active"> Tạo</li>
         </ol>
     </section>
     <!-- Main content -->

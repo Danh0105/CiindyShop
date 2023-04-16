@@ -1,11 +1,11 @@
 <?php $__env->startSection('content'); ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Thêm mới danh mục sản phẩm</h1>
+        <h1>gg</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo e(route('admin.category.index')); ?>"> Category</a></li>
-            <li class="active"> Create </li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="<?php echo e(route('admin.category.index')); ?>"> Danh mục</a></li>
+            <li class="active"> Tạo </li>
         </ol>
     </section>
     <!-- Main content -->

@@ -1,11 +1,11 @@
 <?php $__env->startSection('content'); ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Thêm mới dữ liệu sản phẩm</h1>
+        <h1>Thêm mới kích thước màu sắc sản phẩm</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
             <li><a href="<?php echo e(route('admin.attribute.index')); ?>"> Dữ liệu sản phẩm</a></li>
-            <li class="active">Create</li>
+            <li class="active">Tạo</li>
         </ol>
     </section>
     <!-- Main content -->
@@ -19,7 +19,7 @@
                         <div class="col-sm-8">
                             <div class="form-group <?php echo e($errors->first('atb_name') ? 'has-error' : ''); ?>">
                                 <label for="name">Tên <span class="text-danger">(*)</span></label>
-                                <input type="text" class="form-control" name="atb_name" placeholder="Name ...">
+                                <input type="text" class="form-control" name="atb_name" placeholder="Tên ...">
                                 <?php if($errors->first('atb_name')): ?>
                                     <span class="text-danger"><?php echo e($errors->first('atb_name')); ?></span>
                                 <?php endif; ?>
@@ -41,8 +41,8 @@
                         <div class="col-sm-12">
                             <div class="box-footer text-center " style="margin-top: 20px;">
                                 <a href="<?php echo e(route('admin.attribute.index')); ?>" class="btn btn-danger">
-                                    Quay lại <i class="fa fa-undo"></i></a>
-                                <button type="submit" class="btn btn-success">Lưu dữ liệu <i class="fa fa-save"></i>
+                                    Đóng<i class="fa fa-undo"></i></a>
+                                <button type="submit" class="btn btn-success">Lưu <i class="fa fa-save"></i>
                                 </button>
                             </div>
                         </div>
@@ -54,4 +54,4 @@
     <!-- /.content -->
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app_master_admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/admin/attribute/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app_master_admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/admin/attribute/create.blade.php ENDPATH**/ ?>

@@ -90,7 +90,7 @@ class HomeController extends FrontendController
             'event1'        => $event1,
             'event2'        => $event2,
             'event3'        => $event3,
-            'title_page'    => "Đồ án tốt nghiệp",
+            'title_page'    => "THE CIINDYS",
             'categoriesHot' => $categoriesHot,
             'articlesHot'   => $articlesHot
         ];

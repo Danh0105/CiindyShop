@@ -1,7 +1,7 @@
 <?php
 return [
     [
-        'name' => 'Sản phẩm',
+        'name' => 'Sản Phẩm',
         'list-check' => ['category', 'producer', 'type', 'attribute', 'keyword', 'product', 'discount-code'],
         'icon' => 'fa fa-database',
         'sub'  => [
@@ -12,7 +12,7 @@ return [
                 'icon'  => 'fa fa-edit'
             ],
             [
-                'name'  => 'Nhà sản xuất',
+                'name'  => 'Nhà sản Xuất',
                 'namespace' => 'producer',
                 'route' => 'admin.producer.index',
                 'icon'  => 'fa fa-truck'
@@ -24,25 +24,25 @@ return [
 //                'icon'  => 'fa fa-bookmark'
 //            ],
             [
-                'name'  => 'Dữ liệu sản phẩm',
+                'name'  => 'Dữ Liệu Sản Phẩm',
                 'namespace' => 'attribute',
                 'route' => 'admin.attribute.index',
                 'icon'  => 'fa fa-key'
             ],
             [
-                'name'  => 'Keyword',
+                'name'  => 'Từ Khóa',
                 'namespace' => 'keyword',
                 'route' => 'admin.keyword.index',
                 'icon'  => 'fa fa-key'
             ],
             [
-                'name'  => 'Sản phẩm',
+                'name'  => 'Sản Phẩm',
                 'namespace' => 'product',
                 'route' => 'admin.product.index',
                 'icon'  => 'fa fa-database'
             ],
             [
-                'name'  => 'Mã giảm giá',
+                'name'  => 'Mã Giảm Giá',
                 'namespace' => 'discount-code',
                 'route' => 'admin.discount.code.index',
                 'icon'  => 'fa fa-fw fa-arrow-circle-down'
@@ -50,18 +50,18 @@ return [
         ]
     ],
     [
-        'name' => 'Bài viết',
+        'name' => 'Bài Viết',
         'list-check' => ['menu','article'],
         'icon' => 'fa fa-edit',
         'sub'  => [
             [
-                'name'  => 'Danh mục',
+                'name'  => 'Danh Mục',
                 'namespace' => 'menu',
                 'route' => 'admin.menu.index',
                 'icon'  => 'fa fa-key'
             ],
             [
-                'name'  => 'Bài viết',
+                'name'  => 'Bài Viết',
                 'namespace' => 'article',
                 'route' => 'admin.article.index',
                 'icon'  => 'fa fa-key'
@@ -69,43 +69,44 @@ return [
         ]
     ],
     [
-        'name' => 'Tài khoản',
+        'name' => 'Tài Khoản',
         'list-check' => ['user','rating','comment','contact'],
         'icon' => 'fa fa-user',
         'sub'  => [
             [
-                'name'  => 'Người dùng',
+                'name'  => 'Người Dùng',
                 'route' => 'admin.user.index',
                 'namespace' => 'user',
                 'icon'  => 'fa fa-user'
             ],
             [
-                'name'  => 'Đánh giá',
+                'name'  => 'Đánh Giá',
                 'namespace' => 'rating',
                 'route' => 'admin.rating.index',
                 'icon'  => 'fa fa-star'
             ],
             [
-                'name'  => 'Bình luận',
+                'name'  => 'Bình Luận',
                 'namespace' => 'comment',
                 'route' => 'admin.comment.index',
                 'icon'  => 'fa fa-star'
             ],
             [
-                'name'  => 'Liên hệ',
+                'name'  => 'Liên Hệ',
                 'namespace' => 'contact',
                 'route' => 'admin.contact',
                 'icon'  => 'fa fa-star'
             ],
+            
         ]
     ],
     [
-        'name' => 'Giao dịch',
+        'name' => 'Đơn Hàng',
         'list-check' => ['transaction'],
         'icon' => 'fa-shopping-cart',
         'sub'  => [
             [
-                'name'  => 'Danh sách',
+                'name'  => 'Quản Lý Đơn Hàng',
                 'namespace' => 'transaction',
                 'route' => 'admin.transaction.index',
                 'icon'  => 'fa-opencart'
@@ -113,7 +114,8 @@ return [
         ]
     ],
     [
-        'name'  => 'System',
+        'name'  => 'Phần Hệ Thống',
         'label' => 'true'
     ]
+    
 ];

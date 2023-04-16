@@ -47,8 +47,8 @@
                         <div class="col-sm-12">
                             <div class="box-footer text-center">
                                 <a href="{{ route('admin.static.index') }}" class="btn btn-danger">
-                                Quay lại <i class="fa fa-undo"></i></a>
-                                <button type="submit" class="btn btn-success">Lưu dữ liệu <i class="fa fa-save"></i></button>
+                                 Đóng <i class="fa fa-close"></i></a>
+                                <button type="submit" class="btn btn-success">Lưu <i class="fa fa-save"></i></button>
                             </div>
                         </div>
                     </form>  

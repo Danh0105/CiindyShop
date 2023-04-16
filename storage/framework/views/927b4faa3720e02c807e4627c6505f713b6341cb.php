@@ -3,9 +3,9 @@
     <section class="content-header">
         <h1>Thêm mới sản phẩm</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo e(route('admin.product.index')); ?>"> Product</a></li>
-            <li class="active"> Create </li>
+            <li><a href="#"><i class="fa fa-dashboard"></i>Trang chủ</a></li>
+            <li><a href="<?php echo e(route('admin.product.index')); ?>">Sản phẩm</a></li>
+            <li class="active"> Tạo </li>
         </ol>
     </section>
     <!-- Main content -->

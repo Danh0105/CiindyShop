@@ -48,4 +48,4 @@
             </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </tbody>
-</table><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/components/orders.blade.php ENDPATH**/ ?>
+</table><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/components/orders.blade.php ENDPATH**/ ?>

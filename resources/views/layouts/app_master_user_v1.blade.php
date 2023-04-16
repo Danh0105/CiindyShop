@@ -27,7 +27,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a href="nav-side-user.html" class="dropdown-item">Thông tin</a>
-                                <a href="utility-account-settings.html" class="dropdown-item">Account Settings</a>
+                                <a href="utility-account-settings.html" class="dropdown-item">Cài đặt tài khoản</a>
                                 <a href="#" class="dropdown-item">Đăng xuất</a>
                             </div>
                         </div>

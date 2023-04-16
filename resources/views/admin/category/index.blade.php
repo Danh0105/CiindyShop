@@ -4,9 +4,9 @@
     <section class="content-header">
         <h1>Quản lý danh mục sản phẩm</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{  route('admin.category.index') }}"> Category</a></li>
-            <li class="active"> List</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i>Trang chủ</a></li>
+            <li><a href="{{  route('admin.category.index') }}"> Danh mục</a></li>
+            <li class="active"> Danh sách</li>
         </ol>
     </section>
     <!-- Main content -->
@@ -22,7 +22,7 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <th style="width: 10px">#</th>
+                                   <th style="width: 70px; text-align:center;">Thứ tự</th>
                                     <th>Tên danh mục</th>
                                     <th>Ảnh</th>
                                     <th>Trạng thái</th>

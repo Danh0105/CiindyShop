@@ -2,11 +2,11 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Quản lý menu</h1>
+        <h1>Quản lý Sự Kiện</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{  route('admin.menu.index') }}"> Menu</a></li>
-            <li class="active"> List </li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="{{  route('admin.menu.index') }}"> Sự kiện</a></li>
+            <li class="active"> Danh sách </li>
         </ol>
     </section>
     <!-- Main content -->
@@ -22,7 +22,7 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <th style="width: 10px">#</th>
+                                    <th style="width: 70px">Thứ tự</th>
                                     <th>Tên</th>
                                     <th>Ảnh</th>
                                     <th>Trạng thái</th>
@@ -40,22 +40,22 @@
                                             </td>
                                             <td>
                                                 @if ($menu->mn_status == 1)
-                                                    <a href="{{ route('admin.menu.active', $menu->id) }}" class="label label-info">Show</a>
+                                                    <a href="{{ route('admin.menu.active', $menu->id) }}" class="label label-info">Hiển thị</a>
                                                 @else 
-                                                    <a href="{{ route('admin.menu.active', $menu->id) }}" class="label label-default">Hide</a>
+                                                    <a href="{{ route('admin.menu.active', $menu->id) }}" class="label label-default">Ẩn</a>
                                                 @endif
                                             </td>
                                             <td>
                                                 @if ($menu->mn_hot == 1)
                                                     <a href="{{ route('admin.menu.hot', $menu->id) }}" class="label label-info">Hot</a>
                                                 @else 
-                                                    <a href="{{ route('admin.menu.hot', $menu->id) }}" class="label label-default">None</a>
+                                                    <a href="{{ route('admin.menu.hot', $menu->id) }}" class="label label-default">Không có</a>
                                                 @endif
                                             </td>
                                             <td>{{  $menu->created_at }}</td>
                                             <td>
-                                                <a href="{{ route('admin.menu.update', $menu->id) }}" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a>
-                                                <a href="{{  route('admin.menu.delete', $menu->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                                <a href="{{ route('admin.menu.update', $menu->id) }}" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i>Chỉnh sửa</a>
+                                                <a href="{{  route('admin.menu.delete', $menu->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i>Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

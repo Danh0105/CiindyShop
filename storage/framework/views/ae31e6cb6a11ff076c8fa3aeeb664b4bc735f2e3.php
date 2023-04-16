@@ -3,8 +3,8 @@
     <div class="col-sm-8">
         <div class="col-sm-12">
             <div class="form-group <?php echo e($errors->first('d_code') ? 'has-error' : ''); ?>">
-                <label for="name">Mã code <span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" name="d_code"  placeholder="Code ..." value="<?php echo e(old('d_code', isset($discount)? $discount->d_code : '')); ?>">
+                <label for="name">Mã khuyến mãi <span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" name="d_code"  placeholder="Mã khuyến mãi..." value="<?php echo e(old('d_code', isset($discount)? $discount->d_code : '')); ?>">
                 <?php if($errors->first('d_code')): ?>
                     <span class="text-danger"><?php echo e($errors->first('d_code')); ?></span>
                 <?php endif; ?>
@@ -52,8 +52,8 @@
     <div class="col-sm-12">
         <div class="box-footer text-center">
             <a href="<?php echo e(route('admin.discount.code.index')); ?>" class="btn btn-danger">
-                Quay lại <i class="fa fa-undo"></i></a>
+                 Đóng <i class="fa fa-close"></i></a>
             <button type="submit" class="btn btn-success" name="submit" value="<?php echo e(isset($discount) ? 'update' : 'create'); ?>">Lưu dữ liệu <i class="fa fa-save"></i></button>
         </div>
     </div>
-</form><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/admin/discount_code/form.blade.php ENDPATH**/ ?>
+</form><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/admin/discount_code/form.blade.php ENDPATH**/ ?>

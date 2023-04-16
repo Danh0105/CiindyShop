@@ -3,9 +3,9 @@
     <section class="content-header">
         <h1>Quản lý nhà sản xuất</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo e(route('admin.producer.index')); ?>"> Producer</a></li>
-            <li class="active"> List</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="<?php echo e(route('admin.producer.index')); ?>">  Nhà sản xuất</a></li>
+            <li class="active">  Danh sách</li>
         </ol>
     </section>
     <!-- Main content -->
@@ -21,10 +21,10 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <th style="width: 10px">#</th>
+                                    <th style="width: 10px"> Thứ tự</th>
                                     <th>Tên</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
+                                    <th>Số điện thoại</th>
                                     <th>Ngày tạo</th>
                                     <th>Hành động</th>
                                 </tr>
@@ -37,8 +37,8 @@
                                             <td><?php echo e($producer->pdr_phone); ?></td>
                                             <td><?php echo e($producer->created_at); ?></td>
                                             <td>
-                                                <a href="<?php echo e(route('admin.producer.update', $producer->id)); ?>" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a>
-                                                <a href="<?php echo e(route('admin.producer.delete', $producer->id)); ?>" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                                <a href="<?php echo e(route('admin.producer.update', $producer->id)); ?>" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Chỉnh sửa</a>
+                                                <a href="<?php echo e(route('admin.producer.delete', $producer->id)); ?>" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Xoắ</a>
                                             </td>
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -57,4 +57,4 @@
     </section>
     <!-- /.content -->
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.app_master_admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/admin/producer/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app_master_admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/admin/producer/index.blade.php ENDPATH**/ ?>

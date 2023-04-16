@@ -60,4 +60,4 @@
         <!-- Bootstrap 3.3.7 -->
         <script src="<?php echo e(asset('admin/bower_components/bootstrap/dist/js/bootstrap.min.js')); ?>"></script>
     </body>
-</html><?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/admin/auth/login.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/admin/auth/login.blade.php ENDPATH**/ ?>

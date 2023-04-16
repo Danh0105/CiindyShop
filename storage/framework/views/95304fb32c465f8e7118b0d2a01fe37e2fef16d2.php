@@ -18,12 +18,12 @@
     <div class="col-sm-8">
         <div class="box box-warning">
             <div class="box-header with-border">
-                <h3 class="box-title">Thông tin cơ bản</h3>
+                <h3 class="box-title">Thông tin Sản Phẩm</h3>
             </div>
             <div class="box-body">
                 <div class="form-group ">
                     <label for="exampleInputEmail1">Tên <b class="col-red">(*)</b></label>
-                    <input type="text" class="form-control" name="pro_name" placeholder="Name ...." autocomplete="off" value="<?php echo e($product->pro_name ?? old('pro_name')); ?>">
+                    <input type="text" class="form-control" name="pro_name" placeholder="Tên sản phẩm ...." autocomplete="off" value="<?php echo e($product->pro_name ?? old('pro_name')); ?>">
                     <?php if($errors->first('pro_name')): ?>
                         <span class="text-danger"><?php echo e($errors->first('pro_name')); ?></span>
                     <?php endif; ?>
@@ -32,7 +32,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Giá sản phẩm</label>
-                             <input type="text" name="pro_price" value="<?php echo e(old('pro_price', isset($product->pro_price) ? $product->pro_price : 0)); ?>" class="form-control" data-type="currency" placeholder="15.000.000">
+                             <input type="text" name="pro_price" value="<?php echo e(old('pro_price', isset($product->pro_price) ? $product->pro_price : 0)); ?>" class="form-control" data-type="currency" placeholder="Giá sản phẩm...">
                              <?php if($errors->first('pro_price')): ?>
                                 <span class="text-danger"><?php echo e($errors->first('pro_price')); ?></span>
                             <?php endif; ?>
@@ -41,14 +41,14 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Giảm giá</label>
-                             <input type="number" name="pro_sale" value="<?php echo e(old('pro_sale', isset($product->pro_sale) ? $product->pro_sale : 0)); ?>" class="form-control" data-type="currency" placeholder="5">
+                             <input type="number" name="pro_sale" value="<?php echo e(old('pro_sale', isset($product->pro_sale) ? $product->pro_sale : 0)); ?>" class="form-control" data-type="currency" placeholder="Giá giảm...">
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label for="tag">Keyword</label>
+                            <label for="tag">Từ khóa</label>
                             <select name="keywords[]" class="form-control js-select2-keyword" multiple="">
-                                <option value="">__Click__</option>
+                                <option value="">__Chọn__</option>
                                 <?php $__currentLoopData = $keywords; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $keyword): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option value="<?php echo e($keyword->id); ?>" <?php echo e(in_array($keyword->id, $keywordOld ) ? "selected='selected'"  : ''); ?>>
                                         <?php echo e($keyword->k_name); ?></option>
@@ -68,7 +68,7 @@
                 <div class="form-group ">
                     <label class="control-label">Danh mục <b class="col-red">(*)</b></label>
                     <select name="pro_category_id" class="form-control ">
-                        <option value="">__Click__</option>
+                        <option value="">__Chọn__</option>
                         <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <option value="<?php echo e($category->id); ?>" <?php echo e(($product->pro_category_id ?? 0) == $category->id ? "selected='selected'" : ""); ?>>
                                 <?php echo e($category->c_name); ?>
@@ -216,4 +216,4 @@
     ckeditor('pro_description');
     ckeditor('pro_specifications');
 </script>
-<?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/admin/product/form.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/admin/product/form.blade.php ENDPATH**/ ?>

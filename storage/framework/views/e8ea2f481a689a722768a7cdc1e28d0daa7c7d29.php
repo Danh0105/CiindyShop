@@ -35,4 +35,4 @@
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </tbody>
 </table>
-<?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/user/include/_inc_list_product_order.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/user/include/_inc_list_product_order.blade.php ENDPATH**/ ?>

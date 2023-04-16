@@ -4,9 +4,9 @@
     <section class="content-header">
         <h1>Thêm mới nhà sản xuất</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{  route('admin.producer.index') }}">Producer</a></li>
-            <li class="active"> Create</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="{{  route('admin.producer.index') }}"> Nhà sản xuất</a></li>
+            <li class="active"> Tạo</li>
         </ol>
     </section>
     <!-- Main content -->
@@ -19,7 +19,7 @@
                          @csrf
                         <div class="form-group {{ $errors->first('pdr_name') ? 'has-error' : '' }}">
                             <label for="pdr_name">Tên <span class="text-danger">(*)</span></label>
-                            <input type="text" class="form-control" value="{{  old('pdr_name') }}" name="pdr_name"  placeholder="Name ...">
+                            <input type="text" class="form-control" value="{{  old('pdr_name') }}" name="pdr_name"  placeholder="Tên...">
                             @if ($errors->first('pdr_name'))
                                 <span class="text-danger">{{ $errors->first('pdr_name') }}</span>
                             @endif
@@ -32,8 +32,8 @@
                             @endif
                         </div>
                         <div class="form-group {{ $errors->first('pdr_phone') ? 'has-error' : '' }}">
-                            <label for="pdr_phone">Phone <span class="text-danger">(*)</span></label>
-                            <input type="text" class="form-control" value="{{  old('pdr_phone') }}" name="pdr_phone"  placeholder="Phone ...">
+                            <label for="pdr_phone">Số diện thoại<span class="text-danger">(*)</span></label>
+                            <input type="text" class="form-control" value="{{  old('pdr_phone') }}" name="pdr_phone"  placeholder="Số điện thoại...">
                             @if ($errors->first('pdr_phone'))
                                 <span class="text-danger">{{ $errors->first('pdr_phone') }}</span>
                             @endif
@@ -42,8 +42,8 @@
                         <div class="col-sm-12">
                             <div class="box-footer text-center "  style="margin-top: 20px;">
                                 <a href="{{ route('admin.producer.index') }}" class="btn btn-danger">
-                                Quay lại <i class="fa fa-undo"></i></a>
-                                <button type="submit" class="btn btn-success">Lưu dữ liệu <i class="fa fa-save"></i></button>
+                                Đóng  <i class="fa fa-close"></i></a>
+                                <button type="submit" class="btn btn-success">Lưu <i class="fa fa-save"></i></button>
                             </div>
                         </div>
                     </form>  

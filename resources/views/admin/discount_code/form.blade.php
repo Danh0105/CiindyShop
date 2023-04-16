@@ -3,8 +3,8 @@
     <div class="col-sm-8">
         <div class="col-sm-12">
             <div class="form-group {{ $errors->first('d_code') ? 'has-error' : '' }}">
-                <label for="name">Mã code <span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" name="d_code"  placeholder="Code ..." value="{{ old('d_code', isset($discount)? $discount->d_code : '') }}">
+                <label for="name">Mã Khuyến mãi <span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" name="d_code"  placeholder="Mã khuyến mãi ..." value="{{ old('d_code', isset($discount)? $discount->d_code : '') }}">
                 @if ($errors->first('d_code'))
                     <span class="text-danger">{{ $errors->first('d_code') }}</span>
                 @endif
@@ -52,8 +52,8 @@
     <div class="col-sm-12">
         <div class="box-footer text-center">
             <a href="{{ route('admin.discount.code.index') }}" class="btn btn-danger">
-                Quay lại <i class="fa fa-undo"></i></a>
-            <button type="submit" class="btn btn-success" name="submit" value="{{ isset($discount) ? 'update' : 'create' }}">Lưu dữ liệu <i class="fa fa-save"></i></button>
+                 Đóng <i class="fa fa-close"></i></a>
+            <button type="submit" class="btn btn-success" name="submit" value="{{ isset($discount) ? 'update' : 'create' }}">Lưu   <i class="fa fa-save"></i></button>
         </div>
     </div>
 </form>

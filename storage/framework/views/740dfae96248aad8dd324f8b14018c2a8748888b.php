@@ -63,4 +63,4 @@
         </div>
     </div>
 </div>
-<?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/frontend/pages/product/include/_inc_sidebar.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/frontend/pages/product/include/_inc_sidebar.blade.php ENDPATH**/ ?>

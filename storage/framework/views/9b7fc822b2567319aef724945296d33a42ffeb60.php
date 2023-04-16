@@ -52,7 +52,7 @@
     <div class="col-sm-12">
         <div class="box-footer text-center">
             <a href="<?php echo e(route('admin.discount.code.index')); ?>" class="btn btn-danger">
-                Quay lại <i class="fa fa-undo"></i></a>
+                 Đóng <i class="fa fa-close"></i></a>
             <button type="submit" class="btn btn-success" name="submit" value="<?php echo e(isset($discount) ? 'update' : 'create'); ?>">Lưu dữ liệu <i class="fa fa-save"></i></button>
         </div>
     </div>

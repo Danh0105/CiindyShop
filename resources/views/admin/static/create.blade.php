@@ -2,11 +2,11 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Thêm mới page tinhx</h1>
+        <h1>Thêm mới trang tĩnh</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{  route('admin.static.index') }}"> Static</a></li>
-            <li class="active"> Create </li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="{{  route('admin.static.index') }}"> Tĩnh</a></li>
+            <li class="active">Tạo  </li>
         </ol>
     </section>
     <!-- Main content -->
@@ -20,7 +20,7 @@
                         <div class="col-sm-8">
                             <div class="form-group {{ $errors->first('s_title') ? 'has-error' : '' }}">
                                 <label for="name">Tiêu đề <span class="text-danger">(*)</span></label>
-                                <input type="text" class="form-control" name="s_title"  placeholder="Title ...">
+                                <input type="text" class="form-control" name="s_title"  placeholder="Tiêu đề...">
                                 @if ($errors->first('s_title'))
                                     <span class="text-danger">{{ $errors->first('s_title') }}</span>
                                 @endif
@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-sm-8">
                             <div class="form-group {{ $errors->first('e_link') ? 'has-error' : '' }}">
-                                <label for="name">Loại Page <span class="text-danger">(*)</span></label>
+                                <label for="name">Loại Trang <span class="text-danger">(*)</span></label>
                                 <select class="form-control" name="s_type">
                                     @foreach($type as $key => $item)
                                         <option value="{{  $key }}">{{  $item }}</option>
@@ -47,8 +47,8 @@
                         <div class="col-sm-12">
                             <div class="box-footer text-center">
                                 <a href="{{ route('admin.static.index') }}" class="btn btn-danger">
-                                Quay lại <i class="fa fa-undo"></i></a>
-                                <button type="submit" class="btn btn-success">Lưu dữ liệu <i class="fa fa-save"></i></button>
+                                 Đóng <i class="fa fa-close"></i></a>
+                                <button type="submit" class="btn btn-success">Lưu <i class="fa fa-save"></i></button>
                             </div>
                         </div>
                     </form>  

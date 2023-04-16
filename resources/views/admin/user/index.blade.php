@@ -4,9 +4,9 @@
     <section class="content-header">
         <h1>Quản lý thành viên</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{  route('admin.user.index') }}"> User</a></li>
-            <li class="active"> List</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="{{  route('admin.user.index') }}"> Người dùng</a></li>
+            <li class="active"> Danh sách</a></li>
         </ol>
     </section>
     <!-- Main content -->
@@ -19,12 +19,12 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <th style="width: 10px">#</th>
-                                    <th>Name</th>
+                                    <th style="width: 70px">Thứ tự</th>
+                                    <th>Tên</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Time</th>
-                                    <th>Action</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Thời gian</th>
+                                    <th  style="width: 15%" >Hành động</th>
                                 </tr>
                                 @if (isset($users))
                                     @foreach($users as $user)
@@ -36,7 +36,7 @@
                                             <td>{{ $user->created_at }}</td>
                                             <td>
                                                 {{-- <a href="{{ route('admin.user.update', $user->id) }}" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> --}}
-                                                <a href="{{  route('admin.user.delete', $user->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                                <a href="{{  route('admin.user.delete', $user->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

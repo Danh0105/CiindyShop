@@ -8,4 +8,4 @@
         <a href=""><?php echo e($comment->created_at->diffForHumans()); ?></a>
     </p>
 </div>
-<?php /**PATH C:\wamp64\www\PHP_Laravel\web_ban_giay_L9\resources\views/frontend/pages/product_detail/include/_inc_comment_item.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\wamp64\www\PHP_Laravel\THE CIINDYS\resources\views/frontend/pages/product_detail/include/_inc_comment_item.blade.php ENDPATH**/ ?>

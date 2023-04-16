@@ -10,10 +10,10 @@
     </style>
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Nhận xét sản phẩm</h1>
+        <h1>Bình luận sản phẩm</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{  route('admin.comment.index') }}"> Comment</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="{{  route('admin.comment.index') }}"> Bình luận</a></li>
             <li class="active"> List</li>
         </ol>
     </section>
@@ -27,7 +27,7 @@
                         <table class="table">
                             <tbody>
                             <tr>
-                                <th style="width: 10px">#</th>
+                                <th style="width: 70px">Thứ tự</th>
                                 <th>Tên người dùng</th>
                                 <th>Nội dung </th>
                                 <th>Ngày tạo</th>
@@ -41,7 +41,7 @@
                                         <td>{{ $comment->cmt_content ?? "[N\A]" }}</td>
                                         <td>{{ $comment->created_at }}</td>
                                         <td>
-                                            <a href="{{  route('admin.comment.delete', $comment->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Delete</a>
+                                            <a href="{{  route('admin.comment.delete', $comment->id) }}" class="btn btn-xs btn-danger js-delete-confirm"><i class="fa fa-trash"></i> Xóa</a>
                                         </td>
                                     </tr>
                                 @endforeach
