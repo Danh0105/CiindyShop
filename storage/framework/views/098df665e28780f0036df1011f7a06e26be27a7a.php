@@ -95,30 +95,24 @@
                             <?php endif; ?>
 
                             <div>
-                                <div style="float: left; width: 30%; line-height: 36px;">
-                                    Giới tính :
-                                </div>
-                                <div>
-                                    <label for="gender-male" style="line-height: 40px;"><input type="radio" name="gender" value="1" id="gender-male">&nbsp; Nam</label> &nbsp; &nbsp;
-                                    <label for="gender-female"><input type="radio" name="gender" value="2" id="gender-female">&nbsp; Nữ</label>
-                                </div>
+                                
+                                
                             </div>
                             <div style="clear: both;"></div>
                             <div class="btn-cart">
                                 <a href="<?php echo e(route('get.shopping.add', $product->id)); ?>" title=""
                                    class="muangay">
-                                    <span>Mua ngay</span>
-                                    <span>Hotline: 1800.6005</span>
+                                    <span>THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                                 <a href="<?php echo e(route('ajax_get.user.add_favourite', $product->id)); ?>"
                                    title="Thêm sản phẩm yêu thích"
                                    class="muatragop  <?php echo e(!\Auth::id() ? 'js-show-login' : 'js-add-favourite'); ?>">
                                     <span>Yêu thích</span>
-                                    <span>Sản phẩm</span>
+                                    <span>SẢN PHẨM</span>
                                 </a>
                             </div>
                             <div class="infomation">
-                                <h2 class="infomation__title">Thông số kỹ thuật</h2>
+                                <h2 class="infomation__title">Thông tin sản phẩm</h2>
                                 <div class="infomation__group">
 
                                     <div class="item">
@@ -132,7 +126,7 @@
                                         </h3>
                                     </div>
                                     <div class="item">
-                                        <p class="text1">Xuất sứ:</p>
+                                        <p class="text1">Thương hiệu:</p>
                                         <h3 class="text2"><?php echo e(isset($product->producer) && !empty($product->producer) ? $product->producer->pdr_name : ''); ?></h3>
                                     </div>
                                 </div>
