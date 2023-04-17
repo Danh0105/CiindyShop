@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <title>{{ strtolower($title_page ?? "Đồ án tốt nghiệp")   }}</title>
+    <title>{{ strtolower($title_page ?? "Thời trang CIINDYS")   }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" sizes="32x32" type="image/png" href="{{ asset('ico.png') }}" />
     @yield('css')
@@ -24,7 +24,7 @@
         <div class="header">
             <img src="{{ pare_url_file(Auth::user()->avatar) }}" alt="">
             <p>
-                <span>Tài khoản của</span>
+                <span>Tài khoản</span>
                 <span>{{ Auth::user()->name }}</span>
             </p>
         </div>

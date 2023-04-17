@@ -9,7 +9,7 @@
         <div class="title">Danh sách đơn hàng</div>
         <form class="form-inline">
             <div class="form-group " style="margin-right: 10px;">
-                <input type="text" class="form-control" value="{{ Request::get('id') }}" name="id" placeholder="ID">
+                <input type="text" class="form-control" value="{{ Request::get('id') }}" name="id" placeholder="Nhập mã đơn hàng... ">
             </div>
             <div class="form-group" style="margin-right: 10px;">
                 <select name="status" class="form-control">
@@ -30,10 +30,10 @@
             <thead>
                 <tr>
                     <th scope="col">Mã đơn</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Total</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Tổng tiền</th>
+                    <th scope="col">Ngày</th>
+                    <th scope="col">Trạng thái</th>
                 </tr>
             </thead>
             <tbody>

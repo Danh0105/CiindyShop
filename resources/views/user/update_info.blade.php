@@ -10,33 +10,33 @@
         <form action="" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="">Name</label>
-                <input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}" placeholder="">
+                <label for="">Tên</label>
+                <input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}" placeholder="Nhập tên... ">
                 {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" placeholder="Enter email">
+                <input type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" placeholder="Nhập email... ">
                 {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
             </div>
             <div class="form-group">
-                <label for="">Phone</label>
-                <input type="number" name="phone" class="form-control" value="{{ Auth::user()->phone }}" placeholder="Enter email">
+                <label for="">Số điện thoại</label>
+                <input type="number" name="phone" class="form-control" value="{{ Auth::user()->phone }}" placeholder="Nhập số điện thoại">
                 {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
             </div>
             <div class="form-group">
-                <label for="">Address</label>
-                <input type="text" name="address" class="form-control" value="{{ Auth::user()->address }}" placeholder="Địa chỉ">
+                <label for="">Địa chỉ</label>
+                <input type="text" name="address" class="form-control" value="{{ Auth::user()->address }}" placeholder="Nhập địa chỉ">
                 {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
             </div>
             <div class="from-group">
                 <div class="upload-btn-wrapper">
-                    <button class="btn-upload">Upload a file</button>
+                    <button class="btn-upload">Tải hình ảnh</button>
                     <input type="file" name="avatar" />
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-blue btn-md">Submit</button>
+            <button type="submit" class="btn btn-blue btn-md">Cập nhật</button>
         </form>
 
     </section>

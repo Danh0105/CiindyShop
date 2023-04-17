@@ -83,10 +83,10 @@
                         <table class="table no-margin">
                             <thead>
                                 <tr>
-                                    <th>Order ID</th>
-                                    <th>Item</th>
-                                    <th>Status</th>
-                                    <th>Popularity</th>
+                                    <th>ID đơn hàng</th>
+                                    <th>Danh mục</th>
+                                    <th>Trạng thái</th>
+                                    <th>Phổ biến</th>
                                 </tr>
                             </thead>
                             <tbody>

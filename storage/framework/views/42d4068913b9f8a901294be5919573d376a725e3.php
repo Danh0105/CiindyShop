@@ -62,7 +62,7 @@
             </div>
             <div class="box-body">
                 <div class="form-group ">
-                    <label for="exampleInputEmail1">CNội dung</label> 
+                    <label for="exampleInputEmail1">Nội dung</label> 
                     <textarea name="a_content" id="content" class="form-control textarea" cols="5" rows="2" ><?php echo e($article->a_content ?? ''); ?></textarea>
                     <?php if($errors->first('a_content')): ?>
                         <span class="text-danger"><?php echo e($errors->first('a_content')); ?></span>

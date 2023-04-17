@@ -2,7 +2,7 @@
     <div class="container">
         <div class="content">
             <div class="left">
-                <a href="<?php echo e(route('get.static.customer_care')); ?>" title="Chăm sóc khách hàng" rel="nofollow">Chăm sóc khách hàng</a>
+                
                  <a href="<?php echo e(route('get.user.transaction')); ?>" title="Kiểm tra đơn hàng" rel="nofollow">Kiểm tra đơn hàng</a>
             </div>
             <div class="right">
@@ -43,12 +43,9 @@
             <!--Thay đổi-->
             <div class="logo">
                 <a href="/" class="desktop">
-                    <img src="<?php echo e(url('images/logo.png')); ?>" style="height: 50px;" alt="Home">
+                    <img src="<?php echo e(url('images/logo7.png')); ?>" style="height: 90px; width:auto;" alt="Home">
                 </a>
-
-
-
-                <span class="menu js-menu-cate"><i class="fa fa-list-ul"></i> </span>
+                <span class="menu js-menu-cate" style="margin-right: 30px;"><i class="fa fa-list-ul"></i> </span>
             </div>
             <div class="search">
 
@@ -74,8 +71,8 @@
                     <a href="tel:18006005" title="">
                         <i class="la la-phone"></i>
                         <span class="text">
-                            <span class="">Hotline</span>
-                            <span>1800.6005</span>
+                            <span class="">Gọi Ngay</span>
+                            <span>19008765</span>
                         </span>
                     </a>
                 </li>

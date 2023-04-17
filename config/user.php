@@ -31,8 +31,8 @@ return [
         'icon'  => 'fa fa-eye'
     ],
     [
-        'name'  => 'Log Login',
+        'name'  => 'Đăng xuất tài khoản',
         'route' => 'get.user.log_login',
-        'icon'  => 'fa fa-bug'
+        'icon'  => 'fa fa-'
     ],
 ];

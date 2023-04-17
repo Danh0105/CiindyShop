@@ -16,25 +16,14 @@
                 <div class="breadcrumb">
                     <ul>
                         <li >
-                            <a itemprop="url" href="/" title="Home"><span itemprop="title">Trang chủ</span></a>
+                            <a itemprop="url" href="/" title="Home"><span itemprop="title">Sản phẩm</span></a>
                         </li>
                     </ul>
                 </div>
-                <div class="filter-tab">
-                    <ul>
-                        <?php for($i = 1; $i <= 6; $i++): ?>
-                            <li class="<?php echo e(Request::get('price') == $i ? "active" : ""); ?>">
-                                <a href="<?php echo e(request()->fullUrlWithQuery(['price' =>  $i])); ?>">
-                                    <?php echo e($i == 6 ? "Lớn hơn 10 triệu" : "Giá nhỏ hơn " . $i * 2  ." triệu"); ?>
-
-                                </a>
-                            </li>
-                        <?php endfor; ?>
-                    </ul>
-                </div>
+                 
                 
                 <div class="order-tab">
-                    <span class="total-prod">Tổng số: <?php echo e($products->total()); ?> sản phẩm Tính năng</span>
+                    <span class="total-prod">Tổng số: <?php echo e($products->total()); ?> sản phẩm</span>
                     <div class="sort">
                         <div class="item">
                             <span class="title js-show-sort">Sắp xếp <i class="fa fa-caret-down"></i></span>

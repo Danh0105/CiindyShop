@@ -4,10 +4,9 @@
     }
 </style>
 <div class="filter-sidebar">
-    
     <?php if(isset($country) && !empty($country)): ?>
         <div class="item">
-            <div class="item__title">Xuất xứ</div>
+            <div class="item__title">Thương Hiệu</div>
             <div class="item__content">
                 <ul>
                     <?php $__currentLoopData = $country; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

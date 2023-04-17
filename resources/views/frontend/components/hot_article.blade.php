@@ -1,5 +1,5 @@
 <div class="blog-top">
-    <div class="title"> Bài viết nổi bật</div>
+    <div class="title"> Tin tức  nổi bật</div>
     {{-- <div class="top">
         <div class="top__avatar">
             <a href="" title="" class="image cover">

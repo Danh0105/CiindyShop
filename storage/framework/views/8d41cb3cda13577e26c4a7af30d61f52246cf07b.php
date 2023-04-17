@@ -3,7 +3,7 @@
         <?php $__currentLoopData = $slides; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div>
                 <a href="<?php echo e($item->sd_link); ?>" title="<?php echo e($item->sd_title); ?>">
-                    <img alt="Đồ án tốt nghiệp" src="<?php echo e(pare_url_file($item->sd_image)); ?>"  style="max-width: 100%;height: 500px;" class="" />
+                    <img alt="Thời trang CIINDYS" src="<?php echo e(pare_url_file($item->sd_image)); ?>"  style="max-width: 100%;height: 500px;" class="" />
                 </a>
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -32,7 +32,7 @@
                                 </li>
                             @endforeach
                         @endif
-                        <li><a href="{{ route('get.contact') }}">Liên hệ</a></li>
+                        <li><a href="{{ route('get.contact') }}">Phản hồi</a></li>
                     </ul>
                 </div>
                 <div class="item">
@@ -40,6 +40,7 @@
                     <ul>
                         <li><a href="{{ route('get.static.shopping_guide') }}">Hướng dẫn mua hàng</a></li>
                         <li><a href="{{  route('get.static.return_policy') }}">Chính sách đổi trả</a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -49,7 +50,7 @@
                     <p>
                         <a href="" class="fa fa fa-youtube"></a>
                         <a href="" class="fa fa-facebook-official"></a>
-                        <a href="" class="fa fa-twitter"></a>
+
                     </p>
                 </div>
             </div>
@@ -64,16 +65,16 @@
         <div class="footer__right">
             <div class="title">Fanpage của chúng tôi</div>
             <div class="image">
-                {{-- <div class="fb-page"
-                      data-href="https://www.facebook.com/codedoan94"
-                      data-width="380"
-                      data-height="240"
+                <div class="fb-page"
+                      data-href="https://www.facebook.com/profile.php?id=100091606824976"
+                      data-width="400"
+                      data-height="300"
                       data-hide-cover="false"
-                      data-show-facepile="false" ></div> --}}
+                      data-show-facepile="false" ></div>
             </div>
         </div>
     </div>
 </div>
-{{-- <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=3205159929509308&autoLogAppEvents=1"></script> --}}
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=3205159929509308&autoLogAppEvents=1"></script> 
 

@@ -32,8 +32,8 @@
                                     <img src="{{ pare_url_file($item->pro_avatar) }}" style="width: 80px;height: 100px">
                                 </th>
                                 <th>{{ number_format($item->pro_price,0,',','.') }} đ</th>
-                                <th>
-                                    <a class="btn btn-success" href="{{  route('get.user.favourite.delete', $item->id) }}">Huỷ bỏ</a>
+                                <th style="background-color: #2196fa">
+                                    <a style="color: black;" href="{{  route('get.user.favourite.delete', $item->id) }}">Xóa</a>
                                 </th>
                             </tr>
                         @endforeach
