@@ -75,7 +75,7 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </tbody>
                     </table>
-                    <p style="float: right;margin-top: 20px;" class="total_cart">Tổng tiền : <b id="sub-total"><?php echo e(\Cart::subtotal(0)); ?> đ</b></p>
+                    <p style="float: right;margin-top: 20px;" class="total_cart">Tổng tiền : <b id="sub-total"><?php echo e($total); ?> đ</b></p>
                 </div>
             </div>
         </div>
@@ -104,6 +104,12 @@
                         <div class="form-group">
                             <label for="note">Ghi chú thêm</label>
                             <textarea name="tst_note" id="note" cols="3" style="min-height: 100px;" rows="2" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="note">Phí vận chuyển</label>
+                            <div>
+                                <b style="font-size:20px;"><?php echo e($cost->price); ?></b>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="note">Áp dụng mã giảm giá</label>

@@ -13,16 +13,25 @@ use App\Mail\TransactionSuccess;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Models\DiscountCode;
-
+use Illuminate\Support\Facades\DB;
 
 class ShoppingCartController extends Controller
 {
     public function index()
     {
         $shopping = \Cart::content();
+        $cost = DB::table('cost_vc')->get();
+        $a = $cost[0]->price;
+        
+        $total = \Cart::subtotal(0);
+        $string = str_replace(",","",$total);
+        $number = intval($string);
+        $subtotal = $number + $a;
         $viewData = [
             'title_page' => 'Danh sách giỏ hàng',
-            'shopping'   => $shopping
+            'shopping'   => $shopping,
+            'cost' =>   $cost[0],
+            'total' => number_format($subtotal),
         ];
         return view('frontend.pages.shopping.index', $viewData);
     }
@@ -49,6 +58,8 @@ class ShoppingCartController extends Controller
         }
 
         // 3. Thêm sản phẩm vào giỏ hàng
+         
+        
         \Cart::add([
             'id'      => $product->id,
             'name'    => $product->pro_name,
@@ -62,6 +73,7 @@ class ShoppingCartController extends Controller
                 'size'      => $request->size,
                 'color'      => $request->color,
                 'gender'      => $request->gender,
+                
             ]
         ]);
 

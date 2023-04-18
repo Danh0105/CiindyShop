@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
-
+use Illuminate\Support\Facades\DB;
 class UserTransactionController extends Controller
 {
     public function index(Request $request)
@@ -59,6 +59,7 @@ class UserTransactionController extends Controller
             'title_page'  => "Chi tiết đơn hàng #". $transaction->id,
             'orders'      => $this->getOrderByTransactionID($id)
         ];
+        dd($viewData);
         return view('user.order', $viewData);
     }
 
