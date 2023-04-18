@@ -146,7 +146,7 @@ class ShoppingCartController extends Controller
             $product   = Product::find($idProduct);
 
             //2. Kiểm tra tồn tại sản phẩm
-            if (!$product) return response(['messages' => 'Không tồn tại sản sản phẩm cần update']);
+            if (!$product) return response(['messages' => 'Không tồn tại sản sản phẩm cần cập nhật']);
 
             //3. Kiểm tra số lượng sản phẩm còn ko
             if ($product->pro_number < $qty) {

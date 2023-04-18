@@ -16,7 +16,7 @@
             <div class="col-4">
                 <h5>Hình thức giao hàng</h5>
                 <div class="box">
-                    <p>Phí vận chuyển : <span>0 đ</span></p>
+                    <p>Phí vận chuyển : <span>300000 VNĐ</span></p>
                 </div>
             </div>
             <div class="col-4">

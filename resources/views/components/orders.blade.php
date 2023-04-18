@@ -1,13 +1,13 @@
 <table class="table table-condensed">
     <tbody>
         <tr>
-            <th style="width: 10px">ggg#</th>
+            <th style="width: 10px">ggddg#</th>
             <th style="width: 250px">Tên sản phẩm</th>
             <th>Ảnh</th>
             <th>Giá</th>
             <th>Số lượng</th>
             <th>Tổng tiền</th>
-            <th>Hành độnxxxg</th>
+            <th>Hành động</th>
         </tr>
         @foreach($orders as $item)
             <tr>

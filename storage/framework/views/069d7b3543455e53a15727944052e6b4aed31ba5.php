@@ -1,7 +1,6 @@
-<a style="margin-left: 270px; margin-bottom:400px;"id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button">
-    <i class="fa fa-chevron-up" aria-hidden="true"></i>
-  </a>
+ 
 <div id="footer">
+ 
     <div class="container footer">
         <div class="footer__left">
             <div class="top">
@@ -85,18 +84,7 @@
   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=3205159929509308&autoLogAppEvents=1"></script> 
 
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 50) {
-        $('#back-to-top').fadeIn();
-    } else {
-        $('#back-to-top').fadeOut();
-    }
-});
 
-$('#back-to-top').click(function() {
-    $('body,html').animate({
-        scrollTop: 0
-    }, 1000);
-    return false;
-});
+
+
 <?php /**PATH C:\xampp\htdocs\THE CIINDYS\resources\views/frontend/components/footer.blade.php ENDPATH**/ ?>
