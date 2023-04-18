@@ -25,14 +25,14 @@
                 <?php echo csrf_field(); ?>
                 <div class="form-group">
                     <label for="name">Email <span class="cRed">(*)</span></label>
-                    <input name="email" id="name" type="email" class="form-control" placeholder="nguyenvana@gmail.com">
+                    <input name="email" id="name" type="email" class="form-control" placeholder="Nhập email... ">
                     <?php if($errors->first('email')): ?>
                         <span class="text-danger"><?php echo e($errors->first('email')); ?></span>
                     <?php endif; ?>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password <span class="cRed">(*)</span></label>
-                    <input name="password" id="phone" type="password" placeholder="********" class="form-control">
+                    <label for="password">Mật khẩu <span class="cRed">(*)</span></label>
+                    <input name="password" id="phone" type="password" placeholder="Nhập mật khẩu... " class="form-control">
                     <?php if($errors->first('password')): ?>
                         <span class="text-danger"><?php echo e($errors->first('password')); ?></span>
                     <?php endif; ?>

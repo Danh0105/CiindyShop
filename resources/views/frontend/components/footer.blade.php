@@ -1,3 +1,6 @@
+<a style="margin-left: 270px; margin-bottom:400px;"id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button">
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+  </a>
 <div id="footer">
     <div class="container footer">
         <div class="footer__left">
@@ -58,23 +61,40 @@
         <div class="footer__mid">
             <div class="title">Hệ thống cửa hàng</div>
             <div class="image">
-                {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.608154374919!2d105.6630574148521!3d19.12483865540548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313770e0a52d9da9%3A0xd2b5d6c6dd349a68!2zTMOgbmcgVsO1bmcsIFF14buzbmggTmfhu41jLCBRdeG7s25oIEzGsHUsIE5naOG7hyBBbiwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1581784171643!5m2!1svi!2s" width="100%" height="130px" frameborder="0" style="border:0;" allowfullscreen=""></iframe> --}}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6607.5725666351755!2d105.77607703739011!3d10.026252571005086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1681757653748!5m2!1svi!2s" width="300" height="160" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <a href="he-thong-cua-hang/index.html" title="" class="more">Xem tất cả hệ thống cửa hàng</a>
+            
         </div>
+        
         <div class="footer__right">
             <div class="title">Fanpage của chúng tôi</div>
             <div class="image">
                 <div class="fb-page"
                       data-href="https://www.facebook.com/profile.php?id=100091606824976"
-                      data-width="400"
-                      data-height="300"
+                      data-width="500"
+                      data-height="1500"
                       data-hide-cover="false"
                       data-show-facepile="false" ></div>
-            </div>
+            </div> 
         </div>
+         
+          
     </div>
 </div>
   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=3205159929509308&autoLogAppEvents=1"></script> 
 
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 50) {
+        $('#back-to-top').fadeIn();
+    } else {
+        $('#back-to-top').fadeOut();
+    }
+});
+
+$('#back-to-top').click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 1000);
+    return false;
+});

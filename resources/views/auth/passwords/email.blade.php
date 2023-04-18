@@ -16,7 +16,7 @@
                 </li>
 
                 <li itemscope="" >
-                    <a itemprop="url" href="" title=""><span itemprop="title">Reset Password</span></a>
+                    <a itemprop="url" href="" title=""><span itemprop="title">Đặt lại mật khẩu</span></a>
                 </li>
 
             </ul>
@@ -26,13 +26,13 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">Email <span class="cRed">(*)</span></label>
-                    <input name="email" id="name" required="" type="email" class="form-control" placeholder="nguyenvana@gmail.com">
+                    <input name="email" id="name" required="" type="email" class="form-control" placeholder="Nhập email... ">
                     @if ($errors->first('email'))
                         <span class="text-danger">{{ $errors->first('email') }}</span>
                     @endif
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-purple btn-xs">Gửi xác nhận</button>
+                    <button class="btn btn-purple btn-xs">Gửi</button>
                 </div>
             </form>
         </div>
