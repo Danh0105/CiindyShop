@@ -144,7 +144,7 @@
                     <form action="" method="POST">
                         <input type="hidden" name="productId" value="<?php echo e($product->id); ?>">
                         <div class="form-group">
-                            <textarea placeholder="Mời bạn để lại bình luận ..." name="comment" class="form-control" id="" cols="30" rows="5"></textarea>
+                            <textarea placeholder="Nhập bình luận... " name="comment" class="form-control" id="" cols="30" rows="5"></textarea>
                         </div>
                         <div class="footer">
                             <p>

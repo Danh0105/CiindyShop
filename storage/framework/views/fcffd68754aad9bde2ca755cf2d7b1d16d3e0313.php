@@ -45,7 +45,7 @@
                 <a href="/" class="desktop">
                     <img src="<?php echo e(url('images/logo8.png')); ?>" style="height: 90px; width:auto;" alt="Home">
                 </a>
-                <span class="menu js-menu-cate" style="margin-right: 30px;"><i class="fa fa-list-ul"></i> </span>
+                <span class="menu js-menu-cate" style="margin-right: 30px;"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
             </div>
             <div class="search">
 
@@ -57,17 +57,16 @@
                     </button>
                 </form>
             </div>
+            
             <ul class="right">
                 <li>
-                    <a href="<?php echo e(route('get.shopping.list')); ?>" title="Giỏ hàng">
-                        <i class="la la-shopping-cart"></i>
-                        <span class="text">
-                            <span class="">Giỏ (<?php echo e(\Cart::count()); ?>)</span>
-                            <span></span>
-                        </span>
-                    </a>
+                    <a href="<?php echo e(route('get.product.list')); ?>">Sản phẩm</a>
                 </li>
                 <li>
+                    <a href="http://127.0.0.1:8000/bai-viet">Bài viết</a>
+                </li>
+                <li>
+                    
                     <a href="<?php echo e(route('get.shopping.list')); ?>" title="Giỏ hàng">
                         <i class="la la-shopping-cart"></i>
                         <span class="text">
@@ -76,15 +75,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="desktop">
-                    <a href="tel:18006005" title="">
-                        <i class="la la-phone"></i>
-                        <span class="text">
-                            <span class="">Gọi Ngay</span>
-                            <span>19008765</span>
-                        </span>
-                    </a>
-                </li>
+                 
             </ul>
 
 

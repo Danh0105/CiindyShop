@@ -21,6 +21,15 @@
                         </li>
                     </ul>
                 </div>
+                
+                <div class="item">
+                    <div class="title">Chính sách</div>
+                    <ul>
+                        <li><a href="{{ route('get.static.shopping_guide') }}">Hướng dẫn mua hàng</a></li>
+                        <li><a href="{{  route('get.static.return_policy') }}">Chính sách đổi trả</a></li>
+                        
+                    </ul>
+                </div>
                 <div class="item">
                     <div class="title">Tin tức</div>
                     <ul>
@@ -36,17 +45,9 @@
                         @endif
                         <li><a href="{{ route('get.contact') }}">Phản hồi</a></li>
                     </ul>
-                </div>
-                <div class="item">
-                    <div class="title">Chính sách</div>
-                    <ul>
-                        <li><a href="{{ route('get.static.shopping_guide') }}">Hướng dẫn mua hàng</a></li>
-                        <li><a href="{{  route('get.static.return_policy') }}">Chính sách đổi trả</a></li>
-                        
-                    </ul>
-                </div>
+                </div> 
             </div>
-            <div class="bot">
+            {{-- <div class="bot">
                 <div class="social">
                     <div class="title">KẾT NỐI VỚI CHÚNG TÔI</div>
                     <p>
@@ -55,7 +56,7 @@
 
                     </p>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="footer__mid">
             <div class="title">Hệ thống cửa hàng</div>
@@ -76,7 +77,6 @@
                       data-show-facepile="false" ></div>
             </div> 
         </div>
-         
           
     </div>
 </div>

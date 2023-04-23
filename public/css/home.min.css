@@ -11138,7 +11138,9 @@
 }
 
 #footer .footer {
+     font-size:20px;
      display: flex
+      
 }
 
 #footer .footer__left {
@@ -11157,7 +11159,7 @@
 
 #footer .footer__left .top .item ul li a {
      color: #fff;
-     font-size: 13px;
+     font-size: 16px;
      line-height: 18px
 }
 
@@ -11238,8 +11240,8 @@
 }
 
 #footer .title {
-     color: #2196fa;
-     margin-bottom: 15px;
+     color: #ffffff;
+     margin-bottom: 20px;
      text-transform: uppercase
 }
 

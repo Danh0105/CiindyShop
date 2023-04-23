@@ -48,12 +48,7 @@
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top">
                     <!-- Sidebar toggle button-->
-                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                    <span class="sr-only">Điều hướng chuyển đổi</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </a>
+                
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
 
@@ -109,11 +104,7 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu" data-widget="tree">
                         <li class="header"></li>
-                        <li class="">
-                            <a href="/api-admin">
-                            <i class="fa fa-dashboard"></i> <span></span>
-                            </a>
-                        </li>
+                    
 
                         <?php $__currentLoopData = config('sidebar'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <?php if(isset($item['label'])): ?>
@@ -148,9 +139,10 @@
                                 <?php endif; ?>
                             </li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        <li><a href="<?php echo e(route('admin.slide.index')); ?>"><i class="fa fa-circle-o text-red"></i> <span>Slide banner</span></a></li>
-                        <li><a href="<?php echo e(route('admin.event.index')); ?>"><i class="fa fa-circle-o text-red"></i> <span>Sự kiện</span></a></li>
-                        <li><a href="<?php echo e(route('admin.static.index')); ?>"><i class="fa fa-circle-o text-red"></i> <span>Trang tĩnh</span></a></li>
+                         
+                        <li><a href="<?php echo e(route('admin.event.index')); ?>"><i class="fa fa-calendar" aria-hidden="true"></i><span>Quản lý sự kiện</span></a></li>
+                        <li><a href="<?php echo e(route('admin.slide.index')); ?>"><i class="fa fa-calendar-minus-o" aria-hidden="true"></i><span>Quản lý banner</span></a></li>
+                        <li><a href="<?php echo e(route('admin.static.index')); ?>"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> <span>Quản lý trang</span></a></li>
                        
                     </ul>
                 </section>

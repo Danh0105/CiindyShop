@@ -49,6 +49,7 @@ class AdminProductController extends Controller
 
     public function store(AdminRequestProduct $request)
     {
+
         $data = $request->except('_token','pro_avatar','attribute','keywords','file');
         $data['pro_slug']     = Str::slug($request->pro_name);
         $data['created_at']   = Carbon::now();

@@ -12,7 +12,32 @@
         margin-top: 10px !important;
         margin-bottom: 10px !important;
     }
+    .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+    .custom-file-input::before {
+    content: 'Select some files';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    }
+    .custom-file-input:hover::before {
+    border-color: black;
+    }
+    .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+    }
 </style>
+
 <form role="form" action="" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="col-sm-8">
@@ -189,8 +214,10 @@
                 <div style="margin-bottom: 10px">
                     <img src="{{ pare_url_file($product->pro_avatar ?? '') ?? '/images/no-image.jpg' }}" onerror="this.onerror=null;this.src='/images/no-image.jpg';" alt="" class="img-thumbnail" style="width: 200px;height: 200px;">
                 </div>
-                <div style="position:relative;"> <a class="btn btn-primary" href="javascript:;"> Chọn tập tin... <input type="file" style="position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=0)&quot;;opacity:0;background-color:transparent;color:transparent;" name="pro_avatar" size="40" class="js-upload"> </a> &nbsp; <span class="label label-info" id="upload-file-info"></span> </div>
-            </div>
+{{--                 <div style="position:relative;"> <a class="btn btn-primary" href="javascript:;"> Chọn tập tin... <input type="file" style="position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=0)&quot;;opacity:0;background-color:transparent;color:transparent;" name="pro_avatar" size="40" class="js-upload"> </a> &nbsp; <span class="label label-info" id="upload-file-info"></span> </div>
+ --}}            
+                <input name="pro_avatar" size="40" class="custom-file-input" type="file"    {{-- style="position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=0)&quot;;opacity:0;background-color:transparent;color:transparent;" --}} >
+                </div>
         </div>
     </div>
     <div class="col-sm-12 clearfix">

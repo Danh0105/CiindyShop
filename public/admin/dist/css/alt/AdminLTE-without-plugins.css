@@ -3273,6 +3273,8 @@ table.text-center th {
 }
 .login-box-msg,
 .register-box-msg {
+  margin-top: 20px;
+    margin-bottom: 50px;
   margin: 0;
   text-align: center;
   padding: 0 20px 20px 20px;

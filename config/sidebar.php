@@ -109,12 +109,12 @@ return [
                 'name'  => 'Quản Lý Đơn Hàng',
                 'namespace' => 'transaction',
                 'route' => 'admin.transaction.index',
-                'icon'  => 'fa-opencart'
+                'icon'  => 'fa-cart-plus'
             ]
         ]
     ],
     [
-        'name'  => 'Phần Hệ Thống',
+        'name'  => 'Quản lý trang',
         'label' => 'true'
     ]
     

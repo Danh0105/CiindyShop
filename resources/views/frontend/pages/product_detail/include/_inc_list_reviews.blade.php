@@ -2,7 +2,7 @@
     <div class="item">
         <p class="item_author">
             <span>{{ $item->user->name ?? "[N\A]" }}</span>
-            <span class="item_success"><i class="la la-check-circle"></i> Đã đánh giá sản phẩm tại Siêu Thị Của Chúng Tôi</span>
+            <span class="item_success"><i class="la la-check-circle"></i> Đã đánh giá sản phẩm tại cửa hàng Của Chúng Tôi</span>
         </p>
         <div class="item_review">
             <span class="item_review">
