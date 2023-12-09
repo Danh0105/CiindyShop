@@ -20,11 +20,13 @@ class ShoppingCartController extends Controller
     public function index()
     {
         $shopping = \Cart::content();
+        /*         dd($shopping); */
         $cost = DB::table('cost_vc')->get();
         $a = $cost[0]->price;
-        
+
+
         $total = \Cart::subtotal(0);
-        $string = str_replace(",","",$total);
+        $string = str_replace(",", "", $total);
         $number = intval($string);
         $subtotal = $number + $a;
         $viewData = [
@@ -40,29 +42,33 @@ class ShoppingCartController extends Controller
      * Thêm giỏ hàng
      * */
     public function add(Request $request, $id)
+
     {
+
         $product = Product::find($id);
 
         //1. Kiểm tra tồn tại sản phẩm
         if (!$product) return redirect()->to('/');
 
         // 2. Kiểm tra số lượng sản phẩm
-        if ($product->pro_number < 1) {
+
+        if ($product->pro_number == 0) {
             //4. Thông báo
             \Session::flash('toastr', [
                 'type'    => 'error',
                 'message' => 'Số lượng sản phẩm không đủ'
             ]);
 
-            return redirect()->back();
+            return response(200);
         }
 
         // 3. Thêm sản phẩm vào giỏ hàng
-         
-        
+
+
         \Cart::add([
             'id'      => $product->id,
             'name'    => $product->pro_name,
+            'number'    => $product->pro_number,
             'qty'     => 1,
             'price'   => number_price($product->pro_price, $product->pro_sale),
             'weight'  => '1',
@@ -73,7 +79,7 @@ class ShoppingCartController extends Controller
                 'size'      => $request->size,
                 'color'      => $request->color,
                 'gender'      => $request->gender,
-                
+
             ]
         ]);
 
@@ -100,7 +106,8 @@ class ShoppingCartController extends Controller
 
             return redirect()->back();
         }
-        $data['tst_user_id'] = \Auth::user()->id;$data['tst_user_id'] = \Auth::user()->id;
+        $data['tst_user_id'] = \Auth::user()->id;
+        $data['tst_user_id'] = \Auth::user()->id;
         $data['tst_total_money'] = str_replace(',', '', \Cart::subtotal(0));
         $data['created_at']      = Carbon::now();
 
@@ -184,8 +191,7 @@ class ShoppingCartController extends Controller
      * */
     public function delete(Request $request, $rowId)
     {
-        if ($request->ajax())
-        {
+        if ($request->ajax()) {
             \Cart::remove($rowId);
             return response([
                 'totalMoney' => \Cart::subtotal(0),
@@ -197,8 +203,7 @@ class ShoppingCartController extends Controller
     // xu ly phan giam gia
     public function cartDiscount(Request $request)
     {
-        if ($request->ajax())
-        {
+        if ($request->ajax()) {
             $discount = DiscountCode::where('d_code', $request->discount_code)->first();
 
             if ($discount->d_number_code == 0) {
@@ -222,7 +227,8 @@ class ShoppingCartController extends Controller
         }
     }
     // kiem tra thoi gian giam gia
-    public function checkTimeDiscount($dateThi) {
+    public function checkTimeDiscount($dateThi)
+    {
         $currentTime = Carbon::now();
         $datetime = new Carbon($dateThi);
         $checkTimeBDThi = Carbon::parse($currentTime)->diffInMinutes($datetime, false);
@@ -281,7 +287,8 @@ class ShoppingCartController extends Controller
         return redirect($vnp_Url);
     }
     // lu du lieu va tra ve phan thanh toan online qua vnpay
-    public function vnpayReturn(Request $request) {
+    public function vnpayReturn(Request $request)
+    {
         if (session()->has('info_custormer') && $request->vnp_ResponseCode == '00') {
             //
             \DB::beginTransaction();
@@ -338,7 +345,6 @@ class ShoppingCartController extends Controller
                 \Cart::destroy();
                 \DB::commit();
                 return view('frontend/pages/vnpay/vnpay_return', compact('vnpayData'));
-
             } catch (\Exception $exception) {
                 \Session::flash('toastr', [
                     'type'    => 'error',

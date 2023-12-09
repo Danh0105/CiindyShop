@@ -12,17 +12,17 @@ return [
                 'icon'  => 'fa fa-edit'
             ],
             [
-                'name'  => 'Nhà sản Xuất',
+                'name'  => 'Nhà Cung Cấp',
                 'namespace' => 'producer',
                 'route' => 'admin.producer.index',
                 'icon'  => 'fa fa-truck'
             ],
-//            [
-//                'name'  => 'Kiểu dữ liệu',
-//                'namespace' => 'type',
-//                'route' => 'admin.type.index',
-//                'icon'  => 'fa fa-bookmark'
-//            ],
+            //            [
+            //                'name'  => 'Kiểu dữ liệu',
+            //                'namespace' => 'type',
+            //                'route' => 'admin.type.index',
+            //                'icon'  => 'fa fa-bookmark'
+            //            ],
             [
                 'name'  => 'Dữ Liệu Sản Phẩm',
                 'namespace' => 'attribute',
@@ -51,7 +51,7 @@ return [
     ],
     [
         'name' => 'Bài Viết',
-        'list-check' => ['menu','article'],
+        'list-check' => ['menu', 'article'],
         'icon' => 'fa fa-edit',
         'sub'  => [
             [
@@ -70,7 +70,7 @@ return [
     ],
     [
         'name' => 'Tài Khoản',
-        'list-check' => ['user','rating','comment','contact'],
+        'list-check' => ['user', 'rating', 'comment', 'contact'],
         'icon' => 'fa fa-user',
         'sub'  => [
             [
@@ -97,7 +97,7 @@ return [
                 'route' => 'admin.contact',
                 'icon'  => 'fa fa-star'
             ],
-            
+
         ]
     ],
     [
@@ -117,5 +117,5 @@ return [
         'name'  => 'Quản lý trang',
         'label' => 'true'
     ]
-    
+
 ];

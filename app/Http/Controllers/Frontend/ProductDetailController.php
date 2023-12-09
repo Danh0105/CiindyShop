@@ -49,7 +49,7 @@ class ProductDetailController extends FrontendController
                 ->paginate(5);
 
             if ($request->ajax()) {
-                dd($request->all());
+
                 $html = view('frontend.pages.product_detail.include._inc_list_comments', compact('comments', 'product'))->render();
                 return response(['html' => $html]);
             }
@@ -59,7 +59,7 @@ class ProductDetailController extends FrontendController
                 'pro_hot'    => 1
             ])->orderByDesc('id')
                 ->limit(5)
-                ->select('id','pro_name','pro_slug','pro_sale','pro_avatar','pro_price','pro_review_total','pro_review_star')
+                ->select('id', 'pro_name', 'pro_slug', 'pro_sale', 'pro_avatar', 'pro_price', 'pro_review_total', 'pro_review_star')
                 ->get();
 
             $viewData = [

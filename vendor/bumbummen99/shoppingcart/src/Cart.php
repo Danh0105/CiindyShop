@@ -101,7 +101,7 @@ class Cart
             $instance = $instance->getInstanceIdentifier();
         }
 
-        $this->instance = 'cart.'.$instance;
+        $this->instance = 'cart.' . $instance;
 
         return $this;
     }
@@ -128,15 +128,17 @@ class Cart
      *
      * @return \Gloudemans\Shoppingcart\CartItem
      */
-    public function add($id, $name = null, $qty = null, $price = null, $weight = 0, array $options = [])
+    public function add($id, $name = null, $number = null, $qty = null, $price = null, $weight = 0, array $options = [])
     {
+
         if ($this->isMulti($id)) {
             return array_map(function ($item) {
+
                 return $this->add($item);
             }, $id);
         }
 
-        $cartItem = $this->createCartItem($id, $name, $qty, $price, $weight, $options);
+        $cartItem = $this->createCartItem($id, $name, $number, $qty, $price, $weight, $options);
 
         return $this->addCartItem($cartItem);
     }
@@ -680,7 +682,7 @@ class Cart
         }
 
         $stored = $this->getConnection()->table($this->getTableName())
-            ->where(['identifier'=> $identifier, 'instance' => $currentInstance])->first();
+            ->where(['identifier' => $identifier, 'instance' => $currentInstance])->first();
 
         if ($this->getConnection()->getDriverName() === 'pgsql') {
             $storedContent = unserialize(base64_decode(data_get($stored, 'content')));
@@ -749,7 +751,7 @@ class Cart
         }
 
         $stored = $this->getConnection()->table($this->getTableName())
-            ->where(['identifier'=> $identifier, 'instance'=> $instance])->first();
+            ->where(['identifier' => $identifier, 'instance' => $instance])->first();
 
         if ($this->getConnection()->getDriverName() === 'pgsql') {
             $storedContent = unserialize(base64_decode($stored->content));
@@ -813,18 +815,21 @@ class Cart
      *
      * @return \Gloudemans\Shoppingcart\CartItem
      */
-    private function createCartItem($id, $name, $qty, $price, $weight, array $options)
+    private function createCartItem($id, $name, $number, $qty, $price, $weight, array $options)
     {
         if ($id instanceof Buyable) {
             $cartItem = CartItem::fromBuyable($id, $qty ?: []);
             $cartItem->setQuantity($name ?: 1);
+            $cartItem->setNumber($name ?: 1);
             $cartItem->associate($id);
         } elseif (is_array($id)) {
             $cartItem = CartItem::fromArray($id);
             $cartItem->setQuantity($id['qty']);
+            $cartItem->setNumber($id['number']);
         } else {
-            $cartItem = CartItem::fromAttributes($id, $name, $price, $weight, $options);
+            $cartItem = CartItem::fromAttributes($id, $name, $number, $price, $weight, $options);
             $cartItem->setQuantity($qty);
+            $cartItem->setNumber($number);
         }
 
         $cartItem->setInstance($this->currentInstance());
@@ -855,7 +860,7 @@ class Cart
      */
     private function storedCartInstanceWithIdentifierExists($instance, $identifier)
     {
-        return $this->getConnection()->table($this->getTableName())->where(['identifier' => $identifier, 'instance'=> $instance])->exists();
+        return $this->getConnection()->table($this->getTableName())->where(['identifier' => $identifier, 'instance' => $instance])->exists();
     }
 
     /**

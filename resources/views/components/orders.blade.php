@@ -1,7 +1,7 @@
 <table class="table table-condensed">
     <tbody>
         <tr>
-            <th style="width: 10px">ggddg#</th>
+            <th style="width: 10px">ID</th>
             <th style="width: 250px">Tên sản phẩm</th>
             <th>Ảnh</th>
             <th>Giá</th>

@@ -18,15 +18,16 @@ class AdminProductController extends Controller
 {
     public function index(Request $request)
     {
-        $products = Product::with('category:id,c_name');
-        if ($id = $request->id) $products->where('id', $id);
-        if ($name = $request->name) $products->where('pro_name','like', '%'.$name.'%');
-        if ($category = $request->category) $products->where('pro_category_id',$category);
+        $producer = Producer::with(['products.category:id,c_name']);
+        if ($id = $request->id) $producer->where('id', $id);
+        if ($name = $request->name) $producer->where('pro_name', 'like', '%' . $name . '%');
+        if ($category = $request->category) $producer->where('pro_category_id', $category);
 
-        $products = $products->orderByDesc('id')->paginate(10);
+        $producer = $producer->orderByDesc('id')->get();
+        /* dd($producer->toArray()); */
         $categories = Category::all();
         $viewData = [
-            'products'   => $products,
+            'producer'   => $producer->toArray(),
             'categories' => $categories,
             'query'      => $request->query()
         ];
@@ -50,7 +51,7 @@ class AdminProductController extends Controller
     public function store(AdminRequestProduct $request)
     {
 
-        $data = $request->except('_token','pro_avatar','attribute','keywords','file');
+        $data = $request->except('_token', 'pro_avatar', 'attribute', 'keywords', 'file');
         $data['pro_slug']     = Str::slug($request->pro_name);
         $data['created_at']   = Carbon::now();
 
@@ -110,7 +111,7 @@ class AdminProductController extends Controller
     public function update(AdminRequestProduct $request, $id)
     {
         $product           = Product::find($id);
-        $data               = $request->except('_token','pro_avatar','attribute','keywords','file');
+        $data               = $request->except('_token', 'pro_avatar', 'attribute', 'keywords', 'file');
         $data['pro_slug']     = Str::slug($request->pro_name);
         $data['updated_at'] = Carbon::now();
 
@@ -139,32 +140,32 @@ class AdminProductController extends Controller
         foreach ($files as $key => $fileImage) {
             $ext = $fileImage->getClientOriginalExtension();
             $extend = [
-                'png','jpg','jpeg','PNG','JPG'
+                'png', 'jpg', 'jpeg', 'PNG', 'JPG'
             ];
 
             if (!in_array($ext, $extend)) return false;
 
-            $filename = date('Y-m-d__').Str::slug($fileImage->getClientOriginalName()).'.'.$ext;
-            $path = public_path().'/uploads/'.date('Y/m/d/');
-            if (!\File::exists($path)){
+            $filename = date('Y-m-d__') . Str::slug($fileImage->getClientOriginalName()) . '.' . $ext;
+            $path = public_path() . '/uploads/' . date('Y/m/d/');
+            if (!\File::exists($path)) {
                 mkdir($path, 0777, true);
             }
 
             $fileImage->move($path, $filename);
             \DB::table('product_images')
-            ->insert([
-                'pi_name' => $fileImage->getClientOriginalName(),
-                'pi_slug' => $filename,
-                'pi_product_id' => $productID,
-                'created_at' => Carbon::now()
-            ]);
+                ->insert([
+                    'pi_name' => $fileImage->getClientOriginalName(),
+                    'pi_slug' => $filename,
+                    'pi_product_id' => $productID,
+                    'created_at' => Carbon::now()
+                ]);
         }
     }
 
     public function active($id)
     {
         $product = Product::find($id);
-        $product->pro_active = ! $product->pro_active;
+        $product->pro_active = !$product->pro_active;
         $product->save();
 
         return redirect()->back();
@@ -173,7 +174,7 @@ class AdminProductController extends Controller
     public function hot($id)
     {
         $product = Product::find($id);
-        $product->pro_hot = ! $product->pro_hot;
+        $product->pro_hot = !$product->pro_hot;
         $product->save();
 
         return redirect()->back();
@@ -209,7 +210,7 @@ class AdminProductController extends Controller
         return redirect()->back();
     }
 
-    protected function syncAttribute($attributes , $idProduct)
+    protected function syncAttribute($attributes, $idProduct)
     {
         if (!empty($attributes)) {
             $datas = [];

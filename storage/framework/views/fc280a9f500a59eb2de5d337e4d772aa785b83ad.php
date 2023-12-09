@@ -42,19 +42,23 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="col-sm-4">
                             <div class="box box-warning">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Ảnh</h3>
+                                    <h3 class="box-title">Ảnh đại diện</h3>
                                 </div>
                                 <div class="box-body block-images">
                                     <div style="margin-bottom: 10px">
-                                        <img src="/images/no-image.jpg" onerror="this.onerror=null;this.src='/images/no-image.jpg';" alt="" class="img-thumbnail" style="width: 200px;height: 200px;">
+                                        <img src="<?php echo e(pare_url_file($category->c_avatar ?? '') ?? '/images/no-image.jpg'); ?>" onerror="this.onerror=null;this.src='/images/no-image.jpg';" alt="" class="img-thumbnail" style="width: 200px;height: 200px;">
                                     </div>
-                                    <div style="position:relative;"> <a class="btn btn-primary" href="javascript:;"> Chọn tập tin... <input type="file" style="position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=0)&quot;;opacity:0;background-color:transparent;color:transparent;" name="c_avatar" size="40" class="js-upload"> </a> &nbsp; <span class="label label-info" id="upload-file-info"></span> </div>
-                                </div>
+                                
+                                    <input name="pro_avatar" size="40" class="custom-file-input" type="file"     >
+                                    </div>
                             </div>
                         </div>
+
+
                         <div class="col-sm-12">
                             <div class="box-footer text-center">
                                 <a href="<?php echo e(route('admin.category.index')); ?>" class="btn btn-danger">

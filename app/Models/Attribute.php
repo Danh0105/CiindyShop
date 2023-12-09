@@ -7,7 +7,14 @@ use Illuminate\Support\Arr;
 
 class Attribute extends Model
 {
-    protected $table = 'attributes';
+    public $table = 'attributes';
+
+    protected $fillable = [
+        'id',
+        'atb_name',
+        'atb_slug',
+        'atb_type_id'
+    ];
     protected $guarded = ['atb_name', 'atb_slug', 'atb_type_id', 'created_at', 'updated_at'];
 
     protected $type = [
@@ -23,12 +30,12 @@ class Attribute extends Model
 
     public function getType()
     {
-        return Arr::get($this->type, $this->atb_type,"[N\A]");
+        return Arr::get($this->type, $this->atb_type, "[N\A]");
     }
 
     public function category()
     {
-        return $this->belongsTo(Category::class,'atb_category_id');
+        return $this->belongsTo(Category::class, 'atb_category_id');
     }
 
     public function type()

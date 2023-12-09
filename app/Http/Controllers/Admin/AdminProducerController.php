@@ -19,8 +19,7 @@ class AdminProducerController extends Controller
     public function index(Request $request)
     {
         //
-        $producers = Producer::orderByDesc('id')
-            ->paginate(10);
+        $producers = Producer::orderByDesc('id')->paginate(10);
         $viewData = [
             'producers' => $producers,
             'query'      => $request->query()

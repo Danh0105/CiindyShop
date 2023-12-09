@@ -53,6 +53,7 @@ class CartItem implements Arrayable, Jsonable
      */
     public $name;
 
+    public $number;
     /**
      * The price without TAX of the cart item.
      *
@@ -303,6 +304,14 @@ class CartItem implements Arrayable, Jsonable
 
         $this->qty = $qty;
     }
+    public function setNumber($number)
+    {
+        if (empty($number) || !is_numeric($number)) {
+            throw new \InvalidArgumentException('Please supply a valid quantity.');
+        }
+
+        $this->number = $number;
+    }
 
     /**
      * Update the cart item from a Buyable.
@@ -427,7 +436,7 @@ class CartItem implements Arrayable, Jsonable
             throw new InvalidCalculatorException('The configured Calculator seems to be invalid. Calculators have to implement the Calculator Contract.');
         }
 
-        return call_user_func($class->getName().'::getAttribute', $attribute, $this);
+        return call_user_func($class->getName() . '::getAttribute', $attribute, $this);
     }
 
     /**
@@ -467,9 +476,9 @@ class CartItem implements Arrayable, Jsonable
      *
      * @return \Gloudemans\Shoppingcart\CartItem
      */
-    public static function fromAttributes($id, $name, $price, $weight, array $options = [])
+    public static function fromAttributes($id, $name, $number, $price, $weight, array $options = [])
     {
-        return new self($id, $name, $price, $weight, $options);
+        return new self($id, $name, $number, $price, $weight, $options);
     }
 
     /**
@@ -484,7 +493,7 @@ class CartItem implements Arrayable, Jsonable
     {
         ksort($options);
 
-        return md5($id.serialize($options));
+        return md5($id . serialize($options));
     }
 
     /**
@@ -498,6 +507,7 @@ class CartItem implements Arrayable, Jsonable
             'rowId'    => $this->rowId,
             'id'       => $this->id,
             'name'     => $this->name,
+            'number'     => $this->number,
             'qty'      => $this->qty,
             'price'    => $this->price,
             'weight'   => $this->weight,
