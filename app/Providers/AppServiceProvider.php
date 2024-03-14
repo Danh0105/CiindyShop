@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Menu;
 use Illuminate\Support\Facades\View;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Routing\UrlGenerator;
 
 class AppServiceProvider extends ServiceProvider
 {
