@@ -5,21 +5,26 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
+
         "anhskohbo/no-captcha": "^3.4",
         "barryvdh/laravel-dompdf": "^2.0",
         "bumbummen99/shoppingcart": "^4.2",
         "fideloper/proxy": "^4.4",
-        "guzzlehttp/guzzle": "^7.2",
         "jenssegers/agent": "^2.6",
-        "laravel/framework": "^9.19",
-        "laravel/sanctum": "^3.0",
         "laravel/socialite": "^5.6",
-        "laravel/tinker": "^2.7",
+        "renatomarinho/laravel-page-speed": "^2.1",
+        "unisharp/laravel-filemanager": "^2.5",
+         "php": "^8.1",
+        "egulias/email-validator": "^4.0",
+        "firebase/php-jwt": "^6.9",
+        "guzzlehttp/guzzle": "^7.2",
+        "laravel/framework": "^10.10",
+        "laravel/sanctum": "^3.2",
+        "laravel/tinker": "^2.8",
         "laravel/ui": "^4.2",
         "maatwebsite/excel": "^3.1",
-        "renatomarinho/laravel-page-speed": "^2.1",
-        "unisharp/laravel-filemanager": "^2.5"
+        "simplesoftwareio/simple-qrcode": "^4.2",
+        "spatie/laravel-permission": "^5.11"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
