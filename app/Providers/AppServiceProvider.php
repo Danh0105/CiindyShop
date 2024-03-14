@@ -26,8 +26,14 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(UrlGenerator $url): void
     {
+        Validator::extend('axist_email', function ($attribute, $value, $parameters, $validator) {
+            return User::where('email', $value)->count() !== 0;
+        });
+        if (env('APP_ENV') == 'production') {
+            $url->forceScheme('https');
+        }
         Schema::defaultStringLength(191);
 
         try {
@@ -49,4 +55,5 @@ class AppServiceProvider extends ServiceProvider
         }
         Paginator::useBootstrap();
     }
+
 }
