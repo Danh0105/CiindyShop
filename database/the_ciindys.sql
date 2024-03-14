@@ -18,64 +18,66 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `the ciindys`
+-- Cơ sở dữ liệu: the ciindys
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `admins`
+-- Cấu trúc bảng cho bảng admins
 --
 
-CREATE TABLE `admins` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
-  `log_login` text DEFAULT NULL,
-  `class` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `avatar` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE admins (
+  id BIGSERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  phone VARCHAR(255) NOT NULL,
+  log_login TEXT,
+  class VARCHAR(255),
+  address VARCHAR(255),
+  avatar VARCHAR(255),
+  created_at TIMESTAMP NULL DEFAULT NULL,
+  updated_at TIMESTAMP NULL DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `admins`
+-- Đang đổ dữ liệu cho bảng admins
 --
 
-INSERT INTO `admins` (`id`, `name`, `email`, `password`, `phone`, `log_login`, `class`, `address`, `avatar`, `created_at`, `updated_at`) VALUES
+INSERT INTO admins (id, name, email, password, phone, log_login, class, address, avatar, created_at, updated_at) VALUES
 (1, 'Phan Cong Vinh', 'admin@gmail.com', '$2y$10$wkjMG/vGGEJ21wIARDJDiOZnBxO8p5eyDrc3gw.0E9.oKNKqp0QD.', '0345645678', NULL, 'không', '56 Đ. Mậu Thân, An Phú, Ninh Kiều, Cần Thơ', '2023-04-16__255dfb0fdada2d8474cb.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `articles`
+-- Cấu trúc bảng cho bảng articles
 --
 
-CREATE TABLE `articles` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `a_name` varchar(255) NOT NULL,
-  `a_slug` varchar(255) NOT NULL,
-  `a_hot` tinyint(4) NOT NULL DEFAULT 0,
-  `a_active` tinyint(4) NOT NULL DEFAULT 1,
-  `a_menu_id` int(11) NOT NULL DEFAULT 0,
-  `a_view` int(11) NOT NULL DEFAULT 0,
-  `a_description` mediumtext DEFAULT NULL,
-  `a_avatar` varchar(255) DEFAULT NULL,
-  `a_content` text DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `a_position_2` tinyint(4) NOT NULL DEFAULT 0,
-  `a_position_1` tinyint(4) NOT NULL DEFAULT 0,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE articles (
+  id BIGSERIAL PRIMARY KEY,
+  a_name VARCHAR(255) NOT NULL,
+  a_slug VARCHAR(255) NOT NULL,
+  a_hot SMALLINT NOT NULL DEFAULT 0,
+  a_active SMALLINT NOT NULL DEFAULT 1,
+  a_menu_id INT NOT NULL DEFAULT 0,
+  a_view INT NOT NULL DEFAULT 0,
+  a_description TEXT,
+  a_avatar VARCHAR(255),
+  a_content TEXT,
+  created_at TIMESTAMP NULL DEFAULT NULL,
+  a_position_2 SMALLINT NOT NULL DEFAULT 0,
+  a_position_1 SMALLINT NOT NULL DEFAULT 0,
+  updated_at TIMESTAMP NULL DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `articles`
+-- Đang đổ dữ liệu cho bảng articles
 --
 
-INSERT INTO `articles` (`id`, `a_name`, `a_slug`, `a_hot`, `a_active`, `a_menu_id`, `a_view`, `a_description`, `a_avatar`, `a_content`, `created_at`, `a_position_2`, `a_position_1`, `updated_at`) VALUES
+INSERT INTO articles (id, a_name, a_slug, a_hot, a_active, a_menu_id, a_view, a_description, a_avatar, a_content, created_at, a_position_2, a_position_1, updated_at) VALUES
 (1, '“LOOKING AHEAD”-DEAL ĐỈNH SIÊU TO 30- 50% CỦA ADIDAS ĐÃ CHÍNH THỨC LỘ DIỆN TẠI SPORT1', 'looking-ahead-deal-dinh-sieu-to-30-50-cua-adidas-da-chinh-thuc-lo-dien-tai-sport1', 1, 1, 2, 0, 'Tháng 6 rực rỡ- Tháng vàng Adidas, chương trình khuyến mại “Looking Ahead” của Adidas chỉ mới “ló mặt” đã khiến các team cuồng thời trang 3 sọc phải choáng ngợp bởi các deal sale siêu đỉnh- Up to 30- 50%. Chương trình chính thức diễn ra trong 11 ngày, từ ngày 04/06 đến hết ngày 14/6/2020 tại các showroom của Sport1 trên toàn quốc.', '2020-06-19__banner-khuy-n-m-i-looking-ahead-1.jpg', '<h1 style=\"text-align:center\">&ldquo;LOOKING AHEAD&rdquo;-DEAL ĐỈNH SI&Ecirc;U TO 30- 50% CỦA ADIDAS Đ&Atilde; CH&Iacute;NH THỨC LỘ DIỆN TẠI SPORT1</h1>\r\n\r\n<p>Th&aacute;ng 6 rực rỡ- Th&aacute;ng v&agrave;ng Adidas, chương tr&igrave;nh khuyến mại &ldquo;Looking Ahead&rdquo; của Adidas chỉ mới &ldquo;l&oacute; mặt&rdquo; đ&atilde; khiến c&aacute;c team cuồng thời trang 3 sọc phải cho&aacute;ng ngợp bởi c&aacute;c deal sale si&ecirc;u đỉnh- Up to 30- 50%. Chương tr&igrave;nh ch&iacute;nh thức diễn ra trong 11 ng&agrave;y, từ ng&agrave;y 04/06 đến hết ng&agrave;y 14/6/2020 tại c&aacute;c showroom của Sport1 tr&ecirc;n to&agrave;n quốc.</p>\r\n\r\n<p>Đến hẹn chắc chắn sẽ l&ecirc;n, Chương tr&igrave;nh khuyến mại v&ocirc; c&ugrave;ng hấp dẫn của Adidas th&aacute;ng 6 đ&atilde; trở lại- &ldquo;LOOKING AHEAD&rdquo;. Đ&acirc;y ch&iacute;nh l&agrave; cơ hội v&agrave;ng cho c&aacute;c fan cuồng thời trang nh&agrave; Aididas sở hữu những si&ecirc;u phẩm mơ ước với MỨC GI&Aacute; SI&Ecirc;U HỜI. Theo đ&oacute;, t&ugrave;y theo từng m&atilde; sản phẩm, kh&aacute;ch h&agrave;ng sẽ được giảm liền từ 30- 50% sản phẩm nguy&ecirc;n gi&aacute;. V&agrave; điều đặc biệt trong chương tr&igrave;nh n&agrave;y, khuyến mại kh&ocirc;ng chỉ d&agrave;nh ri&ecirc;ng cho nh&oacute;m ng&agrave;nh gi&agrave;y m&agrave; nh&oacute;m ng&agrave;nh thời trang- phụ kiện Adidas cũng c&oacute; những deal sale hấp dẫn với mức GI&Aacute; CHƯA TỪNG C&Oacute;.</p>\r\n\r\n<p><br />\r\nTại hệ thống si&ecirc;u thị thể thao Sport1, hơn 10000 sản phẩm mới Adidas đ&atilde; đổ bộ, full đầy c&aacute;c kệ chỉ chờ kh&aacute;ch h&agrave;ng qua rước về. Gi&agrave;y d&eacute;p, balo thời trang, quần &aacute;o phụ kiện ch&iacute;nh h&atilde;ng đều được sale với mức gi&aacute; kh&ocirc;ng tưởng. C&aacute;c t&iacute;n đồ đam m&ecirc; c&aacute;c đồ tập chuy&ecirc;n dụng running, traning, sportswear, b&oacute;ng đ&aacute;, cầu l&ocirc;ng, gold... cũng đừng lo v&igrave; c&aacute;c &ldquo;em&rdquo; n&agrave;y cũng điểm đủ mặt &nbsp;trong list SALE SỐC của Adidas th&aacute;ng 6.</p>\r\n\r\n<p>Chương tr&igrave;nh &aacute;p dụng duy nhất trong 11 ng&agrave;y từ 04/06 đến hết 14/06/2020 v&agrave; &aacute;p dụng cho cả mua trực tiếp tại cửa h&agrave;ng v&agrave; hệ thống online của #Sport1! N&agrave;o c&aacute;c anh chị em nh&agrave; Das, h&atilde;y nhanh tay đến Sport1 để săn những si&ecirc;u phẩm n&oacute;ng bỏng tay với mức gi&aacute; SI&Ecirc;U SHOCK n&agrave;o.</p>\r\n\r\n<div id=\"gtx-trans\" style=\"left:743px; position:absolute; top:-4.8px\">\r\n<div class=\"gtx-trans-icon\">&nbsp;</div>\r\n</div>', '2020-06-19 08:46:51', 1, 1, '2023-04-23 08:36:10'),
 (2, 'THÁNG VÀNG ĐẠI LỄ SĂN SALE CỰC DỄ - GHẾ MASSAGE GIẢM ĐẾN 42%', 'thang-vang-dai-le-san-sale-cuc-de-ghe-massage-giam-den-42', 1, 1, 1, 0, 'Hình ảnh cờ đỏ sao vàng tung bay trên mọi nẻo đường Tổ Quốc đã góp phần tạo nên một bầu không khí hào hùng trong đại lễ kỷ niệm 45 năm giải phóng Miền Nam thống nhất toàn vẹn lãnh thổ Việt Nam. Hòa cùng không khí chào mừng đại lễ 30/4 - 1/5 giúp quý khách có những phút giây mua sắm thoải mái, KINGSPORT triển khai chương trình mang tên THÁNG VÀNG ĐẠI LỄ - SĂN SALE CỰC DỄ.', '2020-06-19__360-crop-ctkm-kingsport-01.jpg', '<p><strong>H&igrave;nh ảnh cờ đỏ sao v&agrave;ng tung bay tr&ecirc;n mọi nẻo đường Tổ Quốc đ&atilde; g&oacute;p phần tạo n&ecirc;n một bầu kh&ocirc;ng kh&iacute; h&agrave;o h&ugrave;ng trong đại lễ kỷ niệm 45 năm giải ph&oacute;ng Miền Nam thống nhất to&agrave;n vẹn l&atilde;nh thổ Việt Nam. H&ograve;a c&ugrave;ng kh&ocirc;ng kh&iacute; ch&agrave;o mừng đại lễ&nbsp;30/4 - 1/5 gi&uacute;p qu&yacute; kh&aacute;ch c&oacute; những ph&uacute;t gi&acirc;y mua sắm thoải m&aacute;i, KINGSPORT triển khai chương tr&igrave;nh mang t&ecirc;n&nbsp;<em>TH&Aacute;NG V&Agrave;NG ĐẠI LỄ - SĂN SALE CỰC DỄ.</em></strong></p>\r\n\r\n<p>Với sứ mệnh mang sức khỏe &ndash; hạnh ph&uacute;c &ndash; thịnh vương đến mọi nh&agrave;. Đồng thời, gi&uacute;p qu&yacute; kh&aacute;ch tiết kiệm thời gian v&agrave; t&agrave;i ch&iacute;nh khi đầu tư v&agrave;o việc chăm s&oacute;c sức khỏe KINGSPORT đ&atilde; triển khai chương tr&igrave;nh &ldquo;<em>Th&aacute;ng v&agrave;ng đại lễ - Săn sale cực dễ&rdquo;</em>&nbsp;với&nbsp;<a href=\"https://www.kingsport.vn/ghe-massage-kingsport-g38.html\"><strong>ưu đ&atilde;i si&ecirc;u khủng l&ecirc;n đến 42%</strong></a>&nbsp;d&agrave;nh cho kh&aacute;ch h&agrave;ng tham gia mua sắm tại c&aacute;c k&ecirc;nh online hoặc offline của KINGSPORT. Chương tr&igrave;nh &aacute;p dụng tr&ecirc;n to&agrave;n quốc v&agrave; k&eacute;o d&agrave;i từ ng&agrave;y 20/4/2020 &ndash; 20/5/2020(*).</p>', '2020-06-19 08:49:50', 0, 0, '2020-06-19 08:49:59'),
 (3, 'LỊCH SỬ MÔN CHẠY MARATHON', 'lich-su-mon-chay-marathon', 1, 1, 2, 0, 'Chạy marathon đã quá quen thuộc đến nỗi gần như chẳng ai quan tâm nó […]', '2020-06-19__philippides.jpg', '<div class=\"entry-wrap\">\r\n<h1>Lịch sử m&ocirc;n chạy Marathon</h1>\r\n<!-- End / Related Posts -->\r\n\r\n<div class=\"content entry-content\">\r\n<p>Chạy marathon đ&atilde; qu&aacute; quen thuộc đến nỗi gần như chẳng ai quan t&acirc;m n&oacute; l&agrave; g&igrave; v&agrave; bắt đầu từ bao giờ. C&ugrave;ng t&igrave;m hiểu một ch&uacute;t về lịch sử m&ocirc;n chạy marathon nh&eacute;.</p>\r\n\r\n<p><strong>Ch</strong><strong>ạy marathon l</strong><strong>&agrave; g&igrave;</strong>? Marathon l&agrave; một cuộc đua đường d&agrave;i với một khoảng c&aacute;ch ch&iacute;nh thức của 42,195 km&nbsp; (khoảng 26, 385 dặm), thường chạy như một cuộc chạy đua đường bằng. <strong>L</strong><strong>ịch sử m</strong><strong>&ocirc;n ch</strong><strong>ạy Marathon</strong> được gắn liền với sự kiện n&agrave;y, n&oacute; được tổ chức để kỷ niệm cuộc chạy đua huyền thoại của người l&iacute;nh Hy Lạp t&ecirc;n l&agrave; Pheidippides, một sứ giả từ Trận chiến Marathon đến Athens để b&aacute;o kết quả chiến thằng của trận chiến. Cuộc đua marathon c&oacute; thể được ho&agrave;n th&agrave;nh bằng c&aacute;ch chạy hoặc với chiến lược chạy / đi bộ.</p>\r\n\r\n<p><strong>Ch</strong><strong>ạy marathon bắt </strong><strong>đ</strong><strong>ầu từ bao giờ?</strong></p>\r\n\r\n<p><strong>Ch</strong><strong>ạy marathon</strong> l&agrave; một trong những sự kiện Olympic hiện đại v&agrave;o năm 1896, mặc d&ugrave; khoảng c&aacute;ch kh&ocirc;ng được chuẩn h&oacute;a cho đến năm 1921. Hơn 800 cuộc đua được tổ chức tr&ecirc;n khắp thế giới mỗi năm, với đại đa số c&aacute;c đối thủ l&agrave; vận động vi&ecirc;n, v&igrave; c&aacute;c cuộc đua lớn hơn c&oacute; thể c&oacute; h&agrave;ng chục ng&agrave;n người tham gia.</p>\r\n\r\n<p>Nếu x&eacute;t về<strong> lịch sử m&ocirc;n chạy Marathon</strong>, th&igrave; mới biết c&aacute;i t&ecirc;n Marathon xuất ph&aacute;t từ truyền thuyết về Philippides (hay Pheidippides), sứ giả Hy Lạp. Truyền thuyết n&oacute;i rằng &ocirc;ng được gửi từ chiến trường Marathon đến Athens để th&ocirc;ng b&aacute;o rằng người Ba Tư đ&atilde; bị đ&aacute;nh bại trong trrận chiến Marathon (trong đ&oacute; &ocirc;ng vừa mới chiến đấu),&nbsp; diễn ra v&agrave;o th&aacute;ng 8 hoặc th&aacute;ng 9 năm 490 trước C&ocirc;ng nguy&ecirc;n.&nbsp; Người ta n&oacute;i rằng anh ta đ&atilde; chạy to&agrave;n bộ qu&atilde;ng đường m&agrave; kh&ocirc;ng dừng lại v&agrave; x&ocirc;ng v&agrave;o hội nghị, k&ecirc;u l&ecirc;n &epsilon;&epsilon;&epsilon;&kappa;ή&kappa;&kappa;ή&kappa; (nenikēkamen, &ldquo;ch&uacute;ng t&ocirc;i đ&atilde; thắng!&rdquo;), Trước khi quỵ gối v&agrave; chết.&nbsp;</p>\r\n<img alt=\"\" class=\"wp-image-9916\" src=\"https://runningstore.vn/wp-content/uploads/2020/04/Philippides.jpg\" />\r\n<p>H&igrave;nh ảnh Philippides trong truyền thuyết</p>\r\n\r\n<p>C&oacute; nhiều cuộc tranh luận về t&iacute;nh ch&iacute;nh x&aacute;c của truyền thuyết n&agrave;y. Nh&agrave; sử học Hy Lạp Herodotus, trong nguồn lịch sử ch&iacute;nh của Chiến tranh Greco-Ba Tư, đề cập đến Philippides l&agrave; sứ giả chạy từ Athens đến Sparta để nhờ gi&uacute;p đỡ, v&agrave; sau đ&oacute; chạy lại, khoảng c&aacute;ch hơn 240 km (150 dặm) mỗi chiều. Trong một số bản thảo Herodotus, t&ecirc;n của người chạy giữa Athens v&agrave; Sparta được đặt t&ecirc;n l&agrave; Philippides. Herodotus kh&ocirc;ng đề cập đến một sứ giả được gửi từ Marathon đến Athens, v&agrave; kể rằng phần ch&iacute;nh của qu&acirc;n đội Athen, đ&atilde; chiến đấu v&agrave; chiến thắng trong trận chiến mệt mỏi, v&agrave; sợ một cuộc đột k&iacute;ch của hải qu&acirc;n bởi hạm đội Ba Tư chống lại một Athens kh&ocirc;ng được bảo vệ, đ&atilde; nhanh ch&oacute;ng quay trở lại từ Athens.</p>\r\n<img alt=\"\" class=\"wp-image-9917\" src=\"https://runningstore.vn/wp-content/uploads/2020/04/Tuong-phelippides.jpg\" />\r\n<p>Tượng Philppides được dựng tại Hy Lạp</p>\r\n\r\n<p>N&uacute;i Pentelicus đứng giữa Marathon v&agrave; Athens, điều đ&oacute; c&oacute; nghĩa l&agrave; nếu Philippides thực hiện qu&atilde;ng đường chạy sau trận chiến, anh ta phải chạy quanh ngọn n&uacute;i, ở ph&iacute;a bắc hoặc ph&iacute;a nam. Tuyến đường sau v&agrave; r&otilde; r&agrave;ng hơn ph&ugrave; hợp với gần như ch&iacute;nh x&aacute;c đường cao tốc Marathon-Athens hiện đại, đi theo v&ugrave;ng đất ph&iacute;a nam từ Vịnh Marathon v&agrave; dọc theo bờ biển, sau đ&oacute; đi bộ nhẹ nh&agrave;ng nhưng k&eacute;o d&agrave;i về ph&iacute;a t&acirc;y về ph&iacute;a đ&ocirc;ng đến Athens, giữa c&aacute;c ch&acirc;n đồi của N&uacute;i Hymettus v&agrave; Penteli, v&agrave; sau đ&oacute; nhẹ nh&agrave;ng xuống dốc đến Athens. Tuyến đường n&agrave;y, như đ&atilde; tồn tại khi Thế vận hội được hồi sinh v&agrave;o năm 1896, d&agrave;i khoảng 40 km (25 dặm) v&agrave; đ&acirc;y l&agrave; khoảng c&aacute;ch gần đ&uacute;ng ban đầu được sử dụng cho c&aacute;c cuộc đua <strong>ch</strong><strong>ạy marathon</strong>. Tuy nhi&ecirc;n, đ&atilde; c&oacute; &yacute; kiến ​​cho rằng Philippides c&oacute; thể đ&atilde; đi theo một tuyến đường kh&aacute;c: leo l&ecirc;n ph&iacute;a t&acirc;y dọc theo sườn ph&iacute;a đ&ocirc;ng v&agrave; ph&iacute;a bắc của N&uacute;i Penteli đến đ&egrave;o Dionysos, v&agrave; sau đ&oacute; l&agrave; một con đường xuống dốc thẳng về ph&iacute;a nam đến Athens. Tuyến đường n&agrave;y ngắn hơn đ&aacute;ng kể, 35 km (22 mi), nhưng leo l&ecirc;n ban đầu rất dốc hơn 5 km (3,1 mi).</p>\r\n\r\n<p>Khi Thế vận hội hiện đại bắt đầu v&agrave;o năm 1896, những người khởi xướng v&agrave; tổ chức đang t&igrave;m kiếm một sự kiện phổ biến lớn, gợi lại vinh quang của Hy Lạp cổ đại v&agrave; gi&uacute;p người ta nhớ tới <strong>lịch sử của m&ocirc;n chạy marathon</strong>. &Yacute; tưởng về một cuộc đua marathon đến từ Michel Br&eacute;al, người muốn sự kiện n&agrave;y xuất hiện trong Thế vận hội Olympic hiện đại đầu ti&ecirc;n v&agrave;o năm 1896 tại Athens. &Yacute; tưởng n&agrave;y được Pierre de Coubertin, người s&aacute;ng lập Thế vận hội hiện đại, cũng như người Hy Lạp ủng hộ.&nbsp; Người Hy Lạp đ&atilde; tổ chức một cuộc đua tuyển chọn cho cuộc thi marathon Olympic v&agrave;o ng&agrave;y 22 th&aacute;ng 3 năm 1896, m&agrave; Charilaos Vasilakos đ&atilde; gi&agrave;nh chiến thắng trong 3 giờ v&agrave; 18 ph&uacute;t.&nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n\r\n<div class=\"wp-block-image\"><img alt=\"\" class=\"wp-image-9918\" src=\"https://runningstore.vn/wp-content/uploads/2020/04/Chaolios-vasilakos.jpg\" />\r\n<p>Charilaos Vasilakos &ndash; nh&agrave; v&ocirc; địch chạy marathon thế vận hội 1896</p>\r\n</div>\r\n\r\n<p>Sau n&agrave;y, n&oacute; đ&atilde; trở th&agrave;nh một truyền thống cho cuộc thi marathon Olympic nam l&agrave; sự kiện cuối c&ugrave;ng của lịch thi đấu điền kinh, v&agrave;o ng&agrave;y cuối c&ugrave;ng của Thế vận hội. Trong nhiều năm, cuộc đua kết th&uacute;c b&ecirc;n trong s&acirc;n vận động Olympic; tuy nhi&ecirc;n, tại Thế vận hội Lu&acirc;n Đ&ocirc;n 2012, điểm khởi đầu v&agrave; kết th&uacute;c l&agrave; ở Trung t&acirc;m thương mại,v&agrave; tại Rio 2016 (Rio de Janeiro), điểm khởi đầu v&agrave; kết th&uacute;c l&agrave; ở Samb&oacute;dromo.</p>\r\n</div>\r\n</div>', '2020-06-19 08:53:44', 1, 1, '2020-06-19 08:54:26');
@@ -83,23 +85,24 @@ INSERT INTO `articles` (`id`, `a_name`, `a_slug`, `a_hot`, `a_active`, `a_menu_i
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `attributes`
+-- Cấu trúc bảng cho bảng attributes
 --
 
-CREATE TABLE `attributes` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `atb_name` varchar(255) NOT NULL,
-  `atb_slug` varchar(255) NOT NULL,
-  `atb_type_id` int(11) NOT NULL DEFAULT 0,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE attributes (
+  id BIGSERIAL PRIMARY KEY,
+  atb_name VARCHAR(255) NOT NULL,
+  atb_slug VARCHAR(255) NOT NULL,
+  atb_type_id INT NOT NULL DEFAULT 0,
+  created_at TIMESTAMP NULL DEFAULT NULL,
+  updated_at TIMESTAMP NULL DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `attributes`
+-- Đang đổ dữ liệu cho bảng attributes
 --
 
-INSERT INTO `attributes` (`id`, `atb_name`, `atb_slug`, `atb_type_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO attributes (id, atb_name, atb_slug, atb_type_id, created_at, updated_at) VALUES
 (19, 'Màu đỏ', 'mau-do', 2, '2020-07-03 17:34:32', NULL),
 (20, 'Màu Tím', 'mau-tim', 2, '2020-07-03 17:52:57', NULL),
 (21, 'Màu đỏ đen', 'mau-do-den', 2, '2020-07-03 17:53:08', NULL),
@@ -134,28 +137,29 @@ INSERT INTO `attributes` (`id`, `atb_name`, `atb_slug`, `atb_type_id`, `created_
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categories`
+-- Cấu trúc bảng cho bảng categories
 --
 
-CREATE TABLE `categories` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `c_name` varchar(255) NOT NULL,
-  `c_parent_id` int(11) NOT NULL DEFAULT 0,
-  `c_slug` varchar(255) NOT NULL,
-  `c_avatar` varchar(255) DEFAULT NULL,
-  `c_banner` varchar(255) DEFAULT NULL,
-  `c_description` varchar(255) DEFAULT NULL,
-  `c_hot` tinyint(4) NOT NULL DEFAULT 0,
-  `c_status` tinyint(4) NOT NULL DEFAULT 1,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE categories (
+  id BIGSERIAL PRIMARY KEY,
+  c_name VARCHAR(255) NOT NULL,
+  c_parent_id INT NOT NULL DEFAULT 0,
+  c_slug VARCHAR(255) NOT NULL,
+  c_avatar VARCHAR(255),
+  c_banner VARCHAR(255),
+  c_description VARCHAR(255),
+  c_hot SMALLINT NOT NULL DEFAULT 0,
+  c_status SMALLINT NOT NULL DEFAULT 1,
+  created_at TIMESTAMP NULL DEFAULT NULL,
+  updated_at TIMESTAMP NULL DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `categories`
+-- Đang đổ dữ liệu cho bảng categories
 --
 
-INSERT INTO `categories` (`id`, `c_name`, `c_parent_id`, `c_slug`, `c_avatar`, `c_banner`, `c_description`, `c_hot`, `c_status`, `created_at`, `updated_at`) VALUES
+INSERT INTO categories (id, c_name, c_parent_id, c_slug, c_avatar, c_banner, c_description, c_hot, c_status, created_at, updated_at) VALUES
 (12, 'Áo Nam', 0, 'ao-nam', NULL, NULL, NULL, 0, 0, '2023-04-15 00:33:11', '2023-04-15 10:11:27'),
 (13, 'Quần Nam', 0, 'quan-nam', NULL, NULL, NULL, 0, 1, '2023-04-15 00:58:35', NULL),
 (14, 'Phụ kiện', 0, 'phu-kien', NULL, NULL, NULL, 0, 1, '2023-04-15 00:59:53', NULL),
@@ -164,121 +168,124 @@ INSERT INTO `categories` (`id`, `c_name`, `c_parent_id`, `c_slug`, `c_avatar`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `comments`
+-- Cấu trúc bảng cho bảng comments
 --
 
-CREATE TABLE `comments` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `cmt_name` varchar(255) DEFAULT NULL,
-  `cmt_email` varchar(255) DEFAULT NULL,
-  `cmt_content` text DEFAULT NULL,
-  `cmt_parent_id` int(11) NOT NULL DEFAULT 0,
-  `cmt_product_id` int(11) NOT NULL DEFAULT 0,
-  `cmt_admin_id` int(11) NOT NULL DEFAULT 0,
-  `cmt_user_id` int(11) NOT NULL DEFAULT 0,
-  `cmt_like` int(11) NOT NULL DEFAULT 0,
-  `cmt_disk_like` int(11) NOT NULL DEFAULT 0,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE comments (
+  id BIGSERIAL PRIMARY KEY,
+  cmt_name VARCHAR(255),
+  cmt_email VARCHAR(255),
+  cmt_content TEXT,
+  cmt_parent_id INT NOT NULL DEFAULT 0,
+  cmt_product_id INT NOT NULL DEFAULT 0,
+  cmt_admin_id INT NOT NULL DEFAULT 0,
+  cmt_user_id INT NOT NULL DEFAULT 0,
+  cmt_like INT NOT NULL DEFAULT 0,
+  cmt_disk_like INT NOT NULL DEFAULT 0,
+  created_at TIMESTAMP NULL DEFAULT NULL,
+  updated_at TIMESTAMP NULL DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `comments`
+-- Đang đổ dữ liệu cho bảng comments
 --
 
-INSERT INTO `comments` (`id`, `cmt_name`, `cmt_email`, `cmt_content`, `cmt_parent_id`, `cmt_product_id`, `cmt_admin_id`, `cmt_user_id`, `cmt_like`, `cmt_disk_like`, `created_at`, `updated_at`) VALUES
+INSERT INTO comments (id, cmt_name, cmt_email, cmt_content, cmt_parent_id, cmt_product_id, cmt_admin_id, cmt_user_id, cmt_like, cmt_disk_like, created_at, updated_at) VALUES
 (8, NULL, NULL, 'Sản phẩm này đẹp', 0, 4, 0, 8, 0, 0, '2023-01-20 06:38:53', NULL),
 (9, NULL, NULL, 'hi', 0, 12, 0, 9, 0, 0, '2023-04-23 08:52:17', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `contacts`
+-- Cấu trúc bảng cho bảng contacts
 --
 
-CREATE TABLE `contacts` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `c_title` varchar(255) DEFAULT NULL,
-  `c_phone` char(11) DEFAULT NULL,
-  `c_email` varchar(255) DEFAULT NULL,
-  `c_content` text DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE contacts (
+  id BIGSERIAL PRIMARY KEY,
+  c_title VARCHAR(255),
+  c_phone CHAR(11),
+  c_email VARCHAR(255),
+  c_content TEXT,
+  created_at TIMESTAMP NULL DEFAULT NULL,
+  updated_at TIMESTAMP NULL DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `contacts`
+-- Đang đổ dữ liệu cho bảng contacts
 --
 
-INSERT INTO `contacts` (`id`, `c_title`, `c_phone`, `c_email`, `c_content`, `created_at`, `updated_at`) VALUES
+INSERT INTO contacts (id, c_title, c_phone, c_email, c_content, created_at, updated_at) VALUES
 (2, 'afds', '055555555', 'Dd@gmail.com', 'gdg', '2023-04-15 04:39:21', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cost_vc`
+-- Cấu trúc bảng cho bảng cost_vc
+--
+CREATE TABLE cost_vc (
+  id SERIAL PRIMARY KEY,
+  price INT NOT NULL
+);
+
+
+--
+-- Đang đổ dữ liệu cho bảng cost_vc
 --
 
-CREATE TABLE `cost_vc` (
-  `id` int(11) NOT NULL,
-  `price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `cost_vc`
---
-
-INSERT INTO `cost_vc` (`id`, `price`) VALUES
+INSERT INTO cost_vc (id, price) VALUES
 (1, 25000);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `discount_code`
+-- Cấu trúc bảng cho bảng discount_code
 --
 
-CREATE TABLE `discount_code` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `d_code` varchar(191) NOT NULL,
-  `d_number_code` int(11) NOT NULL DEFAULT 0,
-  `d_date_start` datetime DEFAULT NULL,
-  `d_date_end` datetime DEFAULT NULL,
-  `d_percentage` int(11) NOT NULL DEFAULT 0,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE discount_code (
+  id BIGSERIAL PRIMARY KEY,
+  d_code VARCHAR(191) NOT NULL,
+  d_number_code INT NOT NULL DEFAULT 0,
+  d_date_start TIMESTAMP NULL,
+  d_date_end TIMESTAMP NULL,
+  d_percentage INT NOT NULL DEFAULT 0,
+  created_at TIMESTAMP NULL DEFAULT NULL,
+  updated_at TIMESTAMP NULL DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `discount_code`
+-- Đang đổ dữ liệu cho bảng discount_code
 --
 
-INSERT INTO `discount_code` (`id`, `d_code`, `d_number_code`, `d_date_start`, `d_date_end`, `d_percentage`, `created_at`, `updated_at`) VALUES
+INSERT INTO discount_code (id, d_code, d_number_code, d_date_start, d_date_end, d_percentage, created_at, updated_at) VALUES
 (3, 'bnvvv', 1, '2023-04-22 23:24:00', '2023-04-29 22:23:00', 100, '2023-04-22 08:23:33', '2023-04-22 08:23:33');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `events`
+-- Cấu trúc bảng cho bảng events
 --
 
-CREATE TABLE `events` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `e_name` varchar(255) DEFAULT NULL,
-  `e_banner` varchar(255) DEFAULT NULL,
-  `e_link` varchar(255) DEFAULT NULL,
-  `e_position_1` tinyint(4) NOT NULL DEFAULT 0,
-  `e_position_2` tinyint(4) NOT NULL DEFAULT 0,
-  `e_position_3` tinyint(4) NOT NULL DEFAULT 0,
-  `e_position_4` tinyint(4) NOT NULL DEFAULT 0,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE events (
+  id BIGSERIAL PRIMARY KEY,
+  e_name VARCHAR(255),
+  e_banner VARCHAR(255),
+  e_link VARCHAR(255),
+  e_position_1 SMALLINT NOT NULL DEFAULT 0,
+  e_position_2 SMALLINT NOT NULL DEFAULT 0,
+  e_position_3 SMALLINT NOT NULL DEFAULT 0,
+  e_position_4 SMALLINT NOT NULL DEFAULT 0,
+  created_at TIMESTAMP NULL,
+  updated_at TIMESTAMP NULL
+);
 
 --
--- Đang đổ dữ liệu cho bảng `events`
+-- Đang đổ dữ liệu cho bảng events
 --
 
-INSERT INTO `events` (`id`, `e_name`, `e_banner`, `e_link`, `e_position_1`, `e_position_2`, `e_position_3`, `e_position_4`, `created_at`, `updated_at`) VALUES
+INSERT INTO events (id, e_name, e_banner, e_link, e_position_1, e_position_2, e_position_3, e_position_4, created_at, updated_at) VALUES
 (1, 'sale 1', '2023-04-16__xxxx.png', '/', 1, 0, 0, 0, '2023-04-16 02:21:11', '2023-04-16 02:21:11'),
 (2, 'sale 2', '2023-04-16__banner.jpg', '/', 0, 1, 0, 0, '2023-04-16 03:20:13', '2023-04-16 03:20:13'),
 (3, 'sale 3', '2023-04-16__screenshot-2023-04-16-172905.png', '/', 0, 0, 1, 0, '2023-04-16 03:31:05', '2023-04-16 03:31:05');
@@ -286,39 +293,41 @@ INSERT INTO `events` (`id`, `e_name`, `e_banner`, `e_link`, `e_position_1`, `e_p
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `failed_jobs`
+-- Cấu trúc bảng cho bảng failed_jobs
 --
 
-CREATE TABLE `failed_jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE failed_jobs (
+  id BIGSERIAL PRIMARY KEY,
+  connection TEXT NOT NULL,
+  queue TEXT NOT NULL,
+  payload TEXT NOT NULL,
+  exception TEXT NOT NULL,
+  failed_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `keywords`
+-- Cấu trúc bảng cho bảng keywords
 --
 
-CREATE TABLE `keywords` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `k_name` varchar(255) NOT NULL,
-  `k_slug` varchar(255) NOT NULL,
-  `k_description` varchar(255) DEFAULT NULL,
-  `k_hot` tinyint(4) NOT NULL DEFAULT 0,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE keywords (
+  id BIGSERIAL PRIMARY KEY,
+  k_name VARCHAR(255) NOT NULL,
+  k_slug VARCHAR(255) NOT NULL,
+  k_description VARCHAR(255),
+  k_hot SMALLINT NOT NULL DEFAULT 0,
+  created_at TIMESTAMP DEFAULT NULL,
+  updated_at TIMESTAMP DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `keywords`
+-- Đang đổ dữ liệu cho bảng keywords
 --
 
-INSERT INTO `keywords` (`id`, `k_name`, `k_slug`, `k_description`, `k_hot`, `created_at`, `updated_at`) VALUES
+INSERT INTO keywords (id, k_name, k_slug, k_description, k_hot, created_at, updated_at) VALUES
 (1, 'Áo thun nam', 'ao-thun-nam', NULL, 1, '2020-06-18 07:36:27', '2023-04-15 02:37:40'),
 (2, 'Quần tây Nam', 'quan-tay-nam', NULL, 0, '2020-06-18 07:36:30', '2023-04-16 02:31:33'),
 (3, 'Áo Polo', 'ao-polo', NULL, 0, '2020-06-18 07:36:34', '2023-04-15 02:38:12'),
@@ -335,47 +344,49 @@ INSERT INTO `keywords` (`id`, `k_name`, `k_slug`, `k_description`, `k_hot`, `cre
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `menus`
+-- Cấu trúc bảng cho bảng menus
 --
 
-CREATE TABLE `menus` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `mn_name` varchar(255) NOT NULL,
-  `mn_slug` varchar(255) NOT NULL,
-  `mn_avatar` varchar(255) DEFAULT NULL,
-  `mn_banner` varchar(255) DEFAULT NULL,
-  `mn_description` varchar(255) DEFAULT NULL,
-  `mn_hot` tinyint(4) NOT NULL DEFAULT 0,
-  `mn_status` tinyint(4) NOT NULL DEFAULT 1,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE menus (
+  id BIGSERIAL PRIMARY KEY,
+  mn_name VARCHAR(255) NOT NULL,
+  mn_slug VARCHAR(255) NOT NULL,
+  mn_avatar VARCHAR(255),
+  mn_banner VARCHAR(255),
+  mn_description VARCHAR(255),
+  mn_hot SMALLINT NOT NULL DEFAULT 0,
+  mn_status SMALLINT NOT NULL DEFAULT 1,
+  created_at TIMESTAMP DEFAULT NULL,
+  updated_at TIMESTAMP DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `menus`
+-- Đang đổ dữ liệu cho bảng menus
 --
 
-INSERT INTO `menus` (`id`, `mn_name`, `mn_slug`, `mn_avatar`, `mn_banner`, `mn_description`, `mn_hot`, `mn_status`, `created_at`, `updated_at`) VALUES
+INSERT INTO menus (id, mn_name, mn_slug, mn_avatar, mn_banner, mn_description, mn_hot, mn_status, created_at, updated_at) VALUES
 (1, 'Tin tức mới', 'tin-tuc-moi', NULL, NULL, NULL, 0, 1, '2020-06-19 08:38:59', '2023-04-23 08:39:59'),
 (2, 'Sự Kiện', 'su-kien', NULL, NULL, NULL, 0, 1, '2020-06-19 08:39:22', '2023-04-15 10:31:24');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Cấu trúc bảng cho bảng migrations
 --
 
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE migrations (
+  id SERIAL PRIMARY KEY,
+  migration VARCHAR(255) NOT NULL,
+  batch INT NOT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Đang đổ dữ liệu cho bảng migrations
 --
 
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+INSERT INTO migrations (id, migration, batch) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2018_02_02_041429_create_categories_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
@@ -411,91 +422,95 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orders`
+-- Cấu trúc bảng cho bảng orders
 --
 
-CREATE TABLE `orders` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `od_transaction_id` int(11) NOT NULL DEFAULT 0,
-  `od_product_id` int(11) NOT NULL DEFAULT 0,
-  `od_sale` int(11) NOT NULL DEFAULT 0,
-  `od_qty` tinyint(4) NOT NULL DEFAULT 0,
-  `od_price` int(11) NOT NULL DEFAULT 0,
-  `od_size` varchar(50) DEFAULT NULL,
-  `od_color` varchar(100) DEFAULT NULL,
-  `od_gender` tinyint(10) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE orders (
+  id BIGSERIAL PRIMARY KEY,
+  od_transaction_id INT NOT NULL DEFAULT 0,
+  od_product_id INT NOT NULL DEFAULT 0,
+  od_sale INT NOT NULL DEFAULT 0,
+  od_qty SMALLINT NOT NULL DEFAULT 0,
+  od_price INT NOT NULL DEFAULT 0,
+  od_size VARCHAR(50),
+  od_color VARCHAR(100),
+  od_gender SMALLINT,
+  created_at TIMESTAMP DEFAULT NULL,
+  updated_at TIMESTAMP DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `orders`
+-- Đang đổ dữ liệu cho bảng orders
 --
 
-INSERT INTO `orders` (`id`, `od_transaction_id`, `od_product_id`, `od_sale`, `od_qty`, `od_price`, `od_size`, `od_color`, `od_gender`, `created_at`, `updated_at`) VALUES
+INSERT INTO orders (id, od_transaction_id, od_product_id, od_sale, od_qty, od_price, od_size, od_color, od_gender, created_at, updated_at) VALUES
 (14, 9, 12, 5, 2, 522, 'L', 'Be', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Cấu trúc bảng cho bảng password_resets
 --
 
-CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE password_resets (
+  email VARCHAR(255) NOT NULL,
+  token VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `password_resets`
+-- Đang đổ dữ liệu cho bảng password_resets
 --
 
-INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+INSERT INTO password_resets (email, token, created_at) VALUES
 ('duocnvoit@gmail.com', '$2y$10$pbrzwKceNbJ/t6ay5uJODOz4bweHblK6bPysnuctlVyCFO58YkoSq', '2020-05-03 15:29:08');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `payments`
+-- Cấu trúc bảng cho bảng payments
 --
 
-CREATE TABLE `payments` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `p_transaction_id` int(11) DEFAULT NULL,
-  `p_user_id` int(11) DEFAULT NULL,
-  `p_money` double(8,2) DEFAULT NULL COMMENT 'Số tiền thanh toán',
-  `p_note` varchar(191) DEFAULT NULL COMMENT 'Nội dung thanh toán',
-  `p_transaction_code` varchar(191) NOT NULL,
-  `p_vnp_response_code` varchar(255) DEFAULT NULL COMMENT 'Mã phản hồi',
-  `p_code_vnpay` varchar(255) DEFAULT NULL COMMENT 'Mã giao dịch vnpay',
-  `p_code_bank` varchar(255) DEFAULT NULL COMMENT 'Mã ngân hàng',
-  `p_time` datetime DEFAULT NULL COMMENT 'Thời gian chuyển khoản',
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE payments (
+  id BIGSERIAL PRIMARY KEY,
+  p_transaction_id INT,
+  p_user_id INT,
+  p_money NUMERIC(8,2),
+  p_note VARCHAR(191),
+  p_transaction_code VARCHAR(191) NOT NULL,
+  p_vnp_response_code VARCHAR(255),
+  p_code_vnpay VARCHAR(255),
+  p_code_bank VARCHAR(255),
+  p_time TIMESTAMP,
+  created_at TIMESTAMP DEFAULT NULL,
+  updated_at TIMESTAMP DEFAULT NULL
+);
+
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `producer`
+-- Cấu trúc bảng cho bảng producer
 --
 
-CREATE TABLE `producer` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `pdr_name` varchar(255) NOT NULL,
-  `pdr_slug` varchar(255) NOT NULL,
-  `pdr_email` varchar(100) NOT NULL,
-  `pdr_phone` varchar(20) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE producer (
+  id BIGSERIAL PRIMARY KEY,
+  pdr_name VARCHAR(255) NOT NULL,
+  pdr_slug VARCHAR(255) NOT NULL,
+  pdr_email VARCHAR(100) NOT NULL,
+  pdr_phone VARCHAR(20) NOT NULL,
+  created_at TIMESTAMP DEFAULT NULL,
+  updated_at TIMESTAMP DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `producer`
+-- Đang đổ dữ liệu cho bảng producer
 --
 
-INSERT INTO `producer` (`id`, `pdr_name`, `pdr_slug`, `pdr_email`, `pdr_phone`, `created_at`, `updated_at`) VALUES
+INSERT INTO producer (id, pdr_name, pdr_slug, pdr_email, pdr_phone, created_at, updated_at) VALUES
 (7, 'MenStore', 'menstore', 'MenStore @gmail.ocm', '0345956412', '2023-04-15 01:26:53', '2023-04-15 01:35:06'),
 (8, 'Duze', 'duze', 'Duze@gmail.com', '035987521', '2023-04-15 01:27:19', NULL),
 (9, 'Zunzx', 'zunzx', 'Zunzx@gmail.com', '0335445554', '2023-04-15 01:27:42', '2023-04-15 01:35:37');
@@ -503,39 +518,40 @@ INSERT INTO `producer` (`id`, `pdr_name`, `pdr_slug`, `pdr_email`, `pdr_phone`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Cấu trúc bảng cho bảng products
 --
 
-CREATE TABLE `products` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `pro_name` varchar(255) DEFAULT NULL,
-  `pro_slug` varchar(255) NOT NULL,
-  `pro_price` int(11) NOT NULL DEFAULT 0,
-  `pro_price_entry` int(11) NOT NULL DEFAULT 0 COMMENT 'giá nhập',
-  `pro_category_id` int(11) NOT NULL DEFAULT 0,
-  `pro_admin_id` int(11) NOT NULL DEFAULT 0,
-  `pro_sale` tinyint(4) NOT NULL DEFAULT 0,
-  `pro_avatar` varchar(255) DEFAULT NULL,
-  `pro_view` int(11) NOT NULL DEFAULT 0,
-  `pro_hot` tinyint(4) NOT NULL DEFAULT 0,
-  `pro_active` tinyint(4) NOT NULL DEFAULT 1,
-  `pro_pay` int(11) NOT NULL DEFAULT 0,
-  `pro_description` mediumtext DEFAULT NULL,
-  `pro_content` text DEFAULT NULL,
-  `pro_review_total` int(11) NOT NULL DEFAULT 0,
-  `pro_review_star` int(11) NOT NULL DEFAULT 0,
-  `pro_age_review` int(11) NOT NULL DEFAULT 0,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `pro_number` int(11) NOT NULL DEFAULT 0,
-  `pro_country` tinyint(4) NOT NULL DEFAULT 0,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE products (
+  id BIGSERIAL PRIMARY KEY,
+  pro_name VARCHAR(255),
+  pro_slug VARCHAR(255) NOT NULL,
+  pro_price INTEGER NOT NULL DEFAULT 0,
+  pro_price_entry INTEGER NOT NULL DEFAULT 0,
+  pro_category_id INTEGER NOT NULL DEFAULT 0,
+  pro_admin_id INTEGER NOT NULL DEFAULT 0,
+  pro_sale SMALLINT NOT NULL DEFAULT 0,
+  pro_avatar VARCHAR(255),
+  pro_view INTEGER NOT NULL DEFAULT 0,
+  pro_hot SMALLINT NOT NULL DEFAULT 0,
+  pro_active SMALLINT NOT NULL DEFAULT 1,
+  pro_pay INTEGER NOT NULL DEFAULT 0,
+  pro_description TEXT, -- Changed from MEDIUMTEXT to TEXT
+  pro_content TEXT,
+  pro_review_total INTEGER NOT NULL DEFAULT 0,
+  pro_review_star INTEGER NOT NULL DEFAULT 0,
+  pro_age_review INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMP DEFAULT NULL,
+  pro_number INTEGER NOT NULL DEFAULT 0,
+  pro_country SMALLINT NOT NULL DEFAULT 0,
+  updated_at TIMESTAMP DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Đang đổ dữ liệu cho bảng products
 --
 
-INSERT INTO `products` (`id`, `pro_name`, `pro_slug`, `pro_price`, `pro_price_entry`, `pro_category_id`, `pro_admin_id`, `pro_sale`, `pro_avatar`, `pro_view`, `pro_hot`, `pro_active`, `pro_pay`, `pro_description`, `pro_content`, `pro_review_total`, `pro_review_star`, `pro_age_review`, `created_at`, `pro_number`, `pro_country`, `updated_at`) VALUES
+INSERT INTO products (id, pro_name, pro_slug, pro_price, pro_price_entry, pro_category_id, pro_admin_id, pro_sale, pro_avatar, pro_view, pro_hot, pro_active, pro_pay, pro_description, pro_content, pro_review_total, pro_review_star, pro_age_review, created_at, pro_number, pro_country, updated_at) VALUES
 (12, 'Áo Polo Nam Trơn Cổ Dệt Gân To Form Fitted - 10S23POL066', 'ao-polo-nam-tron-co-det-gan-to-form-fitted-10s23pol066', 549000, 0, 12, 0, 5, '2023-04-16__ao-polo-nam-10s23pol066-black-beauty-1-2.jpg', 6, 0, 1, 4, NULL, '<p>TH&Ocirc;NG TIN CHI TIẾT<strong>&nbsp;&Aacute;O POLO NAM TRƠN CỔ DỆT G&Acirc;N TO FORM FITTED - 10S23POL066</strong></p>\r\n\r\n<p>Ng&agrave;y nay, &aacute;o polo l&agrave; loại trang phục phổ biến trong tủ đồ của ph&aacute;i nam. N&oacute; lu&ocirc;n l&agrave; m&oacute;n trang phục l&yacute; tưởng cho những ng&agrave;y h&egrave; oi bức nhưng b&ecirc;n cạnh đ&oacute; ch&uacute;ng ta cũng c&oacute; thể sử dụng &aacute;o polo linh hoạt v&agrave;o bất cứ m&ugrave;a n&agrave;o trong năm. Ch&iacute;nh v&igrave; vậy, &aacute;o polo hội tụ đủ những yếu tố m&agrave; mọi người cần: lịch sự, chỉn chu nhưng lại kh&ocirc;ng qu&aacute; formal.</p>\r\n\r\n<p><strong>&Aacute;o Polo Nam Trơn Cổ Dệt G&acirc;n To Form Fitted - 10S23POL066</strong>&nbsp;được thiết kế với phong c&aacute;ch sang trọng v&agrave; thanh lịch. &Aacute;o được l&agrave;m từ chất liệu cotton kết hợp với chi tiết phần nh&atilde;n ở lai &aacute;o gi&uacute;p chiếc &aacute;o c&oacute; điểm nhấn hơn. Phần cổ &aacute;o được dệt g&acirc;n to, l&agrave;m đứng form cổ tr&ocirc;ng bạn nam to&aacute;t l&ecirc;n vẻ đẹp sang trọng, lịch sự. Thiết kế n&agrave;y vừa đem lại vẻ chỉn chu, tao nh&atilde; cho bạn nam vừa đem đến sự tho&aacute;ng m&aacute;t, dễ chịu cho người mặc.</p>', 1, 5, 5, '2023-04-15 03:43:19', 100, 7, '2023-04-16 00:42:31'),
 (13, 'Áo Polo Nam Spandex Trơn Form Fitted - 10S21POL001CR2', 'ao-polo-nam-spandex-tron-form-fitted-10s21pol001cr2', 350000, 0, 12, 0, 10, '2023-04-16__ao-polo-nam-10s21pol001cr2-meerkat-2-1.jpg', 1, 0, 1, 0, NULL, '<p>TH&Ocirc;NG TIN CHI TIẾT<strong>&nbsp;&Aacute;O POLO NAM SPANDEX TRƠN FORM FITTED - 10S21POL001CR2</strong></p>\r\n\r\n<p>Ng&agrave;y nay, &aacute;o polo l&agrave; loại trang phục kh&ocirc;ng thể kh&ocirc;ng c&oacute; trong tủ đồ của bạn. N&oacute; lu&ocirc;n l&agrave; m&oacute;n trang phục l&yacute; tưởng cho những ng&agrave;y h&egrave; oi bức nhưng b&ecirc;n cạnh đ&oacute; ch&uacute;ng ta cũng c&oacute; thể sử dụng &aacute;o polo linh hoạt v&agrave;o bất cứ m&ugrave;a n&agrave;o trong năm. Ch&iacute;nh v&igrave; vậy, &aacute;o polo hội tụ đủ những yếu tố m&agrave; mọi người cần: lịch sự, chỉnh chu nhưng lại kh&ocirc;ng qu&aacute; formal.</p>\r\n\r\n<p><strong>&Aacute;o Polo Basic. Fitted &ndash; 10S21POL001CR2</strong>&nbsp;l&agrave; kiểu d&aacute;ng polo cổ điển m&agrave; bạn nam n&agrave;o cũng n&ecirc;n c&oacute; &iacute;t nhất một chiếc trong tủ đồ của m&igrave;nh. Với thiết kế trơn basic kết hợp với m&agrave;u sắc trắng, đen gi&uacute;p ch&agrave;ng c&oacute; thể dễ d&agrave;ng phối đồ v&agrave; phụ kiện cũng như mang lại khả năng ứng dụng cao khi c&oacute; thể ph&ugrave; hợp để mặc đi l&agrave;m, đi chơi, hẹn h&ograve;,&hellip; &Aacute;o c&oacute; form hơi &ocirc;m nhẹ v&agrave;o cơ thể sẽ khoe được đường n&eacute;t rắn chắc của người mặc v&agrave; đồng thời cũng l&agrave;m to&aacute;t l&ecirc;n sự chỉn chu, gọn g&agrave;ng cho tổng thể bộ outfit. Sự kết hợp giữa chất vải cotton v&agrave; spandex mang đến những ưu điểm vượt bậc cho t&iacute;nh năng sản phẩm như: Vải c&oacute; độ bền cao, thấm h&uacute;t mồ h&ocirc;i v&agrave; co gi&atilde;n tốt.</p>\r\n\r\n<p><img alt=\"tong-quan-10S21POL001CR2\" src=\"https://routine.vn/media/wysiwyg/Content_product_2/TQ_-_353_-_10S21POL001CR2_1.jpg\" /></p>\r\n\r\n<p><img alt=\"chat-lieu-10S21POL001CR2\" src=\"https://routine.vn/media/wysiwyg/content/Cotton.jpg\" style=\"height:603px; width:900px\" /></p>\r\n\r\n<p><img alt=\"hdbq-10S21POL001CR2\" src=\"https://routine.vn/media/wysiwyg/content/hdbq-ao-thun.png\" style=\"height:900px; width:900px\" /></p>', 0, 0, 0, '2023-04-16 00:35:54', 100, 7, '2023-04-16 00:38:36'),
 (14, 'Áo Polo Nam Tay Bo Trơn Form Fitted - 10S21POL033CR1', 'ao-polo-nam-tay-bo-tron-form-fitted-10s21pol033cr1', 350000, 0, 12, 0, 10, '2023-04-16__10s21pol033cr1-black-2-2-1.jpg', 1, 0, 1, 0, NULL, '<p>ĐẶC ĐIỂM NỔI BẬT</p>\r\n\r\n<table id=\"product-attribute-specs-table\">\r\n	<tbody>\r\n		<tr>\r\n			<th scope=\"row\">Form</th>\r\n			<td>Fitted</td>\r\n		</tr>\r\n		<tr>\r\n			<th scope=\"row\">Chất liệu</th>\r\n			<td>Cotton</td>\r\n		</tr>\r\n		<tr>\r\n			<th scope=\"row\">Thiết kế</th>\r\n			<td>Trơn</td>\r\n		</tr>\r\n		<tr>\r\n			<th scope=\"row\">Kiểu tay</th>\r\n			<td>Tay ngắn</td>\r\n		</tr>\r\n		<tr>\r\n			<th scope=\"row\">Giới t&iacute;nh</th>\r\n			<td>Nam</td>\r\n		</tr>\r\n		<tr>\r\n			<th scope=\"row\">Loại sản phẩm</th>\r\n			<td>&Aacute;o Polo</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>TH&Ocirc;NG TIN CHI TIẾT<strong>&nbsp;&Aacute;O POLO NAM TAY BO TRƠN FORM FITTED - 10S21POL033CR1</strong></p>\r\n\r\n<p>Ng&agrave;y nay, &aacute;o polo l&agrave; loại trang phục phổ biến trong tủ đồ của ph&aacute;i nam. N&oacute; lu&ocirc;n l&agrave; m&oacute;n trang phục l&yacute; tưởng cho những ng&agrave;y h&egrave; oi bức nhưng b&ecirc;n cạnh đ&oacute; ch&uacute;ng ta cũng c&oacute; thể sử dụng &aacute;o polo linh hoạt v&agrave;o bất cứ m&ugrave;a n&agrave;o trong năm. Ch&iacute;nh v&igrave; vậy, &aacute;o polo hội tụ đủ những yếu tố m&agrave; mọi người cần: lịch sự, chỉn chu nhưng lại kh&ocirc;ng qu&aacute; formal.<br />\r\n<br />\r\n<strong>&Aacute;o Polo Nam Tay Bo Trơn - 10S21POL033CR1</strong>&nbsp;được thiết kế theo phong c&aacute;ch đơn giản, thanh lịch n&ecirc;n c&oacute; thể dễ d&agrave;ng phối c&ugrave;ng nhiểu loại trang phục kh&aacute;c nhau. C&oacute; form &aacute;o hơi &ocirc;m v&agrave;o người gi&uacute;p c&aacute;c ch&agrave;ng c&oacute; thể dễ d&agrave;ng khoe được body săn chắc, khỏe khoắn. Được may từ chất liệu tho&aacute;ng m&aacute;t, thấm h&uacute;t mồ h&ocirc;i tốt v&agrave; c&oacute; khả năng chống m&ugrave;i cho người mặc tự tin trong mọi cuộc gặp gỡ.</p>\r\n\r\n<p><img alt=\"tong-quan-10S21POL033CR1\" src=\"https://routine.vn/media/wysiwyg/Content_product_2/TQ_-_541_-_10S21POL033CR1_1.jpg\" /></p>\r\n\r\n<p><img alt=\"chat-lieu-10S21POL033CR1\" src=\"https://routine.vn/media/wysiwyg/content/Cotton.jpg\" /></p>\r\n\r\n<p><img alt=\"hdbq-10S21POL033CR1\" src=\"https://routine.vn/media/wysiwyg/content/hdbq-ao-thun_1.png\" /></p>', 0, 0, 0, '2023-04-16 00:40:18', 100, 7, '2023-04-16 00:41:22'),
@@ -560,20 +576,20 @@ INSERT INTO `products` (`id`, `pro_name`, `pro_slug`, `pro_price`, `pro_price_en
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products_attributes`
+-- Cấu trúc bảng cho bảng products_attributes
 --
 
-CREATE TABLE `products_attributes` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `pa_product_id` int(11) NOT NULL DEFAULT 0,
-  `pa_attribute_id` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE products_attributes (
+  id BIGSERIAL  NOT NULL,
+  pa_product_id iINT  NOT NULL DEFAULT 0,
+  pa_attribute_id iINT  NOT NULL DEFAULT 0
+) ;
 
 --
--- Đang đổ dữ liệu cho bảng `products_attributes`
+-- Đang đổ dữ liệu cho bảng products_attributes
 --
 
-INSERT INTO `products_attributes` (`id`, `pa_product_id`, `pa_attribute_id`) VALUES
+INSERT INTO products_attributes (id, pa_product_id, pa_attribute_id) VALUES
 (57, 3, 6),
 (58, 3, 7),
 (59, 3, 8),
@@ -733,20 +749,21 @@ INSERT INTO `products_attributes` (`id`, `pa_product_id`, `pa_attribute_id`) VAL
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products_keywords`
+-- Cấu trúc bảng cho bảng products_keywords
 --
 
-CREATE TABLE `products_keywords` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `pk_product_id` int(11) NOT NULL DEFAULT 0,
-  `pk_keyword_id` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE products_keywords (
+  id BIGSERIAL PRIMARY KEY,
+  pk_product_id INTEGER NOT NULL DEFAULT 0,
+  pk_keyword_id INTEGER NOT NULL DEFAULT 0
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `products_keywords`
+-- Đang đổ dữ liệu cho bảng products_keywords
 --
 
-INSERT INTO `products_keywords` (`id`, `pk_product_id`, `pk_keyword_id`) VALUES
+INSERT INTO products_keywords (id, pk_product_id, pk_keyword_id) VALUES
 (26, 3, 1),
 (27, 3, 2),
 (28, 4, 1),
@@ -786,65 +803,69 @@ INSERT INTO `products_keywords` (`id`, `pk_product_id`, `pk_keyword_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_images`
+-- Cấu trúc bảng cho bảng product_images
 --
 
-CREATE TABLE `product_images` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `pi_name` varchar(255) DEFAULT NULL,
-  `pi_slug` varchar(255) DEFAULT NULL,
-  `pi_product_id` int(11) NOT NULL DEFAULT 0,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE product_images (
+  id BIGSERIAL PRIMARY KEY,
+  pi_name VARCHAR(255),
+  pi_slug VARCHAR(255),
+  pi_product_id INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMP DEFAULT NULL,
+  updated_at TIMESTAMP DEFAULT NULL
+);
+
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `ratings`
+-- Cấu trúc bảng cho bảng ratings
 --
 
-CREATE TABLE `ratings` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `r_user_id` int(11) NOT NULL DEFAULT 0,
-  `r_product_id` int(11) NOT NULL DEFAULT 0,
-  `r_number` tinyint(4) NOT NULL DEFAULT 0,
-  `r_status` tinyint(4) NOT NULL DEFAULT 0,
-  `r_content` text DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE ratings (
+  id BIGSERIAL PRIMARY KEY,
+  r_user_id INTEGER NOT NULL DEFAULT 0,
+  r_product_id INTEGER NOT NULL DEFAULT 0,
+  r_number SMALLINT NOT NULL DEFAULT 0,
+  r_status SMALLINT NOT NULL DEFAULT 0,
+  r_content TEXT,
+  created_at TIMESTAMP DEFAULT NULL,
+  updated_at TIMESTAMP DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `ratings`
+-- Đang đổ dữ liệu cho bảng ratings
 --
 
-INSERT INTO `ratings` (`id`, `r_user_id`, `r_product_id`, `r_number`, `r_status`, `r_content`, `created_at`, `updated_at`) VALUES
-(7, 7, 12, 5, 0, NULL, '2023-04-15 04:37:22', '2023-04-15 04:37:22');
+INSERT INTO ratings (id, r_user_id, r_product_id, r_number, r_status, r_content, created_at, updated_at)
+VALUES (7, 7, 12, 5, 0, NULL, '2023-04-15 04:37:22', '2023-04-15 04:37:22');
+
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `slides`
+-- Cấu trúc bảng cho bảng slides
 --
 
-CREATE TABLE `slides` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `sd_title` varchar(255) DEFAULT NULL,
-  `sd_link` varchar(255) DEFAULT NULL,
-  `sd_image` varchar(255) DEFAULT NULL,
-  `sd_target` tinyint(4) NOT NULL DEFAULT 1,
-  `sd_active` tinyint(4) NOT NULL DEFAULT 1,
-  `sd_sort` tinyint(4) NOT NULL DEFAULT 1,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE slides (
+  id BIGSERIAL NOT NULL,
+  sd_title varchar(255) DEFAULT NULL,
+  sd_link varchar(255) DEFAULT NULL,
+  sd_image varchar(255) DEFAULT NULL,
+  sd_target tinyint(4) NOT NULL DEFAULT 1,
+  sd_active tinyint(4) NOT NULL DEFAULT 1,
+  sd_sort tinyint(4) NOT NULL DEFAULT 1,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `slides`
+-- Đang đổ dữ liệu cho bảng slides
 --
 
-INSERT INTO `slides` (`id`, `sd_title`, `sd_link`, `sd_image`, `sd_target`, `sd_active`, `sd_sort`, `created_at`, `updated_at`) VALUES
+INSERT INTO slides (id, sd_title, sd_link, sd_image, sd_target, sd_active, sd_sort, created_at, updated_at) VALUES
 (1, 'slide 11', '/', '2023-04-16__banner-1.png', 4, 1, 1, '2023-04-16 00:27:08', '2023-04-16 00:29:27'),
 (2, 'slide 2', '/', '2023-04-16__banner2.jpg', 1, 1, 2, '2023-04-16 00:29:39', '2023-04-16 00:29:39'),
 (3, 'slide 3', '/', '2023-04-16__banner3.png', 1, 1, 3, '2023-04-16 00:29:44', '2023-04-16 00:29:44');
@@ -852,124 +873,126 @@ INSERT INTO `slides` (`id`, `sd_title`, `sd_link`, `sd_image`, `sd_target`, `sd_
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `statics`
+-- Cấu trúc bảng cho bảng statics
 --
 
-CREATE TABLE `statics` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `s_title` varchar(255) DEFAULT NULL,
-  `s_slug` varchar(255) DEFAULT NULL,
-  `s_type` tinyint(4) NOT NULL DEFAULT 0,
-  `s_md5` varchar(255) DEFAULT NULL,
-  `s_content` text DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE statics (
+  id BIGSERIAL  NOT NULL,
+  s_title varchar(255) DEFAULT NULL,
+  s_slug varchar(255) DEFAULT NULL,
+  s_type tinyint(4) NOT NULL DEFAULT 0,
+  s_md5 varchar(255) DEFAULT NULL,
+  s_content text DEFAULT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
+) ;
 
 --
--- Đang đổ dữ liệu cho bảng `statics`
+-- Đang đổ dữ liệu cho bảng statics
 --
 
-INSERT INTO `statics` (`id`, `s_title`, `s_slug`, `s_type`, `s_md5`, `s_content`, `created_at`, `updated_at`) VALUES
+INSERT INTO statics (id, s_title, s_slug, s_type, s_md5, s_content, created_at, updated_at) VALUES
 (1, 'Hướng dẫn chi tiết mua hàng', NULL, 1, NULL, '<p>Khi mua h&agrave;ng bạn k&iacute;ch chọn size sản phẩm</p>\r\n\r\n<p>Tiếp theo đ&oacute; k&iacute;ch v&agrave;o mua ngay&nbsp;</p>', '2020-06-19 08:41:33', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `transactions`
+-- Cấu trúc bảng cho bảng transactions
 --
 
-CREATE TABLE `transactions` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `tst_user_id` int(11) NOT NULL DEFAULT 0,
-  `tst_total_money` int(11) NOT NULL DEFAULT 0,
-  `tst_name` varchar(255) DEFAULT NULL,
-  `tst_email` varchar(255) DEFAULT NULL,
-  `tst_phone` varchar(255) DEFAULT NULL,
-  `tst_address` varchar(255) DEFAULT NULL,
-  `tst_note` varchar(255) DEFAULT NULL,
-  `tst_status` tinyint(4) NOT NULL DEFAULT 1,
-  `tst_type` tinyint(4) NOT NULL DEFAULT 1 COMMENT ' 1 thanh toan thuong, 2 la thanh toan online',
-  `tst_code` text DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE transactions (
+  id BIGSERIAL  NOT NULL,
+  tst_user_id iINT  NOT NULL DEFAULT 0,
+  tst_total_money iINT  NOT NULL DEFAULT 0,
+  tst_name varchar(255) DEFAULT NULL,
+  tst_email varchar(255) DEFAULT NULL,
+  tst_phone varchar(255) DEFAULT NULL,
+  tst_address varchar(255) DEFAULT NULL,
+  tst_note varchar(255) DEFAULT NULL,
+  tst_status tinyint(4) NOT NULL DEFAULT 1,
+  tst_type tinyint(4) NOT NULL DEFAULT 1 COMMENT ' 1 thanh toan thuong, 2 la thanh toan online',
+  tst_code text DEFAULT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
+) ;
 
 --
--- Đang đổ dữ liệu cho bảng `transactions`
+-- Đang đổ dữ liệu cho bảng transactions
 --
 
-INSERT INTO `transactions` (`id`, `tst_user_id`, `tst_total_money`, `tst_name`, `tst_email`, `tst_phone`, `tst_address`, `tst_note`, `tst_status`, `tst_type`, `tst_code`, `created_at`, `updated_at`) VALUES
+INSERT INTO transactions (id, tst_user_id, tst_total_money, tst_name, tst_email, tst_phone, tst_address, tst_note, tst_status, tst_type, tst_code, created_at, updated_at) VALUES
 (9, 7, 1043, 'Nguyễn Thanh Lâm', 'thanhlam@gmail.com', '0123456789', 'rrrr', NULL, 1, 1, 'bo8VxMaowyfY3Ar', '2023-04-15 10:47:41', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `types`
+-- Cấu trúc bảng cho bảng types
 --
 
-CREATE TABLE `types` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `t_name` varchar(255) DEFAULT NULL,
-  `t_slug` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE types (
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  t_name VARCHAR(255) DEFAULT NULL,
+  t_slug VARCHAR(255) DEFAULT NULL,
+  created_at TIMESTAMP NULL DEFAULT NULL,
+  updated_at TIMESTAMP NULL DEFAULT NULL
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `types`
+-- Đang đổ dữ liệu cho bảng types
 --
 
-INSERT INTO `types` (`id`, `t_name`, `t_slug`, `created_at`, `updated_at`) VALUES
+INSERT INTO types (id, t_name, t_slug, created_at, updated_at) VALUES
 (1, 'Size', 'size', '2020-06-18 07:09:10', NULL),
 (2, 'Màu sắc', 'mau-sac', '2020-07-03 17:28:58', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Cấu trúc bảng cho bảng users
 --
 
-CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
-  `log_login` text DEFAULT NULL,
-  `count_comment` tinyint(4) NOT NULL DEFAULT 0,
-  `address` varchar(255) DEFAULT NULL,
-  `avatar` varchar(255) DEFAULT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE users (
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  email_verified_at TIMESTAMP NULL DEFAULT NULL,
+  password VARCHAR(255) NOT NULL,
+  phone VARCHAR(255) NOT NULL,
+  log_login TEXT DEFAULT NULL,
+  count_comment SMALLINT NOT NULL DEFAULT 0,
+  address VARCHAR(255) DEFAULT NULL,
+  avatar VARCHAR(255) DEFAULT NULL,
+  remember_token VARCHAR(100) DEFAULT NULL,
+  created_at TIMESTAMP NULL DEFAULT NULL,
+  updated_at TIMESTAMP NULL DEFAULT NULL
+);
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Đang đổ dữ liệu cho bảng users
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `phone`, `log_login`, `count_comment`, `address`, `avatar`, `remember_token`, `created_at`, `updated_at`) VALUES
-(9, 'vinh', 'vinh1808a@gmail.com', NULL, '$2y$10$xxEajLLrIXZ5V7gozOigFe3Bwh9tk.gp3WspD0lqwh0ltcEGzI/s6', '0396147266', '[{\"device\":\"WebKit\",\"platform\":\"Windows\",\"platform_ver\":\"10.0\",\"browser\":\"Chrome\",\"browser_ver\":\"112.0.0.0\",\"time\":\"2023-04-23T15:00:01.579523Z\"},{\"device\":\"WebKit\",\"platform\":\"Windows\",\"platform_ver\":\"10.0\",\"browser\":\"Chrome\",\"browser_ver\":\"112.0.0.0\",\"time\":\"2023-04-23T15:33:09.296193Z\"},{\"device\":\"WebKit\",\"platform\":\"Windows\",\"platform_ver\":\"10.0\",\"browser\":\"Chrome\",\"browser_ver\":\"112.0.0.0\",\"time\":\"2023-04-23T15:45:45.872345Z\"}]', 1, NULL, '2023-04-23__255dfb0fdada2d8474cb.jpg', NULL, '2023-04-23 07:59:20', '2023-04-23 08:32:25');
+INSERT INTO users (id, name, email, email_verified_at, password, phone, log_login, count_comment, address, avatar, remember_token, created_at, updated_at) VALUES
+(9, 'danh', 'danh010500@gmail.com', NULL, '$2y$10$xxEajLLrIXZ5V7gozOigFe3Bwh9tk.gp3WspD0lqwh0ltcEGzI/s6', '0396147266', '[{\"device\":\"WebKit\",\"platform\":\"Windows\",\"platform_ver\":\"10.0\",\"browser\":\"Chrome\",\"browser_ver\":\"112.0.0.0\",\"time\":\"2023-04-23T15:00:01.579523Z\"},{\"device\":\"WebKit\",\"platform\":\"Windows\",\"platform_ver\":\"10.0\",\"browser\":\"Chrome\",\"browser_ver\":\"112.0.0.0\",\"time\":\"2023-04-23T15:33:09.296193Z\"},{\"device\":\"WebKit\",\"platform\":\"Windows\",\"platform_ver\":\"10.0\",\"browser\":\"Chrome\",\"browser_ver\":\"112.0.0.0\",\"time\":\"2023-04-23T15:45:45.872345Z\"}]', 1, NULL, '2023-04-23__255dfb0fdada2d8474cb.jpg', NULL, '2023-04-23 07:59:20', '2023-04-23 08:32:25');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user_favourite`
+-- Cấu trúc bảng cho bảng user_favourite
 --
 
-CREATE TABLE `user_favourite` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `uf_product_id` int(11) NOT NULL DEFAULT 0,
-  `uf_user_id` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE user_favourite (
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  uf_product_id INTEGER NOT NULL DEFAULT 0,
+  uf_user_id INTEGER NOT NULL DEFAULT 0
+);
+
 
 --
--- Đang đổ dữ liệu cho bảng `user_favourite`
+-- Đang đổ dữ liệu cho bảng user_favourite
 --
 
-INSERT INTO `user_favourite` (`id`, `uf_product_id`, `uf_user_id`) VALUES
+INSERT INTO user_favourite (id, uf_product_id, uf_user_id) VALUES
 (1, 2, 1),
 (4, 4, 4),
 (7, 4, 8),
@@ -981,369 +1004,368 @@ INSERT INTO `user_favourite` (`id`, `uf_product_id`, `uf_user_id`) VALUES
 --
 
 --
--- Chỉ mục cho bảng `admins`
+-- Chỉ mục cho bảng admins
 --
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `admins_email_unique` (`email`),
-  ADD UNIQUE KEY `admins_phone_unique` (`phone`);
+-- For the "admins" table
+ALTER TABLE admins
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY admins_email_unique (email),
+  ADD UNIQUE KEY admins_phone_unique (phone);
+
+-- For the "articles" table
+ALTER TABLE articles
+  ADD PRIMARY KEY (id),
+  ADD KEY articles_a_slug_index (a_slug),
+  ADD KEY articles_a_hot_index (a_hot),
+  ADD KEY articles_a_active_index (a_active),
+  ADD KEY articles_a_menu_id_index (a_menu_id);
 
 --
--- Chỉ mục cho bảng `articles`
+-- Chỉ mục cho bảng attributes
 --
-ALTER TABLE `articles`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `articles_a_slug_index` (`a_slug`),
-  ADD KEY `articles_a_hot_index` (`a_hot`),
-  ADD KEY `articles_a_active_index` (`a_active`),
-  ADD KEY `articles_a_menu_id_index` (`a_menu_id`);
+ALTER TABLE attributes
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY attributes_atb_name_unique (atb_name),
+  ADD KEY attributes_atb_type_id_index (atb_type_id);
 
 --
--- Chỉ mục cho bảng `attributes`
+-- Chỉ mục cho bảng categories
 --
-ALTER TABLE `attributes`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `attributes_atb_name_unique` (`atb_name`),
-  ADD KEY `attributes_atb_type_id_index` (`atb_type_id`);
+ALTER TABLE categories
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY categories_c_slug_unique (c_slug),
+  ADD KEY categories_c_parent_id_index (c_parent_id);
 
 --
--- Chỉ mục cho bảng `categories`
+-- Chỉ mục cho bảng comments
 --
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `categories_c_slug_unique` (`c_slug`),
-  ADD KEY `categories_c_parent_id_index` (`c_parent_id`);
+ALTER TABLE comments
+  ADD PRIMARY KEY (id),
+  ADD KEY comments_cmt_parent_id_index (cmt_parent_id),
+  ADD KEY comments_cmt_product_id_index (cmt_product_id),
+  ADD KEY comments_cmt_admin_id_index (cmt_admin_id),
+  ADD KEY comments_cmt_user_id_index (cmt_user_id);
 
 --
--- Chỉ mục cho bảng `comments`
+-- Chỉ mục cho bảng contacts
 --
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `comments_cmt_parent_id_index` (`cmt_parent_id`),
-  ADD KEY `comments_cmt_product_id_index` (`cmt_product_id`),
-  ADD KEY `comments_cmt_admin_id_index` (`cmt_admin_id`),
-  ADD KEY `comments_cmt_user_id_index` (`cmt_user_id`);
+ALTER TABLE contacts
+  ADD PRIMARY KEY (id);
 
 --
--- Chỉ mục cho bảng `contacts`
+-- Chỉ mục cho bảng cost_vc
 --
-ALTER TABLE `contacts`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE cost_vc
+  ADD PRIMARY KEY (id);
 
 --
--- Chỉ mục cho bảng `cost_vc`
+-- Chỉ mục cho bảng discount_code
 --
-ALTER TABLE `cost_vc`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE discount_code
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY discount_code_d_code_unique (d_code);
 
 --
--- Chỉ mục cho bảng `discount_code`
+-- Chỉ mục cho bảng events
 --
-ALTER TABLE `discount_code`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `discount_code_d_code_unique` (`d_code`);
+ALTER TABLE events
+  ADD PRIMARY KEY (id);
 
 --
--- Chỉ mục cho bảng `events`
+-- Chỉ mục cho bảng failed_jobs
 --
-ALTER TABLE `events`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE failed_jobs
+  ADD PRIMARY KEY (id);
 
 --
--- Chỉ mục cho bảng `failed_jobs`
+-- Chỉ mục cho bảng keywords
 --
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE keywords
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY keywords_k_slug_unique (k_slug);
 
 --
--- Chỉ mục cho bảng `keywords`
+-- Chỉ mục cho bảng menus
 --
-ALTER TABLE `keywords`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `keywords_k_slug_unique` (`k_slug`);
+ALTER TABLE menus
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY menus_mn_slug_unique (mn_slug);
 
 --
--- Chỉ mục cho bảng `menus`
+-- Chỉ mục cho bảng migrations
 --
-ALTER TABLE `menus`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `menus_mn_slug_unique` (`mn_slug`);
+ALTER TABLE migrations
+  ADD PRIMARY KEY (id);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Chỉ mục cho bảng orders
 --
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE orders
+  ADD PRIMARY KEY (id);
 
 --
--- Chỉ mục cho bảng `orders`
+-- Chỉ mục cho bảng password_resets
 --
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE password_resets
+  ADD KEY password_resets_email_index (email);
 
 --
--- Chỉ mục cho bảng `password_resets`
+-- Chỉ mục cho bảng payments
 --
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
+ALTER TABLE payments
+  ADD PRIMARY KEY (id);
 
 --
--- Chỉ mục cho bảng `payments`
+-- Chỉ mục cho bảng producer
 --
-ALTER TABLE `payments`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE producer
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY producer_pdr_slug_unique (pdr_slug),
+  ADD UNIQUE KEY producer_pdr_email_unique (pdr_email);
 
 --
--- Chỉ mục cho bảng `producer`
+-- Chỉ mục cho bảng products
 --
-ALTER TABLE `producer`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `producer_pdr_slug_unique` (`pdr_slug`),
-  ADD UNIQUE KEY `producer_pdr_email_unique` (`pdr_email`);
+ALTER TABLE products
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY products_pro_slug_unique (pro_slug),
+  ADD KEY products_pro_hot_index (pro_hot),
+  ADD KEY products_pro_active_index (pro_active);
 
 --
--- Chỉ mục cho bảng `products`
+-- Chỉ mục cho bảng products_attributes
 --
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `products_pro_slug_unique` (`pro_slug`),
-  ADD KEY `products_pro_hot_index` (`pro_hot`),
-  ADD KEY `products_pro_active_index` (`pro_active`);
+ALTER TABLE products_attributes
+  ADD PRIMARY KEY (id),
+  ADD KEY products_attributes_pa_product_id_index (pa_product_id),
+  ADD KEY products_attributes_pa_attribute_id_index (pa_attribute_id);
 
 --
--- Chỉ mục cho bảng `products_attributes`
+-- Chỉ mục cho bảng products_keywords
 --
-ALTER TABLE `products_attributes`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `products_attributes_pa_product_id_index` (`pa_product_id`),
-  ADD KEY `products_attributes_pa_attribute_id_index` (`pa_attribute_id`);
+ALTER TABLE products_keywords
+  ADD PRIMARY KEY (id),
+  ADD KEY products_keywords_pk_product_id_index (pk_product_id),
+  ADD KEY products_keywords_pk_keyword_id_index (pk_keyword_id);
 
 --
--- Chỉ mục cho bảng `products_keywords`
+-- Chỉ mục cho bảng product_images
 --
-ALTER TABLE `products_keywords`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `products_keywords_pk_product_id_index` (`pk_product_id`),
-  ADD KEY `products_keywords_pk_keyword_id_index` (`pk_keyword_id`);
+ALTER TABLE product_images
+  ADD PRIMARY KEY (id);
 
 --
--- Chỉ mục cho bảng `product_images`
+-- Chỉ mục cho bảng ratings
 --
-ALTER TABLE `product_images`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE ratings
+  ADD PRIMARY KEY (id);
 
 --
--- Chỉ mục cho bảng `ratings`
+-- Chỉ mục cho bảng slides
 --
-ALTER TABLE `ratings`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE slides
+  ADD PRIMARY KEY (id);
 
 --
--- Chỉ mục cho bảng `slides`
+-- Chỉ mục cho bảng statics
 --
-ALTER TABLE `slides`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE statics
+  ADD PRIMARY KEY (id);
 
 --
--- Chỉ mục cho bảng `statics`
+-- Chỉ mục cho bảng transactions
 --
-ALTER TABLE `statics`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE transactions
+  ADD PRIMARY KEY (id),
+  ADD KEY transactions_tst_user_id_index (tst_user_id);
 
 --
--- Chỉ mục cho bảng `transactions`
+-- Chỉ mục cho bảng types
 --
-ALTER TABLE `transactions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `transactions_tst_user_id_index` (`tst_user_id`);
+ALTER TABLE types
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY types_t_name_unique (t_name);
 
 --
--- Chỉ mục cho bảng `types`
+-- Chỉ mục cho bảng users
 --
-ALTER TABLE `types`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `types_t_name_unique` (`t_name`);
+ALTER TABLE users
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY users_email_unique (email),
+  ADD UNIQUE KEY users_phone_unique (phone);
 
 --
--- Chỉ mục cho bảng `users`
+-- Chỉ mục cho bảng user_favourite
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`),
-  ADD UNIQUE KEY `users_phone_unique` (`phone`);
-
---
--- Chỉ mục cho bảng `user_favourite`
---
-ALTER TABLE `user_favourite`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `user_favourite_uf_product_id_uf_user_id_unique` (`uf_product_id`,`uf_user_id`);
+ALTER TABLE user_favourite
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY user_favourite_uf_product_id_uf_user_id_unique (uf_product_id,uf_user_id);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT cho bảng `admins`
+-- AUTO_INCREMENT cho bảng admins
 --
-ALTER TABLE `admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE admins
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `articles`
+-- AUTO_INCREMENT cho bảng articles
 --
-ALTER TABLE `articles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE articles
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `attributes`
+-- AUTO_INCREMENT cho bảng attributes
 --
-ALTER TABLE `attributes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+ALTER TABLE attributes
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT cho bảng `categories`
+-- AUTO_INCREMENT cho bảng categories
 --
-ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE categories
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT cho bảng `comments`
+-- AUTO_INCREMENT cho bảng comments
 --
-ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE comments
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `contacts`
+-- AUTO_INCREMENT cho bảng contacts
 --
-ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE contacts
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `cost_vc`
+-- AUTO_INCREMENT cho bảng cost_vc
 --
-ALTER TABLE `cost_vc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE cost_vc
+  MODIFY id iINT  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `discount_code`
+-- AUTO_INCREMENT cho bảng discount_code
 --
-ALTER TABLE `discount_code`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE discount_code
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `events`
+-- AUTO_INCREMENT cho bảng events
 --
-ALTER TABLE `events`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE events
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `failed_jobs`
+-- AUTO_INCREMENT cho bảng failed_jobs
 --
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE failed_jobs
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `keywords`
+-- AUTO_INCREMENT cho bảng keywords
 --
-ALTER TABLE `keywords`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE keywords
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `menus`
+-- AUTO_INCREMENT cho bảng menus
 --
-ALTER TABLE `menus`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE menus
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `migrations`
+-- AUTO_INCREMENT cho bảng migrations
 --
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+ALTER TABLE migrations
+  MODIFY id int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT cho bảng `orders`
+-- AUTO_INCREMENT cho bảng orders
 --
-ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+ALTER TABLE orders
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT cho bảng `payments`
+-- AUTO_INCREMENT cho bảng payments
 --
-ALTER TABLE `payments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE payments
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `producer`
+-- AUTO_INCREMENT cho bảng producer
 --
-ALTER TABLE `producer`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE producer
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT cho bảng products
 --
-ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+ALTER TABLE products
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT cho bảng `products_attributes`
+-- AUTO_INCREMENT cho bảng products_attributes
 --
-ALTER TABLE `products_attributes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=321;
+ALTER TABLE products_attributes
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=321;
 
 --
--- AUTO_INCREMENT cho bảng `products_keywords`
+-- AUTO_INCREMENT cho bảng products_keywords
 --
-ALTER TABLE `products_keywords`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+ALTER TABLE products_keywords
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
--- AUTO_INCREMENT cho bảng `product_images`
+-- AUTO_INCREMENT cho bảng product_images
 --
-ALTER TABLE `product_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE product_images
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `ratings`
+-- AUTO_INCREMENT cho bảng ratings
 --
-ALTER TABLE `ratings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE ratings
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `slides`
+-- AUTO_INCREMENT cho bảng slides
 --
-ALTER TABLE `slides`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE slides
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `statics`
+-- AUTO_INCREMENT cho bảng statics
 --
-ALTER TABLE `statics`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE statics
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `transactions`
+-- AUTO_INCREMENT cho bảng transactions
 --
-ALTER TABLE `transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE transactions
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `types`
+-- AUTO_INCREMENT cho bảng types
 --
-ALTER TABLE `types`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE types
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT cho bảng users
 --
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE users
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `user_favourite`
+-- AUTO_INCREMENT cho bảng user_favourite
 --
-ALTER TABLE `user_favourite`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE user_favourite
+  MODIFY id BIGSERIAL  NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
