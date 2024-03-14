@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Aws\Api\Validator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Category;
@@ -29,9 +30,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(UrlGenerator $url): void
     {
-        Validator::extend('axist_email', function ($attribute, $value, $parameters, $validator) {
-            return User::where('email', $value)->count() !== 0;
-        });
         if (env('APP_ENV') == 'production') {
             $url->forceScheme('https');
         }
